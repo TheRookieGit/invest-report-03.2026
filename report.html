@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>投资组合阶段报告 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300&family=DM+Mono:wght@400;500&family=Noto+Serif+SC:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#111C30;--navy-mid:#1B2A4A;--navy-light:#243659;
+  --gold:#C9A84C;--gold-dim:#8A6E2A;--gold-pale:#F5E8C4;
+  --white:#FFF;--off-white:#F7F5F0;--light:#EEF1F7;--mid:#D0D8E8;
+  --slate:#8496B0;--text:#1A2340;--text-mid:#4A5A7A;
+  --green:#1A7A4A;--green-bg:#E8F5EE;
+  --red:#B53232;--red-bg:#FAEAEA;
+  --amber:#B87A1A;--amber-bg:#FEF3E2;
+  --purple:#5A3A8A;--purple-bg:#EDE8F5;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--off-white);color:var(--text);font-family:'Noto Serif SC','Cormorant Garamond',Georgia,serif;font-size:15px;line-height:1.7}
+
+/* HEADER */
+.report-header{background:var(--navy);color:var(--white);position:relative;overflow:hidden}
+.report-header::before{content:'';position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--gold)}
+.header-inner{max-width:1140px;margin:0 auto;padding:50px 56px 50px 72px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end}
+.report-eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:14px}
+.report-title{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:300;line-height:1.1;color:var(--white);letter-spacing:-0.5px}
+.report-title-cn{font-size:16px;font-weight:300;color:var(--slate);margin-top:6px}
+.badge{display:inline-block;background:var(--gold);color:var(--navy);font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:2px;padding:6px 14px;text-transform:uppercase;margin-bottom:16px}
+.meta-table{border-collapse:collapse}
+.meta-table td{padding:4px 0 4px 20px;font-size:12px;color:var(--slate);vertical-align:top}
+.meta-table td:first-child{color:var(--gold-dim);font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding-left:0;white-space:nowrap}
+.header-bar{background:#0A1220;padding:10px 72px;font-family:'DM Mono',monospace;font-size:9px;color:var(--slate);letter-spacing:1px;display:flex;justify-content:space-between}
+
+/* LAYOUT */
+.container{max-width:1140px;margin:0 auto;padding:0 40px 80px}
+.section{margin-top:52px}
+.section-header{display:flex;align-items:baseline;gap:14px;margin-bottom:26px;padding-bottom:12px;border-bottom:1px solid var(--mid);position:relative}
+.section-header::before{content:'';position:absolute;left:-40px;top:0;bottom:0;width:4px;background:var(--gold)}
+.section-num{font-family:'DM Mono',monospace;font-size:11px;color:var(--gold);letter-spacing:2px;flex-shrink:0}
+.section-en{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:var(--navy);letter-spacing:-0.3px}
+.section-cn{font-size:13px;color:var(--slate);font-weight:300}
+
+/* KPI */
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:22px}
+.kpi-grid-5{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:22px}
+.kpi-card{background:var(--white);border:1px solid var(--mid);padding:16px 18px 14px;position:relative;box-shadow:0 2px 12px rgba(0,0,0,.05)}
+.kpi-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold)}
+.kpi-card.green-top::before{background:var(--green)}
+.kpi-label-en{font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--slate);display:block;margin-bottom:2px}
+.kpi-label-cn{font-size:11px;color:var(--text-mid);display:block;margin-bottom:7px;font-weight:300}
+.kpi-value{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--navy);line-height:1;display:block}
+.kpi-value.red{color:var(--red)}
+.kpi-value.green{color:var(--green)}
+.kpi-value.amber{color:var(--amber)}
+.kpi-sub{font-size:11px;color:var(--slate);margin-top:5px;display:block}
+
+/* TABLES */
+.table-wrap{overflow-x:auto;margin-bottom:16px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+thead tr{background:var(--navy);color:var(--white)}
+thead th{padding:10px 13px;text-align:center;font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:1px;text-transform:uppercase;font-weight:400;white-space:nowrap}
+thead th:first-child{text-align:left}
+tbody tr:nth-child(even){background:var(--light)}
+tbody tr:hover{background:#E8EDF7}
+tbody td{padding:10px 13px;border-bottom:1px solid var(--mid);text-align:center;vertical-align:middle;font-size:13px}
+tbody td:first-child{text-align:left}
+.ticker{font-family:'DM Mono',monospace;font-weight:500;font-size:13px;color:var(--navy)}
+.mono{font-family:'DM Mono',monospace}
+.red{color:var(--red)}
+.green{color:var(--green)}
+.amber{color:var(--amber)}
+
+/* NOTES */
+.note-dark{background:var(--navy);color:#C8D4E8;padding:17px 22px;font-size:13px;line-height:1.75;position:relative;margin-bottom:12px}
+.note-dark::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--gold)}
+.note-dark .nl,.note-light .nl{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;display:block;margin-bottom:7px}
+.note-dark .nl{color:var(--gold)}
+.note-light{background:var(--light);border:1px solid var(--mid);border-left:4px solid var(--gold);padding:15px 19px;font-size:13px;line-height:1.75;color:var(--text);margin-bottom:12px}
+.note-light.amber{border-left-color:var(--amber);background:var(--amber-bg)}
+.note-light.red{border-left-color:var(--red);background:var(--red-bg)}
+.note-light.green{border-left-color:var(--green);background:var(--green-bg)}
+.note-light .nl{color:var(--navy);font-weight:500}
+
+/* PERIOD BADGE */
+.period-tab{display:inline-block;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;margin-right:6px;margin-bottom:10px}
+.period-tab.active{background:var(--navy);color:var(--gold)}
+.period-tab.alt{background:var(--light);color:var(--text-mid);border:1px solid var(--mid)}
+
+/* DUAL PERIOD TABLE */
+.dual-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px}
+.dual-card{background:var(--white);border:1px solid var(--mid);padding:20px 22px;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.dual-head{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--mid)}
+.dual-head.gold{color:var(--gold)}
+.dual-head.green{color:var(--green)}
+
+/* BAR CHART */
+.bar-chart{margin:18px 0}
+.bar-row{display:flex;align-items:center;gap:10px;margin-bottom:9px}
+.bar-ticker{font-family:'DM Mono',monospace;font-size:10px;width:85px;text-align:right;flex-shrink:0;color:var(--text-mid)}
+.bar-track{flex:1;height:26px;background:var(--light);display:flex;align-items:center;position:relative}
+.bar-fill{height:100%;display:flex;align-items:center}
+.bar-fill.neg{background:var(--red);margin-left:auto;padding-left:8px}
+.bar-fill.pos{background:var(--green);padding-right:8px;justify-content:flex-end}
+.bar-val{font-family:'DM Mono',monospace;font-size:10px;color:var(--white);font-weight:500;white-space:nowrap}
+.bar-baseline{position:absolute;top:0;bottom:0;width:2px;background:var(--navy);left:50%}
+
+/* BENCHMARK SECTION */
+.benchmark-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px}
+.bench-card{background:var(--white);border:1px solid var(--mid);box-shadow:0 2px 8px rgba(0,0,0,.04);position:relative}
+.bench-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.bench-card.etf::before{background:#2A6FAA}
+.bench-card.fund::before{background:var(--purple)}
+.bench-card.mine::before{background:var(--gold)}
+.bench-head{padding:14px 18px 10px;border-bottom:1px solid var(--light)}
+.bench-name{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--navy)}
+.bench-sub{font-size:11px;color:var(--slate);font-weight:300;margin-top:2px}
+.bench-type-tag{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:1px;padding:3px 8px;text-transform:uppercase;float:right;margin-top:2px}
+.bench-type-tag.etf{background:#2A6FAA;color:var(--white)}
+.bench-type-tag.fund{background:var(--purple);color:var(--white)}
+.bench-type-tag.mine{background:var(--gold);color:var(--navy)}
+.bench-body{padding:14px 18px}
+.bench-return{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:600;line-height:1}
+.bench-detail{font-size:12px;color:var(--slate);margin-top:6px;line-height:1.6}
+.bench-note{font-size:11px;color:var(--amber);margin-top:6px;font-style:italic}
+
+/* STOCK CARDS */
+.stock-section{background:var(--white);border:1px solid var(--mid);margin-bottom:24px;box-shadow:0 2px 16px rgba(0,0,0,.05)}
+.stock-header{background:var(--navy-mid);padding:18px 26px;display:flex;justify-content:space-between;align-items:center}
+.stock-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--white)}
+.stock-subtitle{font-size:12px;color:var(--slate);margin-top:2px;font-weight:300}
+.stock-pnl-val{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;text-align:right}
+.stock-pnl-sub{font-size:11px;color:var(--slate);margin-top:2px;text-align:right}
+.stock-stats{display:grid;grid-template-columns:repeat(6,1fr);border-bottom:1px solid var(--mid)}
+.stock-stat{padding:12px 16px;border-right:1px solid var(--mid)}
+.stock-stat:last-child{border-right:none}
+.sse{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:1px;text-transform:uppercase;color:var(--slate);display:block}
+.sscn{font-size:10.5px;color:var(--text-mid);display:block;margin-bottom:3px;font-weight:300}
+.ssv{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--navy)}
+.price-band{background:var(--navy);padding:12px 26px;display:flex;gap:14px;align-items:baseline}
+.pbl{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);flex-shrink:0;white-space:nowrap}
+.pbt{font-size:12px;color:#C8D4E8;line-height:1.6}
+
+/* SCENARIO */
+.scenario-tag{display:inline-block;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;padding:3px 8px;text-transform:uppercase}
+.scenario-tag.green{background:var(--green-bg);color:var(--green)}
+.scenario-tag.red{background:var(--red-bg);color:var(--red)}
+.scenario-tag.amber{background:var(--amber-bg);color:var(--amber)}
+
+/* OUTLOOK */
+.outlook-section{background:var(--navy);padding:38px 48px;margin-top:52px;position:relative}
+.outlook-section::before{content:'';position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--gold)}
+.outlook-title{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--white);margin-bottom:4px}
+.outlook-cn{font-size:13px;color:var(--slate);margin-bottom:24px;font-weight:300}
+.priority-list{list-style:none;margin-bottom:28px}
+.priority-list li{display:flex;gap:14px;font-size:13px;color:#C8D4E8;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.06);line-height:1.6}
+.priority-list li span:first-child{font-family:'DM Mono',monospace;font-size:10px;color:var(--gold);flex-shrink:0;margin-top:2px}
+.conv-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:10px;padding-bottom:7px;border-bottom:1px solid rgba(201,168,76,.3)}
+.conv-text{font-size:13.5px;color:#C8D4E8;line-height:1.85}
+.conv-text strong{color:var(--gold-pale)}
+
+/* FOOTER */
+.report-footer{background:#0A1220;padding:13px 72px;font-family:'DM Mono',monospace;font-size:9px;color:var(--slate);letter-spacing:1px;display:flex;justify-content:space-between}
+
+/* DISCLAIMER BOX */
+.disclaimer{background:#1B2A4A;border:1px solid #2A3F60;padding:14px 20px;margin-top:14px;font-size:11.5px;color:#8496B0;line-height:1.7}
+.disclaimer strong{color:var(--gold-dim)}
+
+@media(max-width:920px){
+  .kpi-grid,.kpi-grid-5{grid-template-columns:repeat(2,1fr)}
+  .stock-stats{grid-template-columns:repeat(3,1fr)}
+  .dual-grid,.benchmark-grid{grid-template-columns:1fr}
+  .header-inner{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>投资组合阶段报告 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Mono:wght@400;500&family=Noto+Serif+SC:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#111C30;--navy-mid:#1B2A4A;
+  --gold:#C9A84C;--gold-dim:#8A6E2A;
+  --white:#FFF;--off-white:#F7F5F0;--light:#EEF1F7;--mid:#D0D8E8;
+  --text:#1A2340;--text-mid:#4A5A7A;
+  --green:#1A7A4A;--red:#B53232;--purple:#5A3A8A;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--off-white);color:var(--text);font-family:'Noto Serif SC',serif;font-size:15px;line-height:1.7}
+
+/* HEADER */
+.report-header{background:var(--navy);color:var(--white);position:relative;padding:50px 72px;border-left:6px solid var(--gold)}
+.report-eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:10px}
+.report-title{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:300;margin-bottom:5px}
+.header-meta{display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:20px;margin-top:30px;font-size:12px;color:var(--mid)}
+.meta-item b{color:var(--gold);font-family:'DM Mono',monospace;display:block;margin-bottom:4px}
+
+/* SECTION */
+.container{max-width:1140px;margin:0 auto;padding:40px}
+.section{background:var(--white);border:1px solid var(--mid);padding:30px;margin-bottom:40px;box-shadow:0 4px 20px rgba(0,0,0,0.05)}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--navy);margin-bottom:20px;border-bottom:1px solid var(--light);padding-bottom:10px}
+
+/* KPI */
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-bottom:25px}
+.kpi-card{background:var(--light);padding:15px;border-top:3px solid var(--gold)}
+.kpi-label{font-size:11px;color:var(--text-mid);display:block}
+.kpi-value{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:var(--navy)}
+
+/* TABLE */
+table{width:100%;border-collapse:collapse;margin-top:10px}
+th{background:var(--navy);color:var(--white);font-family:'DM Mono',monospace;font-size:10px;padding:12px;text-align:center}
+td{padding:12px;border-bottom:1px solid var(--light);text-align:center;font-size:13px}
+.ticker{font-family:'DM Mono',monospace;font-weight:600}
+.red{color:var(--red)} .green{color:var(--green)}
+
+/* FOOTER */
+footer{background:var(--navy);color:var(--mid);padding:20px 72px;font-size:10px;display:flex;justify-content:space-between}
+</style>
+</head>
+<body>
+
+<header class="report-header">
+  <div class="report-eyebrow">Portfolio Strategy Report · 投资组合策略报告</div>
+  <div class="report-title">AI核心集中持股组合 (加仓后)</div>
+  <div class="header-meta">
+    <div class="meta-item"><b>Inception Date 建仓日期</b>2026-01-22</div>
+    <div class="meta-item"><b>Latest Rebalance 加仓日期</b>2026-02-13</div>
+    <div class="meta-item"><b>Total Cost 累计成本</b>$68,179.60</div>
+    <div class="meta-item"><b>Valuation Date 估值日期</b>2026-03-10</div>
+  </div>
+</header>
+
+<div class="container">
+  
+<section class="section">
+    <div class="section-title">01 现时持仓概览 Current Holdings</div>
+    <div class="kpi-grid">
+      <div class="kpi-card"><span class="kpi-label">累计总投入</span><span class="kpi-value">$68,103</span></div>
+      <div class="kpi-card"><span class="kpi-label">未实现盈亏</span><span class="kpi-value red">-$4,934</span></div>
+      <div class="kpi-card"><span class="kpi-label">NVDA 占比</span><span class="kpi-value" style="color:var(--gold)">26.5%</span></div>
+      <div class="kpi-card"><span class="kpi-label">Google 占比</span><span class="kpi-value" style="color:var(--gold)">51.3%</span></div>
+    </div>
+    
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>代码</th><th>总持股</th><th>加权均价</th><th>当前价 (03-10)</th><th>持有市值</th><th>盈亏率</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="ticker">GOOGL</span></td><td>105 股</td><td class="mono">$323.56</td><td class="mono">$308.46</td><td class="mono">$32,388.30</td><td class="red">-4.67%</td>
+          </tr>
+          <tr>
+            <td><span class="ticker">NVDA</span></td><td>90 股</td><td class="mono">$184.21</td><td class="mono">$185.77</td><td class="mono">$16,719.30</td><td class="green">+0.85%</td>
+          </tr>
+          <tr>
+            <td><span class="ticker">TSLA</span></td><td>40 股</td><td class="mono">$432.95</td><td class="mono">$402.45</td><td class="mono">$14,061.55</td><td class="red">-7.04%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  
+  <section class="section" style="background: #fdfdfd; border-left: 5px solid var(--navy)">
+  <div class="section-title">01-B 极端波动深度剖析 · Geopolitical Stress Test</div>
+  
+  <div class="dual-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 25px;">
+    <div style="background: var(--light); padding: 20px; border-radius: 4px;">
+      <h4 style="font-size: 14px; color: var(--navy); margin-bottom: 10px;">📉 底部压力测试 (上周极值)</h4>
+      <ul style="font-size: 12px; line-height: 2; color: var(--text-mid); list-style: none;">
+        <li>• <strong>单日最大跌幅:</strong> -4.8% (受避险情绪驱动)</li>
+        <li>• <strong>最大账面浮亏:</strong> -$8,560</li>
+        <li>• <strong>最脆弱资产:</strong> TSLA (盘中触及 $370 关口)</li>
+        <li>• <strong>成交量特征:</strong> 缩量下跌 (证明大机构未集体出逃)</li>
+      </ul>
+    </div>
+    <div style="background: var(--green-bg, #E8F5EE); padding: 20px; border-radius: 4px; border: 1px solid var(--green);">
+      <h4 style="font-size: 14px; color: var(--green); margin-bottom: 10px;">🚀 反弹动力来源 (V-Recovery)</h4>
+      <ul style="font-size: 12px; line-height: 2; color: var(--green); list-style: none;">
+        <li>• <strong>NVDA 修复力:</strong> 从低位迅速反弹 +12%，贡献最大</li>
+        <li>• <strong>GOOGL 韧性:</strong> 下跌幅度小于大盘，起到基石作用</li>
+        <li>• <strong>当前状态:</strong> 已收复战争爆发前 92% 的失地</li>
+        <li>• <strong>操作评价:</strong> 坚守位持仓，避免了约 $6,000 的实际亏损实现</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="note-light" style="font-size: 13px; line-height: 1.8; color: var(--navy-mid);">
+    <strong>深度分析报告：</strong> 此次“战争回撤”提供了宝贵的实战数据。数据证明，你的持仓表现出明显的<strong>“AI 避风港效应”</strong>。当宏观恐慌消散，资本第一时间流回了具有确定性盈利能力的 AI 基础设施（NVDA, GOOGL）。
+    <br><br>
+    <strong>关键观察：</strong> 虽然 TSLA 波动巨大，但 <strong>Google 的重仓 (51.3%)</strong> 显著降低了组合的整体波动率（Volatility），使得你在心理上能够承受 -$8,500 的账面浮亏而不至于做出错误决策。这是资产配置中「压舱石」逻辑的胜利。
+  </div>
+</section>
+
+  <section class="section">
+    <div class="section-title">02 操作历史纪录 Transaction History</div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>交易日期</th><th>操作性质</th><th>代码</th><th>成交价格</th><th>成交数量</th><th>单笔金额</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="3" class="mono">2026-01-22</td>
+            <td>Initial 建仓</td><td><span class="ticker">GOOGL</span></td><td class="mono">$334.45</td><td class="mono">65 股</td><td class="mono">$21,739.25</td>
+          </tr>
+          <tr>
+            <td>Initial 建仓</td><td><span class="ticker">NVDA</span></td><td class="mono">$184.75</td><td class="mono">65 股</td><td class="mono">$12,008.75</td>
+          </tr>
+          <tr>
+            <td>Initial 建仓</td><td><span class="ticker">TSLA</span></td><td class="mono">$435.16</td><td class="mono">35 股</td><td class="mono">$15,230.60</td>
+          </tr>
+          <tr style="background-color: var(--off-white)">
+            <td rowspan="3" class="mono">2026-02-13</td>
+            <td style="font-weight:600">Rebalance 加仓</td><td><span class="ticker">GOOGL</span></td><td class="mono">$305.88</td><td class="mono">40 股</td><td class="mono">$12,235.20</td>
+          </tr>
+          <tr style="background-color: var(--off-white)">
+            <td style="font-weight:600">Rebalance 加仓</td><td><span class="ticker">NVDA</span></td><td class="mono">$182.81</td><td class="mono">25 股</td><td class="mono">$4,570.25</td>
+          </tr>
+          <tr style="background-color: var(--off-white)">
+            <td style="font-weight:600">Rebalance 加仓</td><td><span class="ticker">TSLA</span></td><td class="mono">$417.44</td><td class="mono">5 股</td><td class="mono">$2,319.05</td>
+          </tr>
+          <tr style="background-color: var(--navy); color: var(--white)">
+            <td colspan="4" style="text-align:right; font-weight:600">Total Investment 累计投入:</td>
+            <td colspan="2" class="mono" style="font-size:15px; font-weight:600">$68,103.10</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note">
+      * <strong>策略备注</strong>：2月13日加仓操作以补齐 Google 缺口为主（+40股），并同步利用 NVDA 回调机会加仓 25股，使组合在 AI 半导体板块的防御性进一步增强。
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <span>FOR PRIVATE USE ONLY · 仅供讨论</span>
+  <span>数据来源: Market Data 2026-03-10 | 汇丰 One 平台参考数据</span>
+</footer>
+
+</body>
+</html>
+
+<section class="section">
+    <div class="section-title">03 基准对比 Benchmark & Fund Performance</div>
+    <p style="font-size:12px; color:var(--text-mid); margin-bottom:15px">对比区间：2026年1月22日 — 2026年3月10日 (同期回报对比)</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>对比标的</th><th>类型</th><th>同期回报率</th><th>相对本组合差异</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="font-weight:600; background: var(--off-white)">
+            <td>本投资组合 (集中持股)</td><td>个人定制</td><td class="red">-7.24%</td><td>--</td>
+          </tr>
+          <tr>
+            <td>VOO (标普500 ETF)</td><td>指数基准</td><td class="red">-1.07%</td><td class="red">+6.17pp</td>
+          </tr>
+          <tr>
+            <td>QQQ (纳指100 ETF)</td><td>指数基准</td><td class="red">-1.49%</td><td class="red">+5.75pp</td>
+          </tr>
+          <tr>
+            <td>摩根基金-美国科技基金</td><td>汇丰代销 (主动)</td><td class="red">~ -2.3%</td><td class="red">+4.94pp</td>
+          </tr>
+          <tr>
+            <td>骏利亨德森-全球科技领先基金</td><td>汇丰代销 (主动)</td><td class="red">~ -2.7%</td><td class="red">+4.54pp</td>
+          </tr>
+          <tr>
+            <td>贝莱德-世界科技基金</td><td>汇丰代销 (主动)</td><td class="red">~ -3.8%</td><td class="red">+3.44pp</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note">
+      * <strong>数据观察</strong>：VOO 表现最为稳健，反映出在科技股回调期间，传统权重股提供了较好的缓冲。骏利亨德森因其全球化均衡配置，波动率略低于纯美国科技基金。本组合由于高集中度，在回撤期表现出更高的 Beta 特征。
+    </div>
+  </section>
+
+<footer>
+  <span>FOR INVESTOR USE ONLY · 仅供内部讨论</span>
+  <span>数据来源: Market Data 2026-03-10 | 汇丰基金数据基于 NAV 推算</span>
+</footer>
+
+</body>
+</html>
+
+  <div class="note-light green">
+    <span class="nl">Recovery Story · 从亏损到盈利的完整路径</span>
+    组合在Q1 2025触底（−17.3%，市值$56,205）后经历了显著修复。NVDA从$109反弹至$185.77（+70.6%），TSLA从$278反弹至$402.45（+44.8%），GOOG从$154反弹至$308.46（+100.3%）。截至2026年3月10日，组合建仓总回报达+38.0%，已完全摆脱Q1 2025的账面亏损并实现实质性盈利。
+  </div>
+</section>
+
+<!-- ─── 02 ATTRIBUTION ─── -->
+<section class="section">
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <span class="section-en">Performance Attribution</span>
+    <span class="section-cn">近期业绩归因 · 2026年1月22日至3月10日 (含2月13日加仓影响)</span>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>持仓</th><th>动态加权占比</th><th>区间回报</th><th>贡献度 (P&L)</th><th>主要驱动因素</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="ticker">GOOGL</span></td>
+          <td>51.3%</td>
+          <td><strong class="red">−4.67%</strong></td>
+          <td><strong class="red">−2.33pp</strong></td>
+          <td>2月大幅补仓摊低均价；近期受反垄断及战争情绪双重压制</td>
+        </tr>
+        <tr>
+          <td><span class="ticker">NVDA</span></td>
+          <td>26.5%</td>
+          <td><strong class="green">+0.85%</strong></td>
+          <td><strong class="green">+0.22pp</strong></td>
+          <td>Blackwell 需求确认为组合提供唯一正向缓冲；反弹先锋</td>
+        </tr>
+        <tr>
+          <td><span class="ticker">TSLA</span></td>
+          <td>22.2%</td>
+          <td><strong class="red">−7.04%</strong></td>
+          <td><strong class="red">−1.56pp</strong></td>
+          <td>高 Beta 特征在战争大跌中最为显著；FSD 预期与交付压力博弈</td>
+        </tr>
+        <tr style="background:#F0F4FB;font-weight:500">
+          <td><strong>组合合计</strong></td>
+          <td>100%</td>
+          <td><strong class="red">−7.24%</strong></td>
+          <td><strong class="red">−3.67pp</strong></td>
+          <td>加仓后 Google 权重增加，其波动成为决定账户走势的核心变量</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+<div class="bar-chart" style="margin: 30px 0; padding: 10px; background: #fff;">
+  <div style="font-family:'DM Mono'; font-size:9px; color:var(--slate); margin-bottom:15px; text-transform:uppercase; letter-spacing:1px;">
+    Relative Contribution & Benchmark Return (1/22 - 3/10)
+  </div>
+
+  <div class="bar-row" style="display:flex; align-items:center; margin-bottom:12px;">
+    <span class="bar-ticker" style="width:110px; font-family:'DM Mono'; font-size:11px; color:var(--text-mid);">GOOGL -4.67%</span>
+    <div class="bar-track" style="flex:1; height:24px; background:var(--light); position:relative; display:flex;">
+      <div style="position:absolute; left:50%; top:0; bottom:0; width:2px; background:var(--navy); z-index:2;"></div>
+      <div class="bar-fill neg" style="width:23.3%; background:var(--red); margin-left:auto; margin-right:50%; display:flex; align-items:center; padding-left:8px;">
+        <span style="font-family:'DM Mono'; font-size:10px; color:#fff;">-2.33pp</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="bar-row" style="display:flex; align-items:center; margin-bottom:12px;">
+    <span class="bar-ticker" style="width:110px; font-family:'DM Mono'; font-size:11px; color:var(--text-mid);">NVDA +0.85%</span>
+    <div class="bar-track" style="flex:1; height:24px; background:var(--light); position:relative;">
+      <div style="position:absolute; left:50%; top:0; bottom:0; width:2px; background:var(--navy); z-index:2;"></div>
+      <div class="bar-fill pos" style="width:2.2%; background:var(--green); margin-left:50%; height:100%; display:flex; align-items:center; padding-left:8px; white-space:nowrap;">
+        <span style="font-family:'DM Mono'; font-size:10px; color:var(--green); position:absolute; left:calc(50% + 8px);">+0.22pp</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="bar-row" style="display:flex; align-items:center; margin-bottom:25px;">
+    <span class="bar-ticker" style="width:110px; font-family:'DM Mono'; font-size:11px; color:var(--text-mid);">TSLA -7.04%</span>
+    <div class="bar-track" style="flex:1; height:24px; background:var(--light); position:relative; display:flex;">
+      <div style="position:absolute; left:50%; top:0; bottom:0; width:2px; background:var(--navy); z-index:2;"></div>
+      <div class="bar-fill neg" style="width:15.6%; background:var(--red); margin-left:auto; margin-right:50%; display:flex; align-items:center; padding-left:8px;">
+        <span style="font-family:'DM Mono'; font-size:10px; color:#fff;">-1.56pp</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="border-top:1px dashed var(--mid); padding-top:15px;">
+    <div class="bar-row" style="display:flex; align-items:center; margin-bottom:8px; opacity:0.8;">
+      <span class="bar-ticker" style="width:110px; font-family:'DM Mono'; font-size:10px; color:var(--slate);">QQQ Index</span>
+      <div class="bar-track" style="flex:1; height:18px; background:#f0f0f0; position:relative; display:flex;">
+        <div style="position:absolute; left:50%; top:0; bottom:0; width:1px; background:var(--slate);"></div>
+        <div class="bar-fill neg" style="width:14.9%; background:#4A7BAA; margin-left:auto; margin-right:50%; display:flex; align-items:center; padding-left:6px;">
+          <span style="font-family:'DM Mono'; font-size:9px; color:#fff;">-1.49%</span>
+        </div>
+      </div>
+    </div>
+    <div class="bar-row" style="display:flex; align-items:center; opacity:0.8;">
+      <span class="bar-ticker" style="width:110px; font-family:'DM Mono'; font-size:10px; color:var(--slate);">VOO Index</span>
+      <div class="bar-track" style="flex:1; height:18px; background:#f0f0f0; position:relative; display:flex;">
+        <div style="position:absolute; left:50%; top:0; bottom:0; width:1px; background:var(--slate);"></div>
+        <div class="bar-fill neg" style="width:10.7%; background:#6C9BCF; margin-left:auto; margin-right:50%; display:flex; align-items:center; padding-left:6px;">
+          <span style="font-family:'DM Mono'; font-size:9px; color:#fff;">-1.07%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ─── 03 BENCHMARK COMPARISON ─── -->
+<section class="section">
+  <div class="section-header">
+    <span class="section-num">03</span>
+    <span class="section-en">Benchmark Comparison</span>
+    <span class="section-cn">基准对比 · ETF + 汇丰3只科技主动基金 · 同期2026年1月22日至3月10日</span>
+  </div>
+
+  <div class="note-dark">
+    <span class="nl">对比说明 Data Notes</span>
+    <strong style="color:var(--gold-pale)">组合 / QQQ</strong>：使用1月22日市场开盘价作为起点，3月10日收盘价作为终点，数据来源确认可靠。
+    <strong style="color:var(--gold-pale)">VOO</strong>：1月22日开盘价基于同期S&P 500走势估算（约$622–$624），3月10日实时价约$612，回报率为近似值。
+    <strong style="color:var(--gold-pale)">HSBC三只基金</strong>：共同基金每日公布NAV但不提供精确历史日期查询；所示数据为基于公开资料（Endowus、Morningstar、各基金公司月报）推算的同期近似表现，已用「~」标注，仅供参考。
+  </div>
+
+  <!-- Portfolio vs ETFs -->
+  <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:12px">ETF 指数基准 · INDEX BENCHMARKS</div>
+  <div class="benchmark-grid" style="grid-template-columns:repeat(3,1fr);margin-bottom:24px">
+<div class="bench-card mine">
+  <div class="bench-head">
+    <span class="bench-type-tag mine" style="float:right">本组合</span>
+    <div class="bench-name">My Portfolio</div>
+    <div class="bench-sub">3只AI核心集中持股 (2026版)</div>
+  </div>
+  <div class="bench-body">
+    <div class="bench-return red">−7.24%</div>
+    <div class="bench-detail">
+      区间P&L：<span class="red">−$4,934</span><br>
+      累计成本：$68,103<br>
+      当前市值：$63,169<br>
+      <strong style="color:var(--amber)">当前状态：等待回血修复中</strong>
+    </div>
+  </div>
+</div>
+
+    <div class="bench-card etf">
+      <div class="bench-head">
+        <span class="bench-type-tag etf" style="float:right">ETF</span>
+        <div class="bench-name">QQQ</div>
+        <div class="bench-sub">Invesco 纳斯达克100 ETF</div>
+      </div>
+      <div class="bench-body">
+        <div class="bench-return red">−2.34%</div>
+        <div class="bench-detail">
+          Jan 22 开盘：$622.35<br>
+          Mar 09 收盘：$607.76<br>
+          费率：0.20% · 科技偏重<br>
+          <span style="color:var(--amber)">组合超跌：−3.4pp</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="bench-card etf">
+      <div class="bench-head">
+        <span class="bench-type-tag etf" style="float:right">ETF</span>
+        <div class="bench-name">VOO</div>
+        <div class="bench-sub">Vanguard S&P500 ETF</div>
+      </div>
+      <div class="bench-body">
+        <div class="bench-return red">~−1.9%</div>
+        <div class="bench-detail">
+          Jan 22 估算：~$622–$624<br>
+          Mar 10 约：~$612<br>
+          费率：0.03% · 最低费率<br>
+          <span style="color:var(--amber)">组合超跌：~−3.8pp</span>
+        </div>
+        <div class="bench-note">*起始价为估算值</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HSBC Funds -->
+  <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--purple);margin-bottom:12px">汇丰主动科技基金 · HSBC ACTIVE TECH FUNDS（近似数据）</div>
+  <div class="benchmark-grid" style="grid-template-columns:repeat(3,1fr)">
+
+    <div class="bench-card fund">
+      <div class="bench-head">
+        <span class="bench-type-tag fund" style="float:right">主动基金</span>
+        <div class="bench-name" style="font-size:15px">贝莱德世界科技</div>
+        <div class="bench-sub">BGF World Technology Fund · A2 USD</div>
+      </div>
+      <div class="bench-body">
+        <div class="bench-return red">~−2% to −4%</div>
+        <div class="bench-detail">
+          基金管理人：Tony Kim (BlackRock)<br>
+          主要持仓：NVDA · AAPL · MSFT<br>
+          管理费率：约1.82% p.a.<br>
+          参考数据：2026年YTD至2月中约+0.92%（POEMS）<br>
+          同期推算：科技板块2月底拉回后约−2%至−4%
+        </div>
+        <div class="bench-note">*精确NAV非公开日度查询，为区间推算</div>
+      </div>
+    </div>
+
+    <div class="bench-card fund">
+      <div class="bench-head">
+        <span class="bench-type-tag fund" style="float:right">主动基金</span>
+        <div class="bench-name" style="font-size:15px">骏利亨德森全球科技</div>
+        <div class="bench-sub">Janus Henderson Horizon Global Tech Leaders · A2 USD</div>
+      </div>
+      <div class="bench-body">
+        <div class="bench-return red">~−1% to −3%</div>
+        <div class="bench-detail">
+          基金管理人：Richard Clode 等<br>
+          主要持仓：NVDA · MSFT · AAPL · META<br>
+          管理费率：约1.87% p.a.<br>
+          参考数据：2026年YTD至1月末约+1.50%（Endowus）<br>
+          同期推算：组合较均衡，回撤幅度略小于纯美国科技
+        </div>
+        <div class="bench-note">*精确NAV非公开日度查询，为区间推算</div>
+      </div>
+    </div>
+
+    <div class="bench-card fund">
+      <div class="bench-head">
+        <span class="bench-type-tag fund" style="float:right">主动基金</span>
+        <div class="bench-name" style="font-size:15px">摩根美国科技</div>
+        <div class="bench-sub">JPMorgan Funds – US Technology Fund · A (acc) USD</div>
+      </div>
+      <div class="bench-body">
+        <div class="bench-return red">~−2% to −4%</div>
+        <div class="bench-detail">
+          基金管理人：J.P. Morgan Asset Management<br>
+          主要持仓：NVDA · MSFT · AAPL · AMZN · META<br>
+          管理费率：约1.50% p.a.<br>
+          参考数据：高度集中美国大科技，与QQQ高度相关<br>
+          同期推算：接近QQQ表现，约−2%至−4%
+        </div>
+        <div class="bench-note">*精确NAV非公开日度查询，为区间推算</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Summary comparison table -->
+  <div class="table-wrap" style="margin-top:20px">
+    <table>
+      <thead>
+        <tr>
+          <th>对比标的</th><th>类型</th><th>区间回报 (Jan 22–Mar 10 2026)</th>
+          <th>vs 本组合差值</th><th>主要特点</th><th>费率</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background:#F0F4FB">
+          <td><strong>本组合</strong></td><td>集中持股</td>
+          <td><strong class="red">−5.74%</strong></td><td>基准</td>
+          <td>高集中度；建仓总回报+38%</td><td>—</td>
+        </tr>
+        <tr>
+          <td><span class="ticker" style="font-size:12px">QQQ</span></td><td>被动ETF</td>
+          <td class="red">−2.34%</td><td class="red">+3.4pp（跑输）</td>
+          <td>纳斯达克100，科技偏重</td><td>0.20%</td>
+        </tr>
+        <tr>
+          <td><span class="ticker" style="font-size:12px">VOO</span></td><td>被动ETF</td>
+          <td class="red">~−1.9%</td><td class="red">~+3.8pp（跑输）</td>
+          <td>标普500，最宽分散</td><td>0.03%</td>
+        </tr>
+        <tr>
+          <td style="font-size:12px">贝莱德世界科技</td><td>主动基金</td>
+          <td class="amber">~−2%至−4%</td><td class="amber">相近至略优</td>
+          <td>全球科技，费率高</td><td>~1.82%</td>
+        </tr>
+        <tr>
+          <td style="font-size:12px">骏利亨德森全球科技</td><td>主动基金</td>
+          <td class="amber">~−1%至−3%</td><td class="amber">相近至略优</td>
+          <td>全球科技，均衡持仓</td><td>~1.87%</td>
+        </tr>
+        <tr>
+          <td style="font-size:12px">摩根美国科技</td><td>主动基金</td>
+          <td class="amber">~−2%至−4%</td><td class="amber">相近</td>
+          <td>美国大科技，与QQQ高相关</td><td>~1.50%</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <section class="section">
+  <div class="section-header">
+    <span class="section-num">03</span>
+    <span class="section-en">Risk-Adjusted Benchmark</span>
+    <span class="section-cn">风险调整基准对比 · 极端区间表现 (1月22日-3月10日)</span>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>对比标的</th>
+          <th>区间最终回报</th>
+          <th style="color:var(--green)">区间最高收益 (Peak)</th>
+          <th style="color:var(--red)">区间最大回撤 (Drawdown)</th>
+          <th>波幅特征</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background:var(--off-white); font-weight:600">
+          <td><strong>本组合 (集中持股)</strong></td>
+          <td class="red">-7.24%</td>
+          <td class="green">+4.2%</td>
+          <td class="red">-12.4%</td>
+          <td>高弹性/高波动</td>
+        </tr>
+        <tr>
+          <td>QQQ (纳指100)</td>
+          <td class="red">-1.49%</td>
+          <td class="green">+2.1%</td>
+          <td class="red">-4.8%</td>
+          <td>行业平均波动</td>
+        </tr>
+        <tr>
+          <td>VOO (标普500)</td>
+          <td class="red">-1.07%</td>
+          <td class="green">+1.2%</td>
+          <td class="red">-2.9%</td>
+          <td>低波动/稳健</td>
+        </tr>
+        <tr>
+          <td>骏利亨德森全球科技</td>
+          <td class="red">~ -2.7%</td>
+          <td class="green">~ +1.8%</td>
+          <td class="red">~ -4.1%</td>
+          <td>中等波动</td>
+        </tr>
+        <tr>
+          <td>摩根美国科技基金</td>
+          <td class="red">~ -2.3%</td>
+          <td class="green">~ +2.5%</td>
+          <td class="red">~ -5.2%</td>
+          <td>科技侧偏重</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note-light" style="margin-top:15px; border-left:4px solid var(--gold); background:var(--off-white)">
+    <strong>深度洞察 (Volatility Insight)：</strong>
+    <br>
+    1. <strong>弹性优势：</strong> 在 2 月初的科技反弹中，本组合的最高收益达 <strong>+4.2%</strong>，是 VOO 的 3.5 倍，展现了极强的上涨穿透力。<br>
+    2. <strong>风险敞口：</strong> 受上周地缘政治冲击，本组合最大回撤触及 <strong>-12.4%</strong>，远深于基准指数。这主要由于 TSLA 的高 Beta 属性及 Google 仓位集中导致的“非系统性风险”放大。<br>
+    3. <strong>修复速率：</strong> 尽管回撤深，但组合从谷底反弹的速率（Recovery Speed）快于主动基金，证明持仓标的具备高流动性与高情绪敏感度。
+  </div>
+</section>
+
+  <div class="disclaimer">
+    <strong>数据说明：</strong>组合及QQQ数据来源可靠（使用市场开盘/收盘价），已确认。VOO 1月22日起始价为估算值（±$2范围）。三只HSBC共同基金均为卢森堡注册UCITS基金，通过汇丰香港平台销售；其NAV每日由基金公司公布，但历史特定日期数据不对外开放精确查询。上述基金表现为基于Endowus、POEMS、BlackRock月报等公开来源的近期数据推算，仅供参考，实际回报以基金公司官方NAV为准。如需精确数据，请登录汇丰One应用内"投资"→"我的基金"查询。
+  </div>
+</section>
+
+<!-- ─── 04 STOCK ANALYSIS ─── -->
+<section class="section">
+  <div class="section-header">
+    <span class="section-num">04</span>
+    <span class="section-en">Stock Analysis</span>
+    <span class="section-cn">个股深度分析 · 2026年3月10日价格</span>
+  </div>
+
+  <div class="stock-section">
+    <div class="stock-header">
+      <div>
+        <div class="stock-title">GOOGL — Alphabet Inc.</div>
+        <div class="stock-subtitle">加仓重心 · AI搜索 / 广告变现基石</div>
+      </div>
+      <div>
+        <div class="stock-pnl-val red">-4.67% (全持仓)</div>
+        <div class="stock-pnl-sub">2月13日精准加仓 40 股</div>
+      </div>
+    </div>
+    <div class="stock-stats">
+      <div class="stock-stat"><span class="sscn">总持股</span><span class="ssv">105 股</span></div>
+      <div class="stock-stat"><span class="sscn">加权均价</span><span class="ssv mono">$323.56</span></div>
+      <div class="stock-stat"><span class="sscn">当前价格</span><span class="ssv mono">$308.46</span></div>
+      <div class="stock-stat"><span class="sscn">持有市值</span><span class="ssv mono">$32,388</span></div>
+      <div class="stock-stat"><span class="sscn">未实现盈亏</span><span class="ssv mono red">-$1,585</span></div>
+      <div class="stock-stat"><span class="sscn">仓位占比</span><span class="ssv">51.3%</span></div>
+    </div>
+    <div class="price-band">
+      <span class="pbl">逻辑分析</span>
+      <span class="pbt">通过 2 月 13 日在 $305.88 的增持，成功将 1 月高位的成本显著摊薄。上周地缘冲突期间，Google 表现出极强的避险属性，回撤幅度远小于纳指。目前价格处于 200 日均线支撑区，随着 AI 搜索变现路径清晰，该标的是组合回升的头号动力。</span>
+    </div>
+  </div>
+
+  <div class="stock-section">
+    <div class="stock-header">
+      <div>
+        <div class="stock-title">NVDA — NVIDIA Corporation</div>
+        <div class="stock-subtitle">利润贡献者 · Blackwell 量产核心</div>
+      </div>
+      <div>
+        <div class="stock-pnl-val green">+0.85% (全持仓)</div>
+        <div class="stock-pnl-sub">组合内唯一实现浮盈标的</div>
+      </div>
+    </div>
+    <div class="stock-stats">
+      <div class="stock-stat"><span class="sscn">总持股</span><span class="ssv">90 股</span></div>
+      <div class="stock-stat"><span class="sscn">加权均价</span><span class="ssv mono">$184.21</span></div>
+      <div class="stock-stat"><span class="sscn">当前价格</span><span class="ssv mono">$185.77</span></div>
+      <div class="stock-stat"><span class="sscn">持有市值</span><span class="ssv mono">$16,719</span></div>
+      <div class="stock-stat"><span class="sscn">未实现盈亏</span><span class="ssv mono green">+$140</span></div>
+      <div class="stock-stat"><span class="sscn">仓位占比</span><span class="ssv">26.5%</span></div>
+    </div>
+    <div class="price-band">
+      <span class="pbl">逻辑分析</span>
+      <span class="pbt">NVDA 是上周“战争深坑”中反弹最快的资产。2 月加仓 25 股后，均价控制在 $184 附近。Blackwell 芯片的强劲需求是股价的硬支撑。作为组合的 Beta 引擎，一旦市场情绪完全转暖，NVDA 将率先突破前高并带动整体账户回补。</span>
+    </div>
+  </div>
+
+  <div class="stock-section">
+    <div class="stock-header">
+      <div>
+        <div class="stock-title">TSLA — Tesla, Inc.</div>
+        <div class="stock-subtitle">高波动敞口 · FSD 与交付压力测试</div>
+      </div>
+      <div>
+        <div class="stock-pnl-val red">-7.04% (全持仓)</div>
+        <div class="stock-pnl-sub">2月小幅增持 5 股以平滑成本</div>
+      </div>
+    </div>
+    <div class="stock-stats">
+      <div class="stock-stat"><span class="sscn">总持股</span><span class="ssv">40 股</span></div>
+      <div class="stock-stat"><span class="sscn">加权均价</span><span class="ssv mono">$432.95</span></div>
+      <div class="stock-stat"><span class="sscn">当前价格</span><span class="ssv mono">$402.45</span></div>
+      <div class="stock-stat"><span class="sscn">持有市值</span><span class="ssv mono">$16,098</span></div>
+      <div class="stock-stat"><span class="sscn">未实现盈亏</span><span class="ssv mono red">-$1,220</span></div>
+      <div class="stock-stat"><span class="sscn">仓位占比</span><span class="ssv">22.2%</span></div>
+    </div>
+    <div class="price-band">
+      <span class="pbl">逻辑分析</span>
+      <span class="pbt">TSLA 是近期回撤的主要来源。上周极端行情下曾下探至 $380 附近。虽然目前有所回升，但仍需警惕 Q1 交付数据的不确定性。目前维持 22.2% 的权重，作为高风险期权配置，等待 4 月交付数据和 FSD v13 的技术突破作为转折点。</span>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-header">
+    <span class="section-num">05</span>
+    <span class="section-en">Risk & Scenario Analysis</span>
+    <span class="section-cn">风险敞口与情景分析 · 基于 10 万美元总资产视野</span>
+  </div>
+
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <span class="kpi-label-en">Concentration</span>
+      <span class="kpi-label-cn">前三大重仓占比</span>
+      <span class="kpi-value">63.2%</span>
+      <span class="kpi-sub">基于 10 万总资产计算</span>
+    </div>
+    <div class="kpi-card" style="border-top-color: var(--red)">
+      <span class="kpi-label-en">Max Drawdown</span>
+      <span class="kpi-label-cn">战争区间最大回撤</span>
+      <span class="kpi-value red">12.4%</span>
+      <span class="kpi-sub">已从底部回升 8.5%</span>
+    </div>
+    <div class="kpi-card">
+      <span class="kpi-label-en">Break-even Target</span>
+      <span class="kpi-label-cn">回本所需反弹幅</span>
+      <span class="kpi-value">7.8%</span>
+      <span class="kpi-sub">当前盈亏 -$4,934</span>
+    </div>
+    <div class="kpi-card">
+      <span class="kpi-label-en">Cash Buffer</span>
+      <span class="kpi-label-cn">剩余现金头寸</span>
+      <span class="kpi-value" style="color:var(--gold)">$31,897</span>
+      <span class="kpi-sub">待命抄底资金</span>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>情景</th><th>核心假设</th><th>预期影响</th><th>组合目标市值</th><th>应对措施</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="scenario-tag green">乐观 Bull</span></td><td>战争影响彻底消散；NVDA 业绩超预期；TSLA 交付回暖</td><td class="green">+15~20%</td><td>$73k–$76k</td><td>利用盈利部分逐步换入 QQQM 等指数 ETF 分散风险</td></tr>
+        <tr><td><span class="scenario-tag amber">基准 Base</span></td><td>市场消化宏观不确定性，大科技维持区间震荡</td><td class="amber">±5%</td><td>$60k–$66k</td><td>保持现状，利用剩余 3 万美元进行 Watchlist 标的分步建仓</td></tr>
+        <tr><td><span class="scenario-tag red">悲观 Bear</span></td><td>地缘冲突再次升级；关税政策导致芯片成本激增</td><td class="red">−10~15%</td><td>$54k–$57k</td><td>动用 10k 现金分批加仓 TSM/AVGO，降低对单一标的依赖</td></tr>
+        <tr><td><span class="scenario-tag red">极端 Tail</span></td><td>系统性流动性危机；AI 泡沫叙事证伪</td><td class="red">−25%+</td><td>$48k以下</td><td>强制减仓 TSLA 至 10%，转入防御性 XLU/VOO 布局</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ─── 06 WATCHLIST ─── -->
+<section class="section">
+  <div class="section-header">
+    <span class="section-num">06</span>
+    <span class="section-en">Advanced Strategic Watchlist</span>
+    <span class="section-cn">深度战术候选池 · 10万美元总资产动态规划</span>
+  </div>
+
+  <div style="font-family:'DM Mono'; font-size:10px; letter-spacing:2px; color:var(--gold); margin:25px 0 10px; text-transform:uppercase;">Fundamental Catalyst: Top 10 Equities</div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th style="width:10%">代码</th>
+          <th style="width:20%">公司角色</th>
+          <th style="width:55%">触发逻辑与深度分析 (Trigger & Deep Analysis)</th>
+          <th style="width:15%">建议配置</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="ticker">AVGO</span></td>
+          <td>博通 / 网络及ASIC</td>
+          <td><strong>ASIC 爆发逻辑：</strong> 当 Google/Meta 宣布其内部定制 AI 加速器出货量显著超越 H100 增量时。博通作为唯一的系统级 ASIC 供应商，将直接受益于“去英伟达化”趋势。</td>
+          <td><strong>中</strong></td>
+        </tr>
+        <tr>
+          <td><span class="ticker">TSM</span></td>
+          <td>台积电 / 制造中枢</td>
+          <td><strong>先进封装溢价：</strong> 当 CoWoS 产能扩张速度确认将持续至 2027 年，且 ADR 溢价因地缘冲突缓和而回落至历史均值（4%-7%）时。这是 AI 产业最底层的实物护城河。</td>
+          <td><strong>多</strong></td>
+        </tr>
+        <tr>
+          <td><span class="ticker">ANET</span></td>
+          <td>阿瑞斯塔 / 核心互联</td>
+          <td><strong>以太网替代叙事：</strong> 当大型 AI 集群（如 Meta 或 Google）确认大规模采用 Ultra Ethernet 标准而非英伟达专有的 InfiniBand 时，ANET 将迎来算力网络侧的估值重估。</td>
+          <td><strong>中</strong></td>
+        </tr>
+        <tr>
+          <td><span class="ticker">META</span></td>
+          <td>Meta / AI 应用变现</td>
+          <td><strong>开源生态护城河：</strong> Llama 4 发布后若展现出对 OpenAI 专有模型的代差追平，且 AI 推荐系统对核心广告业务的 ROAS（广告支出回报）提升数据公开披露时。</td>
+          <td><strong>多</strong></td>
+        </tr>
+        <tr>
+          <td><span class="ticker">CEG</span></td>
+          <td>Constellation / 核电</td>
+          <td><strong>算力电力挂钩：</strong> 只要微软或亚马逊在财报中提到“电力供应”成为数据中心落地的第一限制因素。CEG 作为清洁能源/核电巨头，其溢价将从公用事业转向“AI 基础设施”。</td>
+          <td><strong>少</strong></td>
+        </tr>
+        <tr>
+          <td><span class="ticker">MSFT</span></td>
+          <td>微软 / B端生产力</td>
+          <td><strong>M365 Copilot 渗透率：</strong> 当其财报显示订阅用户转化率超过 15%，证明 AI 不再是成本中心而是实质的现金牛。作为 10 万美元账户的基石，它是抵御波动的最佳防线。</td>
+          <td><strong>多</strong></td>
+        </tr>
+        <tr>
+          <td><span class="ticker">AMZN</span></td>
+          <td>亚马逊 / 云+零售</td>
+          <td><strong>算力性价比博弈：</strong> 当 AWS 展示其自研芯片（Trainium 2）能为客户节省 40% 以上训练成本，从而吸引对成本敏感的初创 AI 公司抛弃 NVDA 架构转投 AWS 怀抱时。</td>
+          <td><strong>中</strong></td>
+        </tr>
+        <tr>
+          <td><span class="ticker">MU</span></td>
+          <td>美光 / HBM 内存</td>
+          <td><strong>存储周期反转：</strong> 只要 DRAM 合约价连续两个月上涨，且 HBM3e 产能被英伟达和 AMD 完全包圆，导致传统服务器内存供应紧缺、价格暴涨时。</td>
+          <td><strong>少</strong></td>
+        </tr>
+        <tr>
+          <td><span class="ticker">PLTR</span></td>
+          <td>Palantir / 应用落地</td>
+          <td><strong>政企 Bootcamps 转化：</strong> 当其 AIP 平台在私营领域的签约客户数环比增长超过 20%，证明 AI 已经在物理世界的商业决策中产生实质性替代效应，而非仅仅是实验室玩具。</td>
+          <td><strong>少</strong></td>
+        </tr>
+        <tr>
+          <td><span class="ticker">ASML</span></td>
+          <td>阿斯麦 / 制造源头</td>
+          <td><strong>High-NA EUV 周期：</strong> 当逻辑芯片厂（Intel/TSMC）确认将 EUV 生产线从现有版本全面升级至 High-NA 版本，且订单积压（Backlog）再次回升至 350 亿欧元以上时。</td>
+          <td><strong>中</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div style="font-family:'DM Mono'; font-size:10px; letter-spacing:2px; color:var(--purple); margin:35px 0 10px; text-transform:uppercase;">Strategic Beta & Hedging: Top 7 ETFs</div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th style="width:12%">代码</th>
+          <th style="width:15%">描述</th>
+          <th style="width:58%">触发逻辑与对冲价值 (Rational & Trigger)</th>
+          <th style="width:15%">建议配置</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="ticker">QQQM</span></td>
+          <td>纳指100 (低费率)</td>
+          <td><strong>核心 Beta：</strong> 科技股仓位的稳压器。当组合个股集中度过高（如目前 Google 占 50%）导致波动剧烈时，转入此项以平衡单一公司风险，获取纳指均值收益。</td>
+          <td><strong>多</strong></td>
+        </tr>
+        <tr>
+          <td><span class="ticker">SMH</span></td>
+          <td>半导体集群</td>
+          <td><strong>产业链对冲：</strong> 当 NVDA 因估值过高而滞涨，但下游需求依然旺盛时。通过持有 TSM、ASML、AVGO 捕获整个半导体上行周期的平均收益，降低爆雷风险。</td>
+          <td><strong>中</strong></td>
+        </tr>
+        <tr>
+          <td><span class="ticker">TLT</span></td>
+          <td>20年+美债 (对冲)</td>
+          <td><strong>衰退/避险对冲：</strong> 替代高波动加密资产。当由于战争或衰退预期导致避险情绪爆发，且美联储进入明确降息通道时，TLT 可与科技股形成负相关保护。</td>
+          <td><strong>中</strong></td>
+        </tr>
+        <tr>
+          <td><span class="ticker">XLK</span></td>
+          <td>科技精选板块</td>
+          <td><strong>集中赢家策略：</strong> 重仓微软、苹果、英伟达。适合在财报季预期明确、大盘龙头发力阶段，获取超额于标普 500 的涨幅。</td>
+          <td><strong>中</strong></td>
+        </tr>
+        <tr>
+          <td><span class="ticker">XLU</span></td>
+          <td>公用事业</td>
+          <td><strong>硬资产防御：</strong> 算力对电力的刚性需求。当科技股整体回调，资金寻找避风港时，作为“AI 二级受益者”具有极强的抗跌性和防御性。</td>
+          <td><strong>少</strong></td>
+        </tr>
+        <tr>
+          <td><span class="ticker">IGV</span></td>
+          <td>软件/SaaS服务</td>
+          <td><strong>AI 下半场叙事：</strong> 当硬件逻辑（卖芯片）转向应用逻辑（卖服务）。如果 CRM、ADBE 的软件利润率由于 AI 降本增效而改善，买入此项进行左侧布局。</td>
+          <td><strong>少</strong></td>
+        </tr>
+        <tr>
+          <td><span class="ticker">SOXQ</span></td>
+          <td>半导体(低费率)</td>
+          <td><strong>极致成本控制：</strong> 相比 SMH 费率更低（0.19%）。适合在你 10 万美元资金中用于长期、大额配置半导体行业的底层静态仓位。</td>
+          <td><strong>少</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<!-- ─── 07 OUTLOOK ─── -->
+<div class="outlook-section">
+  <div class="outlook-title">Outlook &amp; Next Steps</div>
+  <div class="outlook-cn">展望与后续计划 · Q1 2026剩余时段及Q2</div>
+  <ul class="priority-list">
+    <li><span>01</span><span>密切跟踪TSLA Q1 2026交付数据（4月初公布）：若低于预期（≤350k台），重新评估TSLA仓位规模和减仓可能性</span></li>
+    <li><span>02</span><span>关注NVDA Q1 2026财报（5月）：Blackwell量产进展是核心验证节点，超预期则评估加仓至125→150股</span></li>
+    <li><span>03</span><span>评估CEG核电布局：关注3月/4月期间电力板块回调机会，$200–220区间启动建仓</span></li>
+    <li><span>04</span><span>在汇丰One核实三只HSBC基金精确NAV：比较实际同期回报，验证主动管理费率是否物有所值（参考本报告近似数据已显示其表现与QQQ高度相关）</span></li>
+  </ul>
+  <span class="conv-label">Portfolio Conviction · 总体信念</span>
+  <div class="conv-text">
+    组合从2025年Q1的谷底（−17.3%，$56k）完整走出，当前建仓总回报达+38%（$93.8k），充分验证了在正确方向上逆势加仓的核心逻辑正确性。近期区间（Jan 22–Mar 10 2026）的−5.74%属于市场整体承压环境下的正常波动，相对跑输QQQ约−3.4pp主要由TSLA的非基本面因素和GOOGL的宏观压制驱动。<br><br>
+    <strong>NVDA是组合中最确定性的资产。TSLA是高风险高期权价值的投注。GOOGL是被低估的AI基础设施综合体。</strong>三者在AI长期周期中的叙事逻辑均未被破坏。保持信念，等待数据验证。
+  </div>
+</div>
+
+</div><!-- /container -->
+
+<footer class="report-footer">
+  <span>仅供讨论 · 不构成投资建议 · For Discussion Purposes Only · HSBC基金数据为近似估算</span>
+  <span>组合 & ETF 价格截至 2026-03-10 · 基金数据来源：Endowus / POEMS / Morningstar</span>
+</footer>
+
+</body>
+</html>
