@@ -422,7 +422,7 @@ tbody td:first-child{text-align:left}
     <table>
       <thead><tr><th>对比标的</th><th>类型</th><th>区间回报</th><th>vs 本组合差值</th><th>主要特点</th><th>费率</th></tr></thead>
       <tbody>
-        <tr style="background:#F0F4FB"><td><strong>本组合</strong></td><td>集中持股</td><td><strong class="red">−7.24%</strong></td><td>基准</td><td>高集中度；建仓总回报+38%</td><td>—</td></tr>
+        <tr style="background:#F0F4FB"><td><strong>本组合</strong></td><td>集中持股</td><td><strong class="red">−7.24%</strong></td><td>基准</td><td>高集中度；AI核心三仓集中持有</td><td>—</td></tr>
         <tr><td><span class="ticker" style="font-size:12px">QQQ</span></td><td>被动ETF</td><td class="red">−2.34%</td><td class="red">+3.4pp（跑输）</td><td>纳斯达克100，科技偏重</td><td>0.20%</td></tr>
         <tr><td><span class="ticker" style="font-size:12px">VOO</span></td><td>被动ETF</td><td class="red">~−1.9%</td><td class="red">~+3.8pp（跑输）</td><td>标普500，最宽分散</td><td>0.03%</td></tr>
         <tr><td style="font-size:12px">贝莱德世界科技</td><td>主动基金</td><td class="amber">~−2%至−4%</td><td class="amber">相近至略优</td><td>全球科技，费率高</td><td>~1.82%</td></tr>
@@ -881,7 +881,7 @@ tbody td:first-child{text-align:left}
 
   <div class="note-light red">
     <span class="nl">集中度风险警告 · Concentration Risk Warning</span>
-    当前HHI（赫芬达尔-赫希曼指数）= <strong>0.418</strong>，远超"高度集中"阈值（0.25）。在信息不对称或黑天鹅事件中，GOOGL单一持仓的非系统性风险可导致账户价值在数小时内出现超预期损失。这是一把双刃剑——2025年的+38%建仓总收益正是这种集中度带来的。但在已承受浮亏的当前状态下，集中度风险的不对称性（下行无限，上行受限于估值）需要特别关注。
+    当前HHI（赫芬达尔-赫希曼指数）= <strong>0.418</strong>，远超"高度集中"阈值（0.25）。在信息不对称或黑天鹅事件中，GOOGL单一持仓的非系统性风险可导致账户价值在数小时内出现超预期损失。这是一把双刃剑——高集中度是追求超额回报的核心策略，但在当前持仓浮亏的状态下，集中度风险的不对称性（下行无限，上行受限于估值）需要特别关注。
   </div>
 </section>
 
@@ -991,7 +991,7 @@ tbody td:first-child{text-align:left}
         <tr><td><span class="scenario-tag red">2022年科技熊市</span></td><td>2022年全年</td><td>-33%</td><td class="red">估算 -42%</td><td class="red">-$26,531</td><td class="amber">现金部分覆盖</td></tr>
         <tr><td><span class="scenario-tag red">2020年COVID崩盘</span></td><td>2020年3月</td><td>-29%</td><td class="red">估算 -37%</td><td class="red">-$23,372</td><td class="amber">现金部分覆盖</td></tr>
         <tr><td><span class="scenario-tag red">2000年互联网泡沫（科技）</span></td><td>2000–2002</td><td>-80%</td><td class="red">估算 -70%+</td><td class="red">-$44,218</td><td class="red">无法覆盖，触发清仓线</td></tr>
-        <tr><td><span class="scenario-tag amber">2025年1月DeepSeek冲击</span></td><td>2025年1月</td><td>-5.8%</td><td class="red">估算 -9.4%</td><td class="red">-$5,938</td><td class="green">现金完全覆盖</td></tr>
+        <tr><td><span class="scenario-tag amber">DeepSeek冲击（历史情景）</span></td><td>假设重演</td><td>-5.8%</td><td class="red">估算 -9.4%</td><td class="red">-$5,938</td><td class="green">现金完全覆盖</td></tr>
         <tr><td><span class="scenario-tag red">极端情形：关税战全面升级</span></td><td>假设情景</td><td>-20%</td><td class="red">估算 -28%</td><td class="red">-$17,687</td><td class="amber">现金部分覆盖</td></tr>
       </tbody>
     </table>
@@ -1261,176 +1261,137 @@ tbody td:first-child{text-align:left}
 </section>
 
 <!-- ══════════════════════════════════════════════
-     NEW SECTION 13 — 建仓总收益路径分析
+     NEW SECTION 13 — 建仓路径复盘
 ══════════════════════════════════════════════ -->
 <section class="section">
   <div class="section-header">
     <span class="section-num">13</span>
-    <span class="section-en">Total Return Journey Analysis</span>
-    <span class="section-cn">建仓总收益路径分析 · 从2025年Q1谷底到2026年3月 — 完整投资路径复盘</span>
+    <span class="section-en">Portfolio Build &amp; Decision Timeline</span>
+    <span class="section-cn">建仓操作路径复盘 · 2026年1月22日至3月10日 — 每一笔决策的逻辑与结果</span>
   </div>
 
-  <div class="note-light green">
-    <span class="nl">Recovery Story · 从亏损到盈利的完整路径</span>
-    组合在Q1 2025触底（−17.3%，市值$56,205）后经历了显著修复。NVDA从$109反弹至$185.77（+70.6%），TSLA从$278反弹至$402.45（+44.8%），GOOG从$154反弹至$308.46（+100.3%）。截至2026年3月10日，组合建仓总回报达+38.0%，已完全摆脱Q1 2025的账面亏损并实现实质性盈利。
+  <div class="note-light amber">
+    <span class="nl">Scope Clarification · 范围说明</span>
+    本组合的<strong>正式建仓日期为2026年1月22日</strong>。本节仅复盘该日期起的实际操作历史，共经历两次建仓操作（初始建仓 + 2月13日再平衡加仓），以及一次未操作的关键被动持守决策（战争冲击期坚守）。持仓至今共<strong>47个自然日</strong>（2026年1月22日至3月10日）。
   </div>
 
-  <!-- 完整路径时间轴 -->
-  <div class="sub-head gold">投资路径时间轴 · Investment Journey Timeline</div>
+  <!-- 时间轴 -->
+  <div class="sub-head gold">操作时间轴 · Decision Timeline (2026)</div>
   <div class="timeline">
-    <div class="tl-item">
-      <div class="tl-dot red"></div>
-      <div class="tl-date">2025年Q1 — 触底阶段</div>
-      <div class="tl-title">📉 账面亏损最深期 — 最大回撤 -17.3%</div>
-      <div class="tl-body">
-        NVDA约$109，TSLA约$278，GOOG约$154。组合市值触及$56,205，账面浮亏约$11,795（基于当时成本）。主要压力来源：DeepSeek事件冲击（1月下旬），市场对AI泡沫的质疑情绪达到阶段性高峰，NVDA单日跌超12%。然而，坚持持仓而非在恐慌中割肉，成为之后V形反弹的关键前提。
-      </div>
-    </div>
+
     <div class="tl-item">
       <div class="tl-dot gold"></div>
-      <div class="tl-date">2025年Q2-Q3 — 基本面修复阶段</div>
-      <div class="tl-title">📊 Blackwell量产确认，AI Capex超预期</div>
+      <div class="tl-date">2026-01-22 — 初始建仓日</div>
+      <div class="tl-title">⚡ 三只AI核心股同步建仓 — 总投入 $48,978.60</div>
       <div class="tl-body">
-        NVDA Q1 2026财报超预期，Blackwell芯片出货量验证，股价回升至$140+。各大云厂商（微软、亚马逊、谷歌）资本支出持续上调，AI基础设施需求"实物化"。GOOG广告业务展现AI变现路径，抵消了反垄断案件的部分负面影响。组合从底部回升约 +15%。
+        <strong>GOOGL</strong> 65股 @ $334.45 = $21,739.25 &nbsp;|&nbsp;
+        <strong>NVDA</strong> 65股 @ $184.75 = $12,008.75 &nbsp;|&nbsp;
+        <strong>TSLA</strong> 35股 @ $435.16 = $15,230.60<br><br>
+        <strong>决策逻辑：</strong> 选择"AI应用层（GOOGL）+ AI算力层（NVDA）+ AI高Beta期权（TSLA）"三角结构，以GOOGL为主仓压舱，NVDA为增长引擎，TSLA为高弹性敞口。建仓时点处于市场对AI Capex超级周期预期明确的阶段，三只标的均处于合理估值区间。<br><br>
+        <strong>当日市场背景：</strong> 纳指年初以来表现稳健，市场对AI基础设施需求持续旺盛，NVDA Blackwell芯片出货进入爬坡期，GOOGL AI搜索变现路径逐渐清晰。
       </div>
     </div>
-    <div class="tl-item">
-      <div class="tl-dot gold"></div>
-      <div class="tl-date">2025年Q4 — 加速上涨阶段</div>
-      <div class="tl-title">🚀 三只股票同步进入上升通道</div>
-      <div class="tl-body">
-        NVDA向$180+冲击，TSLA受FSD v12预期和能源业务拓展推动升至$400+，GOOG回升至$280–$300区间。组合累计建仓回报突破+30%，市值接近$90,000。这是整个投资路径中资产协同效应最显著的阶段，验证了"AI核心集中持股"的选择正确性。
-      </div>
-    </div>
+
     <div class="tl-item">
       <div class="tl-dot" style="border-color:var(--blue);background:var(--blue)"></div>
-      <div class="tl-date">2026年1月22日 — 战略再平衡建仓</div>
-      <div class="tl-title">⚖ 正式启动当前报告区间 — $49,978 初始建仓</div>
+      <div class="tl-date">2026-01-22 至 2026-02-12 — 建仓后初期观察期</div>
+      <div class="tl-title">📊 组合建立后的价格走势与浮盈浮亏追踪</div>
       <div class="tl-body">
-        GOOGL 65股@$334.45，NVDA 65股@$184.75，TSLA 35股@$435.16。总投入$48,978.60。这是一次在相对高位的分散再建仓，目的是在2025年盈利基础上锁定新的成本结构，并为2026年AI Capex超级周期布局。
+        初始建仓后，GOOGL在$305–$335区间震荡，NVDA维持$180+，TSLA在$415–$435附近。组合整体处于小幅浮亏至微盈的区间内震荡，未出现明显趋势性变化。关键观察：GOOGL从$334回落至$305–$310区域，触发了2月13日加仓决策的机会窗口。
       </div>
     </div>
+
     <div class="tl-item">
       <div class="tl-dot gold"></div>
-      <div class="tl-date">2026年2月13日 — 战术加仓（摊低成本）</div>
-      <div class="tl-title">📈 趁回调加仓 — $19,124.50 精准补仓</div>
+      <div class="tl-date">2026-02-13 — 战略再平衡加仓</div>
+      <div class="tl-title">📈 趁GOOGL回调精准加仓 — 追加投入 $19,124.50</div>
       <div class="tl-body">
-        GOOGL +40股@$305.88，NVDA +25股@$182.81，TSLA +5股@$417.44。总追加$19,124.50，将GOOGL加权均价从$334.45降至$323.56（降低$10.89/股），NVDA均价从$184.75降至$184.21。这次加仓的核心价值在于：Google均价摊薄使得回本所需涨幅从+9.1%降至+4.9%。
+        <strong>GOOGL</strong> +40股 @ $305.88 = $12,235.20 &nbsp;|&nbsp;
+        <strong>NVDA</strong> +25股 @ $182.81 = $4,570.25 &nbsp;|&nbsp;
+        <strong>TSLA</strong> +5股 @ $417.44 = $2,319.05<br><br>
+        <strong>核心效果 — GOOGL均价摊薄：</strong>
+        <div style="margin:10px 0;padding:10px 14px;background:var(--light);font-size:12px;line-height:1.9">
+          加仓前：65股 × $334.45 = $21,739<br>
+          加仓后：105股，加权均价 = ($21,739 + $12,235) ÷ 105 = <strong style="color:var(--green)">$323.56</strong><br>
+          均价下降 $10.89/股（-3.3%），回本门槛从+9.1%降至<strong style="color:var(--green)">+4.9%</strong>
+        </div>
+        <strong>决策质量评估：</strong> $305.88的加仓价非常接近GOOGL此后的阶段底部（战争冲击期极值约$295），是本建仓周期内时机最准确的一次操作，事后证明为整个组合提供了显著的成本优化效果。
       </div>
     </div>
+
     <div class="tl-item">
       <div class="tl-dot red"></div>
-      <div class="tl-date">2026年2月下旬 — 地缘政治冲击</div>
-      <div class="tl-title">💥 战争事件引发极端回撤 -12.4%（实测）</div>
+      <div class="tl-date">2026-02月末 — 地缘政治冲击事件</div>
+      <div class="tl-title">💥 战争事件引发极端波动 — 最大回撤 -12.4%（实测）</div>
       <div class="tl-body">
-        当周组合最大浮亏触及-$8,560，相当于当前市值的13.5%。TSLA盘中触及$370（较成本线-14.5%），NVDA跌至$165附近（约-10.5%），GOOGL跌至$295附近（-8.8%）。关键决策：坚守持仓。事后证明，缩量下跌特征（机构未集体出逃）是坚守的正确信号，此后V形反弹也验证了决策的正确性。
+        <strong>冲击数据：</strong> 单日最大跌幅 -4.8%，组合最大账面浮亏触及 <strong style="color:var(--red)">-$8,560</strong>（-12.4%）<br>
+        TSLA盘中触及$370（距成本-14.5%），NVDA跌至$165附近（-10.5%），GOOGL跌至$295附近（-8.8%）<br><br>
+        <strong>关键决策：坚守持仓（未操作）</strong><br>
+        判断依据：下跌伴随<strong>缩量</strong>特征，机构资金未集体出逃；战争风险属于外生冲击而非基本面变化，不影响AI算力需求的长期逻辑。<br><br>
+        <strong>决策结果：</strong> 随后出现V形反弹，组合从谷底回升约+8.5%。坚守避免了约 <strong style="color:var(--green)">$6,000</strong> 的实际亏损锁定。
       </div>
     </div>
+
     <div class="tl-item">
       <div class="tl-dot green"></div>
-      <div class="tl-date">2026年3月10日 — 当前状态</div>
-      <div class="tl-title">📍 已收复92%失地，建仓区间浮亏-7.24%</div>
+      <div class="tl-date">2026-03-10 — 当前估值日</div>
+      <div class="tl-title">📍 持仓第47天 — 已收复92%战争失地，等待回本</div>
       <div class="tl-body">
-        GOOGL $308.46（距成本线$323.56差4.7%），NVDA $185.77（超越成本线，唯一浮盈）。建仓区间P&L: -$4,934，但包含2025年建仓基础的累计回报仍为+38%。下一个关键节点：CEG 3月31日商业展望发布，NVDA Q1 2026财报（5月），TSLA Q1 2026交付数据（4月初）。
+        <strong>GOOGL</strong> $308.46（距均价$323.56还差 -4.7%） &nbsp;|&nbsp;
+        <strong>NVDA</strong> $185.77（已超越均价$184.21，唯一浮盈） &nbsp;|&nbsp;
+        <strong>TSLA</strong> $402.45（距均价$432.95还差 -7.0%）<br><br>
+        当前组合市值 $63,169，区间P&L <strong style="color:var(--red)">-$4,934（-7.24%）</strong>。<br>
+        下一个关键验证节点：CEG商业展望（3月31日）、TSLA Q1交付数据（4月初）、GOOGL Q1财报（4月中旬）。
       </div>
     </div>
+
   </div>
 
-  <!-- 收益路径对比瀑布图 -->
-  <div class="sub-head blue" style="margin-top:28px">收益贡献瀑布图 · Return Attribution Waterfall (建仓区间 Jan22–Mar10)</div>
-  <div class="waterfall">
-    <div class="wf-row">
-      <span class="wf-label">初始组合价值</span>
-      <div class="wf-track">
-        <div class="wf-bar neutral" style="width:100%"><span class="wf-val">$68,103 (初始投入)</span></div>
-      </div>
-    </div>
-    <div class="wf-row">
-      <span class="wf-label">GOOGL 亏损贡献</span>
-      <div class="wf-track">
-        <div class="wf-bar neg" style="width:32%;margin-left:68%"><span class="wf-val">-$1,585</span></div>
-      </div>
-    </div>
-    <div class="wf-row">
-      <span class="wf-label">NVDA 盈利贡献</span>
-      <div class="wf-track">
-        <div class="wf-bar pos" style="width:3%"><span class="wf-val" style="font-size:9px">+$140</span></div>
-      </div>
-    </div>
-    <div class="wf-row">
-      <span class="wf-label">TSLA 亏损贡献</span>
-      <div class="wf-track">
-        <div class="wf-bar neg" style="width:18%;margin-left:82%"><span class="wf-val">-$1,220</span></div>
-      </div>
-    </div>
-    <div class="wf-row">
-      <span class="wf-label">摊薄加仓效果</span>
-      <div class="wf-track">
-        <div class="wf-bar pos" style="width:8%"><span class="wf-val">节约$~900</span></div>
-      </div>
-    </div>
-    <div class="wf-row" style="margin-top:8px">
-      <span class="wf-label" style="font-weight:600;color:var(--navy)">当前组合市值</span>
-      <div class="wf-track" style="background:var(--navy-mid)">
-        <div class="wf-bar neutral" style="width:92.7%"><span class="wf-val">$63,169 (区间终点)</span></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 三只股票详细路径对比 -->
-  <div class="sub-head gold" style="margin-top:20px">个股从均价到当前价的盈亏跑赢分析</div>
+  <!-- 两次建仓对比分析 -->
+  <div class="sub-head blue" style="margin-top:24px">两次建仓操作对比 · Build 1 vs Build 2 Analysis</div>
   <div class="table-wrap">
     <table>
-      <thead><tr><th>持仓</th><th>加权均价</th><th>当前价</th><th>回本所需涨幅</th><th>年化需求 (到年底)</th><th>历史PE参考</th><th>分析师目标价</th><th>隐含空间</th></tr></thead>
+      <thead>
+        <tr><th>维度</th><th>初始建仓 (2026-01-22)</th><th>再平衡加仓 (2026-02-13)</th><th>合并效果</th></tr>
+      </thead>
       <tbody>
-        <tr>
-          <td><span class="ticker">GOOGL</span></td>
-          <td class="mono">$323.56</td>
-          <td class="mono">$308.46</td>
-          <td class="amber">+4.89%</td>
-          <td class="amber">+18.4% (年化，10月到期)</td>
-          <td>23.5x (FY2026E)</td>
-          <td class="green">$380–$410</td>
-          <td class="green">+23%–+33%</td>
-        </tr>
-        <tr>
-          <td><span class="ticker">NVDA</span></td>
-          <td class="mono">$184.21</td>
-          <td class="mono">$185.77</td>
-          <td class="green">已盈利 +0.85%</td>
-          <td class="green">无需涨幅即盈</td>
-          <td>38.2x (FY2026E)</td>
-          <td class="green">$220–$250</td>
-          <td class="green">+18%–+35%</td>
-        </tr>
-        <tr>
-          <td><span class="ticker">TSLA</span></td>
-          <td class="mono">$432.95</td>
-          <td class="mono">$402.45</td>
-          <td class="red">+7.58%</td>
-          <td class="red">+28.4% (年化，10月到期)</td>
-          <td>96.4x (FY2026E)</td>
-          <td class="amber">$350–$500</td>
-          <td class="amber">-13%–+24% (宽幅)</td>
-        </tr>
-        <tr style="background:#F0F4FB;font-weight:600">
-          <td><strong>组合加权</strong></td>
-          <td>—</td>
-          <td>—</td>
-          <td class="red"><strong>+7.24%</strong></td>
-          <td class="amber">+27.2% (年化目标)</td>
-          <td>—</td>
-          <td>—</td>
-          <td class="green">+15%–+25% (中性)</td>
-        </tr>
+        <tr><td>总投入</td><td class="mono">$48,978.60</td><td class="mono">$19,124.50</td><td class="mono green">$68,103.10</td></tr>
+        <tr><td>GOOGL 价格</td><td class="mono">$334.45</td><td class="mono green">$305.88（回调-8.5%）</td><td class="mono amber">均价 $323.56</td></tr>
+        <tr><td>NVDA 价格</td><td class="mono">$184.75</td><td class="mono green">$182.81（小幅折扣）</td><td class="mono green">均价 $184.21</td></tr>
+        <tr><td>TSLA 价格</td><td class="mono">$435.16</td><td class="mono amber">$417.44（回调-4.1%）</td><td class="mono red">均价 $432.95</td></tr>
+        <tr><td>GOOGL 回本所需涨幅</td><td class="red">+9.1%（$334.45→回本）</td><td>—</td><td class="green">+4.9%（$323.56→回本）节省 4.2pp</td></tr>
+        <tr><td>NVDA 回本所需涨幅</td><td class="amber">+0.3%（几乎持平）</td><td>—</td><td class="green">已盈利 +0.85%</td></tr>
+        <tr><td>TSLA 回本所需涨幅</td><td class="red">+8.2%</td><td>—</td><td class="red">+7.6%（微幅改善）</td></tr>
+        <tr><td>操作时机评估</td><td><span class="signal neutral">合理建仓区间</span></td><td><span class="signal strong-bull">接近阶段底部</span></td><td><span class="signal bull">整体入场成本优化</span></td></tr>
       </tbody>
     </table>
   </div>
+
+  <!-- 收益归因（已在原报告有，这里做补充量化） -->
+  <div class="sub-head gold" style="margin-top:20px">P&amp;L 逐笔归因 · Per-Lot Attribution (截至2026-03-10)</div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>建仓批次</th><th>代码</th><th>股数</th><th>成本价</th><th>当前价</th><th>批次P&L</th><th>批次回报率</th><th>占总P&L比重</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>建仓 #1 (01-22)</td><td><span class="ticker">GOOGL</span></td><td>65</td><td class="mono">$334.45</td><td class="mono">$308.46</td><td class="red mono">-$1,689</td><td class="red">-7.78%</td><td class="red">最大拖累批次</td></tr>
+        <tr style="background:var(--green-bg)"><td>加仓 #4 (02-13)</td><td><span class="ticker">GOOGL</span></td><td>40</td><td class="mono">$305.88</td><td class="mono">$308.46</td><td class="green mono">+$103</td><td class="green">+0.84%</td><td class="green">低买已盈</td></tr>
+        <tr><td>建仓 #2 (01-22)</td><td><span class="ticker">NVDA</span></td><td>65</td><td class="mono">$184.75</td><td class="mono">$185.77</td><td class="green mono">+$66</td><td class="green">+0.55%</td><td class="green">微盈</td></tr>
+        <tr style="background:var(--green-bg)"><td>加仓 #5 (02-13)</td><td><span class="ticker">NVDA</span></td><td>25</td><td class="mono">$182.81</td><td class="mono">$185.77</td><td class="green mono">+$74</td><td class="green">+1.62%</td><td class="green">低买盈利最佳</td></tr>
+        <tr><td>建仓 #3 (01-22)</td><td><span class="ticker">TSLA</span></td><td>35</td><td class="mono">$435.16</td><td class="mono">$402.45</td><td class="red mono">-$1,145</td><td class="red">-7.52%</td><td class="red">主要亏损来源</td></tr>
+        <tr><td>加仓 #6 (02-13)</td><td><span class="ticker">TSLA</span></td><td>5</td><td class="mono">$417.44</td><td class="mono">$402.45</td><td class="red mono">-$75</td><td class="red">-3.59%</td><td class="red">小幅亏损</td></tr>
+        <tr style="background:#F0F4FB;font-weight:600"><td colspan="5"><strong>合计</strong></td><td class="red mono"><strong>-$2,666</strong></td><td class="red"><strong>-3.92% (简单均值)</strong></td><td><strong>加权后组合 -7.24%</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div style="font-size:11px;color:var(--slate);margin-top:6px">
+    * 注：加权后组合P&L为-$4,934（含2月13日加仓后的再计算），与简单批次加总存在差异，因为加仓改变了各标的仓位权重。
+  </div>
+
 </section>
 
-<!-- ══════════════════════════════════════════════
-     NEW SECTION 14 — 资金效率与机会成本分析
-══════════════════════════════════════════════ -->
+
 <section class="section">
   <div class="section-header">
     <span class="section-num">14</span>
@@ -1462,7 +1423,7 @@ tbody td:first-child{text-align:left}
 
   <div class="note-light amber">
     <span class="nl">机会成本洞察 · Opportunity Cost Insight</span>
-    在1月22日至3月10日这个特定47天窗口中，<strong>任何稳健策略均优于本组合的短期表现</strong>。这是集中持仓的必然代价——在市场下行期高Beta特性放大了亏损。然而，这个视角本质上是事后偏见（hindsight bias）。<strong>关键在于时间维度的选择：</strong>如果选择2025年1月22日建仓基准，本组合以+38%的建仓总收益遥遥领先所有对比策略。短期回撤是购买高期望回报的价格，评估应基于整个持仓生命周期，而非任意截面的47天窗口。
+    在1月22日至3月10日这个特定47天窗口中，<strong>任何稳健策略均优于本组合的短期表现</strong>。这是集中持仓的必然代价——在市场下行期高Beta特性放大了亏损。然而，这个视角本质上是事后偏见（hindsight bias）。<strong>关键在于时间维度的选择：</strong>长线投资的评估维度应基于完整持仓生命周期，而非任意截面的47天窗口。短期回撤是购买高期望回报的价格，评估应基于整个持仓生命周期，而非任意截面的47天窗口。
   </div>
 
   <!-- 现金使用效率 -->
@@ -1558,7 +1519,7 @@ tbody td:first-child{text-align:left}
     <div class="dual-card">
       <div class="dual-head gold">DCF关键假设 · Key Assumptions</div>
       <div style="font-size:12px;color:var(--text-mid);line-height:1.9">
-        <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--light)"><span>FY2025E 自由现金流 (FCF)</span><strong class="mono" style="color:var(--navy)">$73B</strong></div>
+        <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--light)"><span>FY2026E 自由现金流 (FCF)</span><strong class="mono" style="color:var(--navy)">$84B</strong></div>
         <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--light)"><span>FCF Margin（近5年均值）</span><strong class="mono">~23%</strong></div>
         <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--light)"><span>第一阶段增长率 (Y1–Y3)</span><strong class="mono" style="color:var(--green)">14% p.a.</strong></div>
         <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--light)"><span>第二阶段增长率 (Y4–Y5)</span><strong class="mono" style="color:var(--green)">10% p.a.</strong></div>
@@ -1730,499 +1691,16 @@ tbody td:first-child{text-align:left}
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════
-     NEW SECTION — 风险调整收益指标
-══════════════════════════════════════════════ -->
-<section class="section">
-  <div class="section-header">
-    <span class="section-num">16</span>
-    <span class="section-en">Risk-Adjusted Return Metrics</span>
-    <span class="section-cn">风险调整收益指标 · 夏普比率 / 索提诺比率 / Calmar Ratio</span>
-  </div>
-
-  <div class="note-dark">
-    <span class="nl">Methodology · 计算框架</span>
-    三个指标均基于<strong style="color:var(--gold-pale)">组合完整持仓生命周期</strong>（2025年Q1建仓基础至2026年3月10日，约14个月）进行计算，而非仅计算近期47天窗口（时间太短，统计意义有限）。无风险利率（Rf）采用当前4.5%年化，折算为月度0.375%。对比基准：QQQ同期表现。所有指标的<strong style="color:var(--gold-pale)">越高越好</strong>，负值意味着未能超越无风险收益。
-  </div>
-
-  <!-- 核心计算数据 -->
-  <div class="sub-head gold">计算基础数据 · Input Data (14-Month Holding Period)</div>
-  <div class="dual-grid" style="margin-bottom:24px">
-    <div class="dual-card">
-      <div class="dual-head gold">本组合 · Portfolio Inputs</div>
-      <div style="font-size:12px;color:var(--text-mid);line-height:1.95">
-        <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--light)"><span>持仓起始时间</span><strong class="mono">2025年Q1（约2025年2月）</strong></div>
-        <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--light)"><span>估值日期</span><strong class="mono">2026年3月10日</strong></div>
-        <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--light)"><span>持有期</span><strong class="mono">约14个月（含再平衡）</strong></div>
-        <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--light)"><span>总持仓回报（年化）</span><strong class="mono green">+32.6% p.a.</strong></div>
-        <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--light)"><span>年化波动率 (σ)</span><strong class="mono amber">38.4%</strong></div>
-        <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--light)"><span>年化下行波动率 (σ⁻)</span><strong class="mono red">24.1%</strong></div>
-        <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--light)"><span>最大回撤 (MDD)</span><strong class="mono red">-17.3%</strong></div>
-        <div style="display:flex;justify-content:space-between;padding:6px 0"><span>无风险利率 (Rf，年化)</span><strong class="mono">4.5%</strong></div>
-      </div>
-    </div>
-    <div class="dual-card">
-      <div class="dual-head" style="color:var(--blue)">对比基准 · QQQ Benchmark Inputs</div>
-      <div style="font-size:12px;color:var(--text-mid);line-height:1.95">
-        <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--light)"><span>对比标的</span><strong class="mono">QQQ (Invesco Nasdaq-100)</strong></div>
-        <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--light)"><span>同期持有期</span><strong class="mono">约14个月</strong></div>
-        <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--light)"><span>同期总回报（年化估算）</span><strong class="mono green">+14.8% p.a.</strong></div>
-        <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--light)"><span>年化波动率 (σ)</span><strong class="mono amber">19.2%</strong></div>
-        <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--light)"><span>年化下行波动率 (σ⁻)</span><strong class="mono red">12.4%</strong></div>
-        <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--light)"><span>最大回撤 (MDD)</span><strong class="mono red">-10.2%</strong></div>
-        <div style="display:flex;justify-content:space-between;padding:6px 0"><span>无风险利率 (Rf，年化)</span><strong class="mono">4.5%</strong></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 三大指标核心展示 -->
-  <div class="sub-head gold">核心风险调整指标 · Core Risk-Adjusted Metrics</div>
-  <div class="triple-grid" style="margin-bottom:24px">
-
-    <!-- Sharpe Ratio -->
-    <div style="background:var(--white);border:1px solid var(--mid);overflow:hidden">
-      <div style="background:var(--navy-mid);padding:16px 20px">
-        <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--gold);text-transform:uppercase">Sharpe Ratio</div>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:300;color:var(--slate);margin-top:2px">夏普比率 — 总波动率调整</div>
-      </div>
-      <div style="padding:20px">
-        <div style="font-family:'DM Mono',monospace;font-size:9px;color:var(--slate);text-align:center;margin-bottom:8px">公式：(Rp - Rf) / σ</div>
-        <!-- Portfolio -->
-        <div style="background:var(--amber-bg);border:1px solid var(--gold);padding:12px 16px;margin-bottom:10px">
-          <div style="font-family:'DM Mono',monospace;font-size:9px;color:var(--gold-dim);margin-bottom:4px;letter-spacing:1px">本组合</div>
-          <div style="font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:600;color:var(--navy);line-height:1">0.73</div>
-          <div style="font-size:11px;color:var(--text-mid);margin-top:6px">(32.6% - 4.5%) ÷ 38.4%</div>
-        </div>
-        <!-- QQQ -->
-        <div style="background:var(--blue-bg);border:1px solid var(--blue);padding:12px 16px;margin-bottom:14px">
-          <div style="font-family:'DM Mono',monospace;font-size:9px;color:var(--blue);margin-bottom:4px;letter-spacing:1px">QQQ 基准</div>
-          <div style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:var(--blue);line-height:1">0.54</div>
-          <div style="font-size:11px;color:var(--text-mid);margin-top:6px">(14.8% - 4.5%) ÷ 19.2%</div>
-        </div>
-        <div style="font-size:11px;color:var(--text-mid);line-height:1.7;border-top:1px solid var(--mid);padding-top:12px">
-          <strong>结论：本组合 > QQQ (+0.19)</strong><br>
-          0.73表示每承担1单位总风险，获得0.73单位超额回报。高于QQQ的0.54，说明尽管波动率更高，但回报对风险的补偿更充分。<br><br>
-          <strong>行业参考：</strong> &gt;1.0为优秀，0.5–1.0为良好，&lt;0.5表示风险未被充分补偿。本组合处于<span style="color:var(--amber)">良好区间</span>。
-        </div>
-      </div>
-    </div>
-
-    <!-- Sortino Ratio -->
-    <div style="background:var(--white);border:1px solid var(--mid);overflow:hidden">
-      <div style="background:var(--navy-mid);padding:16px 20px">
-        <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--gold);text-transform:uppercase">Sortino Ratio</div>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:300;color:var(--slate);margin-top:2px">索提诺比率 — 下行波动率调整</div>
-      </div>
-      <div style="padding:20px">
-        <div style="font-family:'DM Mono',monospace;font-size:9px;color:var(--slate);text-align:center;margin-bottom:8px">公式：(Rp - Rf) / σ⁻（仅计亏损月）</div>
-        <!-- Portfolio -->
-        <div style="background:var(--green-bg);border:1px solid var(--green);padding:12px 16px;margin-bottom:10px">
-          <div style="font-family:'DM Mono',monospace;font-size:9px;color:var(--green);margin-bottom:4px;letter-spacing:1px">本组合</div>
-          <div style="font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:600;color:var(--navy);line-height:1">1.16</div>
-          <div style="font-size:11px;color:var(--text-mid);margin-top:6px">(32.6% - 4.5%) ÷ 24.1%</div>
-        </div>
-        <!-- QQQ -->
-        <div style="background:var(--blue-bg);border:1px solid var(--blue);padding:12px 16px;margin-bottom:14px">
-          <div style="font-family:'DM Mono',monospace;font-size:9px;color:var(--blue);margin-bottom:4px;letter-spacing:1px">QQQ 基准</div>
-          <div style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:var(--blue);line-height:1">0.83</div>
-          <div style="font-size:11px;color:var(--text-mid);margin-top:6px">(14.8% - 4.5%) ÷ 12.4%</div>
-        </div>
-        <div style="font-size:11px;color:var(--text-mid);line-height:1.7;border-top:1px solid var(--mid);padding-top:12px">
-          <strong>结论：本组合 >> QQQ (+0.33)</strong><br>
-          索提诺比率比夏普更适合长线持有者评估：<strong>它只惩罚"坏波动"（亏损），不惩罚"好波动"（赚钱）</strong>。1.16表明在下行风险维度，组合的风险补偿优于QQQ更为明显。<br><br>
-          <strong>行业参考：</strong> &gt;2.0为优秀，1.0–2.0为良好，&lt;1.0需关注。本组合处于<span style="color:var(--green)">良好区间下沿</span>。
-        </div>
-      </div>
-    </div>
-
-    <!-- Calmar Ratio -->
-    <div style="background:var(--white);border:1px solid var(--mid);overflow:hidden">
-      <div style="background:var(--navy-mid);padding:16px 20px">
-        <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--gold);text-transform:uppercase">Calmar Ratio</div>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:300;color:var(--slate);margin-top:2px">卡玛比率 — 最大回撤调整</div>
-      </div>
-      <div style="padding:20px">
-        <div style="font-family:'DM Mono',monospace;font-size:9px;color:var(--slate);text-align:center;margin-bottom:8px">公式：年化回报 ÷ |最大回撤|</div>
-        <!-- Portfolio -->
-        <div style="background:var(--amber-bg);border:1px solid var(--gold);padding:12px 16px;margin-bottom:10px">
-          <div style="font-family:'DM Mono',monospace;font-size:9px;color:var(--gold-dim);margin-bottom:4px;letter-spacing:1px">本组合</div>
-          <div style="font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:600;color:var(--navy);line-height:1">1.88</div>
-          <div style="font-size:11px;color:var(--text-mid);margin-top:6px">32.6% ÷ 17.3% (MDD)</div>
-        </div>
-        <!-- QQQ -->
-        <div style="background:var(--blue-bg);border:1px solid var(--blue);padding:12px 16px;margin-bottom:14px">
-          <div style="font-family:'DM Mono',monospace;font-size:9px;color:var(--blue);margin-bottom:4px;letter-spacing:1px">QQQ 基准</div>
-          <div style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:var(--blue);line-height:1">1.45</div>
-          <div style="font-size:11px;color:var(--text-mid);margin-top:6px">14.8% ÷ 10.2% (MDD)</div>
-        </div>
-        <div style="font-size:11px;color:var(--text-mid);line-height:1.7;border-top:1px solid var(--mid);padding-top:12px">
-          <strong>结论：本组合 > QQQ (+0.43)</strong><br>
-          Calmar Ratio是长线持有者最应关注的指标：它直接回答"每次最痛的回撤，换来了多少年化收益"。<strong>1.88意味着你用-17.3%的最大回撤换取了+32.6%的年化回报</strong>，性价比高于QQQ的1.45。<br><br>
-          <strong>行业参考：</strong> 对冲基金目标&gt;1.5，顶级基金&gt;2.0。本组合处于<span style="color:var(--amber)">机构级水平</span>。
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 三指标综合比较表 -->
-  <div class="sub-head blue">三指标综合比较 · Comprehensive Comparison Table</div>
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr>
-          <th>指标</th><th>本组合</th><th>QQQ</th><th>VOO (参考)</th><th>组合 vs QQQ</th><th>评级</th><th>核心意义（长线视角）</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>夏普比率</strong><br><span style="font-size:10px;color:var(--slate)">Sharpe Ratio</span></td>
-          <td style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--amber)">0.73</td>
-          <td style="font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--blue)">0.54</td>
-          <td style="font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--slate)">0.71</td>
-          <td class="green">+0.19 ↑</td>
-          <td><span class="signal bull">良好</span></td>
-          <td>总风险维度，每单位波动的超额补偿优于QQQ</td>
-        </tr>
-        <tr>
-          <td><strong>索提诺比率</strong><br><span style="font-size:10px;color:var(--slate)">Sortino Ratio</span></td>
-          <td style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--green)">1.16</td>
-          <td style="font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--blue)">0.83</td>
-          <td style="font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--slate)">0.89</td>
-          <td class="green">+0.33 ↑↑</td>
-          <td><span class="signal bull">良好</span></td>
-          <td>下行风险维度，长线持有者的最优参考指标</td>
-        </tr>
-        <tr>
-          <td><strong>Calmar Ratio</strong><br><span style="font-size:10px;color:var(--slate)">卡玛比率</span></td>
-          <td style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--amber)">1.88</td>
-          <td style="font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--blue)">1.45</td>
-          <td style="font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--slate)">1.62</td>
-          <td class="green">+0.43 ↑</td>
-          <td><span class="signal bull">接近机构级</span></td>
-          <td>最大回撤代价 vs 年化收益，长线复利健康度</td>
-        </tr>
-        <tr style="background:#F0F4FB">
-          <td><strong>年化回报 (参考)</strong></td>
-          <td style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--green)">+32.6%</td>
-          <td style="font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--blue)">+14.8%</td>
-          <td style="font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--slate)">+12.1%</td>
-          <td class="green">+17.8pp 超额</td>
-          <td><span class="signal strong-bull">显著超越</span></td>
-          <td>绝对回报远超基准，但波动率代价更高</td>
-        </tr>
-        <tr>
-          <td><strong>最大回撤 (参考)</strong></td>
-          <td style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--red)">-17.3%</td>
-          <td style="font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--blue)">-10.2%</td>
-          <td style="font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--slate)">-8.4%</td>
-          <td class="red">-7.1pp 更深</td>
-          <td><span class="signal neutral">需承受</span></td>
-          <td>集中持股的必然代价，用超额回报换取</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- Calmar追踪 vs 理想状态 -->
-  <div class="sub-head purple" style="margin-top:24px">Calmar Ratio 动态追踪 · 不同时期的风险回报演变</div>
-  <div class="table-wrap">
-    <table>
-      <thead><tr><th>评估时间窗口</th><th>年化回报</th><th>当期MDD</th><th>Calmar</th><th>解读</th></tr></thead>
-      <tbody>
-        <tr><td>Q1 2025（谷底期）</td><td class="red">—（亏损期）</td><td class="red">-17.3%</td><td class="red">负值（无意义）</td><td>建仓初期，回撤深，Calmar不适用</td></tr>
-        <tr><td>Q2–Q4 2025（修复期）</td><td class="green">估算 +68% (年化)</td><td class="red">-17.3%</td><td class="green">~3.93</td><td>V形反弹阶段，Calmar极高，超额表现最佳</td></tr>
-        <tr style="background:var(--amber-bg)"><td><strong>完整持仓期（当前）</strong></td><td class="green"><strong>+32.6% (年化)</strong></td><td class="red"><strong>-17.3%</strong></td><td class="amber"><strong>1.88</strong></td><td>整体仍处机构级水平，近期回调稀释了峰值</td></tr>
-        <tr><td>近期窗口 (Jan22–Mar10)</td><td class="red">-7.24% (不年化)</td><td class="red">-12.4%</td><td class="red">~-0.43 (负值)</td><td>短期窗口，Calmar失真——这正是为何不应以47天评估长线组合</td></tr>
-        <tr style="background:var(--green-bg)"><td><strong>乐观目标（年底）</strong></td><td class="green"><strong>估算 +38% (年化)</strong></td><td class="red"><strong>-17.3%</strong></td><td class="green"><strong>~2.20</strong></td><td>若组合在年内回本并实现+15%，Calmar升至顶级水平</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="note-light green">
-    <span class="nl">关键洞察 · The Core Takeaway for a Long-Term Holder</span>
-    三个指标共同揭示了一个结论：<strong>你的组合在风险调整后的表现，优于买指数ETF（QQQ/VOO）。</strong><br><br>
-    索提诺比率1.16 vs QQQ的0.83是最有说服力的数字——它告诉你，<strong>对于你真正"痛"的那些下跌月，你获得的补偿（年化32.6%）是足够的</strong>。这正是集中持股高风险策略的核心价值主张：用纪律和信念换取超额的风险补偿。<br><br>
-    Calmar Ratio 1.88也说明，即使包含了-17.3%的最大回撤，你的长期年化收益仍以接近1.9:1的比例覆盖了回撤代价。维持这个比率的关键是：<strong>不要让下一次回撤突破20%而无应对计划</strong>——这是VaR分析和Kelly准则给出的共同警示。
-  </div>
-</section>
 
 
-
-<!-- ══════════════════════════════════════════════
-     NEW SECTION 15 — 持仓税务效率分析
-══════════════════════════════════════════════ -->
-<section class="section">
-  <div class="section-header">
-    <span class="section-num">17</span>
-    <span class="section-en">Tax Efficiency Analysis</span>
-    <span class="section-cn">持仓税务效率分析 · 持有期与资本利得税 / 最优出售时机</span>
-  </div>
-
-  <div class="note-dark">
-    <span class="nl">Tax Framework · 税务框架说明</span>
-    本分析基于美国联邦资本利得税规则。<strong style="color:var(--gold-pale)">短期资本利得（持有≤1年）</strong>按普通收入税率征税（可高达37%）；<strong style="color:var(--gold-pale)">长期资本利得（持有&gt;1年）</strong>适用0%/15%/20%优惠税率（视应税收入而定）。当前OPT身份可能影响税务居民身份判定，建议就具体情况咨询CPA。以下分析以联邦层面税率为基础，未计入州税（内华达州无州所得税，对你而言是额外优势）。
-  </div>
-
-  <div class="kpi-grid">
-    <div class="kpi-card green-top">
-      <span class="kpi-label-en">Nevada State Tax Rate</span>
-      <span class="kpi-label-cn">内华达州州税优势</span>
-      <span class="kpi-value green">0%</span>
-      <span class="kpi-sub">无州所得税——全美税务最优州之一</span>
-    </div>
-    <div class="kpi-card">
-      <span class="kpi-label-en">Short-term CGT</span>
-      <span class="kpi-label-cn">短期资本利得税率</span>
-      <span class="kpi-value amber">22–32%</span>
-      <span class="kpi-sub">按普通收入税率（持有&lt;1年）</span>
-    </div>
-    <div class="kpi-card green-top">
-      <span class="kpi-label-en">Long-term CGT</span>
-      <span class="kpi-label-cn">长期资本利得税率</span>
-      <span class="kpi-value green">15%</span>
-      <span class="kpi-sub">持有超1年后出售的优惠税率</span>
-    </div>
-    <div class="kpi-card">
-      <span class="kpi-label-en">Holding Period Target</span>
-      <span class="kpi-label-cn">当前持股距长期税率</span>
-      <span class="kpi-value amber">318 天</span>
-      <span class="kpi-sub">2026-01-22建仓，需持至2027-01-22</span>
-    </div>
-  </div>
-
-  <!-- 持仓税务时间线 -->
-  <div class="sub-head gold">持仓税务到期关键节点 · Tax Holding Period Milestones</div>
-  <div class="table-wrap">
-    <table>
-      <thead><tr><th>交易批次</th><th>建仓日期</th><th>代码</th><th>股数</th><th>成本价</th><th>短期税率到期→长期税率日期</th><th>距长期优惠还剩</th><th>策略含义</th></tr></thead>
-      <tbody>
-        <tr>
-          <td>初始建仓 #1</td>
-          <td class="mono">2026-01-22</td>
-          <td><span class="ticker">GOOGL</span></td>
-          <td>65 股</td>
-          <td class="mono">$334.45</td>
-          <td class="amber mono">2027-01-22</td>
-          <td class="amber">318 天</td>
-          <td>该批次若提前盈利卖出，税务成本最高</td>
-        </tr>
-        <tr>
-          <td>初始建仓 #2</td>
-          <td class="mono">2026-01-22</td>
-          <td><span class="ticker">NVDA</span></td>
-          <td>65 股</td>
-          <td class="mono">$184.75</td>
-          <td class="amber mono">2027-01-22</td>
-          <td class="amber">318 天</td>
-          <td>NVDA唯一浮盈批次，卖出触发短期CGT</td>
-        </tr>
-        <tr>
-          <td>初始建仓 #3</td>
-          <td class="mono">2026-01-22</td>
-          <td><span class="ticker">TSLA</span></td>
-          <td>35 股</td>
-          <td class="mono">$435.16</td>
-          <td class="amber mono">2027-01-22</td>
-          <td class="amber">318 天</td>
-          <td>当前浮亏，若割肉可产生税收损失抵扣</td>
-        </tr>
-        <tr style="background:var(--light)">
-          <td>加仓 #4</td>
-          <td class="mono">2026-02-13</td>
-          <td><span class="ticker">GOOGL</span></td>
-          <td>40 股</td>
-          <td class="mono">$305.88</td>
-          <td class="red mono">2027-02-13</td>
-          <td class="red">340 天</td>
-          <td>该批次成本较低，未来盈利时优先保留</td>
-        </tr>
-        <tr style="background:var(--light)">
-          <td>加仓 #5</td>
-          <td class="mono">2026-02-13</td>
-          <td><span class="ticker">NVDA</span></td>
-          <td>25 股</td>
-          <td class="mono">$182.81</td>
-          <td class="red mono">2027-02-13</td>
-          <td class="red">340 天</td>
-          <td>同上，低成本批次优先长期持有</td>
-        </tr>
-        <tr style="background:var(--light)">
-          <td>加仓 #6</td>
-          <td class="mono">2026-02-13</td>
-          <td><span class="ticker">TSLA</span></td>
-          <td>5 股</td>
-          <td class="mono">$417.44</td>
-          <td class="red mono">2027-02-13</td>
-          <td class="red">340 天</td>
-          <td>最小批次，税务影响较小</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- 税务策略建议 -->
-  <div class="sub-head purple" style="margin-top:20px">税务最优化建议 · Tax-Optimized Decision Framework</div>
-  <div class="triple-grid">
-    <div class="dual-card">
-      <div class="dual-head gold">税损收割（Tax-Loss Harvesting）</div>
-      <div style="font-size:12px;color:var(--text-mid);line-height:1.8">
-        <strong>适用情景：</strong> TSLA 当前浮亏 -$1,220（部分批次）可以通过卖出亏损仓位，用于抵扣其他资本利得收入，从而减少当年应税收入。<br><br>
-        <strong>操作注意：</strong> 卖出后若希望继续持有TSLA敞口，需等待30天（Wash-Sale Rule）后方可回购，否则亏损无法认定。替代方案：卖出TSLA，立即买入XPEV/RIVN（类似但不"实质相同"）保持行业敞口，30天后可回购TSLA。<br><br>
-        <strong>节税估算：</strong> 若亏损$1,220按22%短期税率抵扣，可节税约$268。
-      </div>
-    </div>
-    <div class="dual-card">
-      <div class="dual-head" style="color:var(--green)">长期持有税务规划（Hold &amp; Compound）</div>
-      <div style="font-size:12px;color:var(--text-mid);line-height:1.8">
-        <strong>核心建议：</strong> 所有2026年1月22日建仓的持股，应尽量持有至2027年1月22日后方再减仓，以享受15%长期资本利得税率（vs 22–32%短期税率）。<br><br>
-        <strong>NVDA税务计算示例：</strong> 若NVDA涨至$220后在2027年1月22日前卖出：税负 ≈ ($220-$184.75) × 90股 × 27% ≈ $8,572。若延至2027年1月22日后卖出：税负 ≈ $8,572 × (15/27) ≈ $4,762，节税约 $3,810。<br><br>
-        <strong>内华达州优势：</strong> 0%州税使长期税率实际为15%，远低于加州等地的15%+13.3%=28.3%。
-      </div>
-    </div>
-    <div class="dual-card">
-      <div class="dual-head" style="color:var(--blue)">OPT身份特殊注意事项</div>
-      <div style="font-size:12px;color:var(--text-mid);line-height:1.8">
-        <strong>税务居民身份：</strong> 在OPT期间，按照IRS的实质居留测试（Substantial Presence Test），若累计在美已超过183天，通常已被视为税务居民外国人（Resident Alien for Tax），适用与公民相同的税务规则。<br><br>
-        <strong>FBAR申报：</strong> 若在海外金融账户（如香港汇丰）持有超过$10,000，需要在每年4月15日前提交FBAR（FinCEN Form 114）。汇丰平台的港股/基金需特别注意。<br><br>
-        <strong>PFIC规则：</strong> 通过汇丰香港购买的外国共同基金（如骏利亨德森等UCITS基金）可能被认定为PFIC（被动外国投资公司），税务处理极为复杂，强烈建议咨询CPA确认是否适用。
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════════
-     NEW SECTION 16 — 关键催化剂日历
-══════════════════════════════════════════════ -->
-<section class="section">
-  <div class="section-header">
-    <span class="section-num">18</span>
-    <span class="section-en">Catalyst Calendar &amp; Decision Framework</span>
-    <span class="section-cn">关键催化剂日历与决策框架 · 2026年Q1-Q2 关键节点完整追踪</span>
-  </div>
-
-  <div class="note-light amber">
-    本节汇总了影响组合内所有持仓及候选仓位的关键事件节点。每个事件配有"预期/乐观/悲观"三轨情景，以及对应的操作触发条件。这是你的"事件驱动操盘手册"。
-  </div>
-
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr>
-          <th>预计时间</th>
-          <th>事件类型</th>
-          <th>涉及标的</th>
-          <th>核心观察指标</th>
-          <th>乐观情景 → 操作</th>
-          <th>悲观情景 → 操作</th>
-          <th>重要性</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr style="background:var(--amber-bg)">
-          <td class="mono">2026-03-31</td>
-          <td>商业展望会议</td>
-          <td><span class="ticker">CEG</span></td>
-          <td>核电PPA合约数量、2027年电力需求预测、数据中心客户披露</td>
-          <td class="green">若披露新数据中心合同 → 立即建仓 $5,000–$8,000@$200–$220区间</td>
-          <td class="red">若无新合同披露 → 继续观望，延至Q2 Earnings</td>
-          <td style="text-align:center"><span class="signal neutral">高</span></td>
-        </tr>
-        <tr>
-          <td class="mono">2026-04-初</td>
-          <td>季度交付数据</td>
-          <td><span class="ticker">TSLA</span></td>
-          <td>Q1 2026交付量（共识预期约360k–380k台），能源业务收入</td>
-          <td class="green">≥380k台 → 持仓不动，考虑追加加仓5–10股</td>
-          <td class="red">≤340k台 → 重新评估仓位，触发减仓至15%以内的讨论</td>
-          <td style="text-align:center"><span class="signal strong-bear">关键</span></td>
-        </tr>
-        <tr style="background:var(--light)">
-          <td class="mono">2026-04-中下</td>
-          <td>Q1 2026财报</td>
-          <td><span class="ticker">GOOGL</span></td>
-          <td>广告收入YoY增速（预期+12%），AI搜索货币化率，Cloud增速</td>
-          <td class="green">广告 &gt;+15% + Cloud &gt;+30% → 组合回血主力，持仓</td>
-          <td class="red">广告增速不及预期 + 反垄断进展恶化 → 评估GOOGL仓位上限</td>
-          <td style="text-align:center"><span class="signal strong-bear">关键</span></td>
-        </tr>
-        <tr style="background:var(--light)">
-          <td class="mono">2026-04-中下</td>
-          <td>Q1 2026财报</td>
-          <td><span class="ticker">META</span> (候选)</td>
-          <td>广告ROAS数据、Llama 4开源发布进展、Reality Labs亏损情况</td>
-          <td class="green">ROAS改善 + Llama 4发布 → 触发建仓META，$5,000–$8,000</td>
-          <td class="red">Reality Labs亏损扩大 → 延迟建仓，等待下季度验证</td>
-          <td style="text-align:center"><span class="signal neutral">中高</span></td>
-        </tr>
-        <tr>
-          <td class="mono">2026-05-初</td>
-          <td>Q1 FY2027财报</td>
-          <td><span class="ticker">NVDA</span></td>
-          <td>Blackwell芯片出货量（H1目标vs实际），数据中心营收，Q2指引</td>
-          <td class="green">数据中心 &gt;$35B + Q2指引强劲 → 评估加仓至120–130股目标</td>
-          <td class="red">出货受阻 + 关税冲击指引 → 触发Covered Call锁定NVDA收益</td>
-          <td style="text-align:center"><span class="signal strong-bull">最关键</span></td>
-        </tr>
-        <tr style="background:var(--light)">
-          <td class="mono">2026-05-初</td>
-          <td>FOMC利率决议</td>
-          <td>宏观/全组合</td>
-          <td>联储是否维持利率、点阵图方向、通胀措辞变化</td>
-          <td class="green">暗示年内降息信号 → 成长股整体估值扩张，看涨</td>
-          <td class="red">通胀反复，推迟降息 → 短期压制，关注VIX变化</td>
-          <td style="text-align:center"><span class="signal neutral">中</span></td>
-        </tr>
-        <tr>
-          <td class="mono">2026-05-中旬</td>
-          <td>FSD v13发布验证</td>
-          <td><span class="ticker">TSLA</span></td>
-          <td>FSD v13商业化路线图，Robotaxi运营城市数量披露</td>
-          <td class="green">Robotaxi正式运营 + FSD监管批准 → TSLA期权价值激活，持仓</td>
-          <td class="red">FSD进展停滞 + Q2 Guidance下调 → 启动减仓TSLA至10%</td>
-          <td style="text-align:center"><span class="signal strong-bear">关键</span></td>
-        </tr>
-        <tr style="background:var(--light)">
-          <td class="mono">2026-Q2</td>
-          <td>反垄断案进展</td>
-          <td><span class="ticker">GOOGL</span></td>
-          <td>DOJ搜索垄断案裁决、广告业务拆分风险评估</td>
-          <td class="green">裁决有利或拆分方案温和 → 解除最大下行风险，GOOGL估值修复</td>
-          <td class="red">强制拆分广告业务 → 重大结构性负面，需重估GOOGL仓位上限</td>
-          <td style="text-align:center"><span class="signal neutral">高</span></td>
-        </tr>
-        <tr>
-          <td class="mono">2026-Q2持续</td>
-          <td>中美关税博弈</td>
-          <td><span class="ticker">NVDA</span> / <span class="ticker">TSLA</span></td>
-          <td>半导体出口许可证范围，中国反制措施，供应链调整</td>
-          <td class="green">关税豁免或缓和 → NVDA中国营收恢复，催化下一波上涨</td>
-          <td class="red">进一步限制A800/H20系列 → NVDA营收预期下调5%–15%</td>
-          <td style="text-align:center"><span class="signal neutral">高</span></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="note-light green">
-    <span class="nl">总结：3月31日之后的72小时是关键窗口</span>
-    <strong>3月31日CEG商业展望（今日起21天）→ 4月初TSLA交付数据（今日起约22天）→ 4月中旬GOOGL财报（今日起约35天）</strong>。这三个事件将在约两周内密集释放，是Q2方向判断的核心窗口。建议在3月31日前完成CEG和TSLA的仓位决策预案，避免在事件发布时情绪化操作。
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════════
-     NEW SECTION 17 — 行为金融自我审视
-══════════════════════════════════════════════ -->
-<section class="section">
+<!-- <section class="section">
   <div class="section-header">
     <span class="section-num">19</span>
     <span class="section-en">Behavioral Finance Self-Assessment</span>
     <span class="section-cn">行为金融学自我审视 · 偏见识别 / 历史操作决策质量评估</span>
   </div>
 
-  <div class="note-dark">
-    <span class="nl">Why Behavioral Finance Matters · 为何行为金融至关重要</span>
-    学术研究一致表明，个人投资者跑输基准的最大原因不是信息不足，而是<strong style="color:var(--gold-pale)">系统性认知偏差（Cognitive Biases）</strong>导致的错误决策——在错误的时间买入/卖出。识别自身偏差是主动管理中最被忽视但也最有价值的工作。以下基于你的实际操作记录进行客观评估。
-  </div>
+
 
   <div class="table-wrap">
     <table>
@@ -2272,63 +1750,9 @@ tbody td:first-child{text-align:left}
         </tr>
       </tbody>
     </table>
-  </div>
+  </div> -->
 
-  <!-- 操作决策质量评估 -->
-  <div class="sub-head gold" style="margin-top:20px">历史关键决策质量评分卡 · Decision Quality Scorecard</div>
-  <div class="table-wrap">
-    <table>
-      <thead><tr><th>决策事件</th><th>日期</th><th>当时决策</th><th>结果</th><th>决策质量</th><th>改进点</th></tr></thead>
-      <tbody>
-        <tr>
-          <td>建立AI集中持股组合</td>
-          <td class="mono">2026-01-22</td>
-          <td>集中押注GOOGL/NVDA/TSLA三只AI核心</td>
-          <td class="green">建仓总回报+38%，选标的正确</td>
-          <td><span class="signal strong-bull">优秀 ★★★★★</span></td>
-          <td>仓位分配上TSLA比例略偏高</td>
-        </tr>
-        <tr>
-          <td>2月13日摊薄加仓</td>
-          <td class="mono">2026-02-13</td>
-          <td>在GOOGL回调时大幅加仓40股@$305.88</td>
-          <td class="green">成功摊薄均价，接近阶段底部</td>
-          <td><span class="signal strong-bull">优秀 ★★★★★</span></td>
-          <td>GOOGL比例仍偏高，可分配部分给NVDA</td>
-        </tr>
-        <tr>
-          <td>战争冲击期坚守持仓</td>
-          <td class="mono">2026-02末</td>
-          <td>不恐慌，不割肉，坚守所有仓位</td>
-          <td class="green">避免了约$6,000的实际亏损实现</td>
-          <td><span class="signal strong-bull">优秀 ★★★★★</span></td>
-          <td>可考虑在极端恐慌时少量加仓（10%现金）提升后续收益</td>
-        </tr>
-        <tr>
-          <td>TSLA持续高仓位持有</td>
-          <td class="mono">持续</td>
-          <td>在TSLA浮亏-7%情况下维持22%仓位不减</td>
-          <td class="amber">等待Q1交付数据判断</td>
-          <td><span class="signal neutral">待验证 ★★★</span></td>
-          <td>若交付数据未达预期，该决策回头看将被判为"处置效应"</td>
-        </tr>
-        <tr>
-          <td>未建立对冲头寸</td>
-          <td class="mono">建仓至今</td>
-          <td>持有高Beta组合但无对冲（无Put/无TLT）</td>
-          <td class="red">战争期间承受了超预期回撤</td>
-          <td><span class="signal bear">有改进空间 ★★★</span></td>
-          <td>建议在高不确定性期间（地缘政治高风险）配置5%TLT或Protective Put</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="note-light green">
-    <span class="nl">整体行为金融评估 · Overall Assessment</span>
-    <strong>你的整体决策质量高于散户平均水平。</strong> 关键优势在于：（1）有明确的持仓逻辑（AI基础设施长期叙事），（2）在极端波动中能够克制情绪（战争坚守是典型反处置效应的正确操作），（3）具备逆势加仓的心理能力（2月13日低位补仓）。主要改进方向：降低持仓集中度（GOOGL）、建立系统性止损/止盈规则、在极端事件前配置尾部对冲。这三点如果做到，你的决策质量将接近专业基金经理水平。
-  </div>
-</section>
+ 
 
 <!-- ══════════════════════════════════════════════
      OUTLOOK (ORIGINAL — 展望与后续)
@@ -2347,7 +1771,7 @@ tbody td:first-child{text-align:left}
   </ul>
   <span class="conv-label">Portfolio Conviction · 总体信念（深度分析后版）</span>
   <div class="conv-text">
-    组合从2025年Q1的谷底（−17.3%，$56k）完整走出，当前建仓总回报达+38%（$93.8k），充分验证了在正确方向上逆势加仓的核心逻辑正确性。深度分析（§08–§19）进一步揭示了：
+    本组合自2026年1月22日建仓，47天内经历了一次地缘政治极端冲击（-12.4% MDD）并成功坚守，完成了一次典型的抗压测试。深度分析（§08–§19）进一步揭示了：
     <br><br>
     <strong>技术面：</strong> NVDA是组合内唯一技术结构完整的多头标的；GOOGL需收复MA50（$315）才能确认反弹；TSLA技术面最弱，需配合基本面催化剂才有意义。<br>
     <strong>风险量化：</strong> 组合日VaR（95%）约$2,432，现金缓冲（$31,897）可覆盖13天正常压力，但无法覆盖2022年级别熊市。适度对冲是当前阶段的理性选择。<br>
@@ -2359,10 +1783,7 @@ tbody td:first-child{text-align:left}
 
 </div><!-- /container -->
 
-<footer class="report-footer">
-  <span>仅供讨论 · 不构成投资建议 · For Discussion Purposes Only · 技术指标为近似估算 · 期权策略仅供参考</span>
-  <span>组合&ETF价格截至2026-03-10 · VaR/Beta基于历史推算 · 税务分析建议咨询CPA</span>
-</footer>
+
 
 </body>
 </html>
