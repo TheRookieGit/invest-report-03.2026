@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio Paths C — 保留 NVDA · 卖出 TSLA/GOOGL</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=JetBrains+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:      #08090d;
+  --surface: #0f1118;
+  --card:    #151821;
+  --border:  #1f2535;
+  --text:    #dde3f0;
+  --muted:   #5d6880;
+  --base:    #7a849e;
+
+  --p7:  #34d399;   /* emerald  — 只卖TSLA */
+  --p8:  #e879f9;   /* fuchsia  — 只卖GOOGL */
+  --p9:  #fbbf24;   /* amber    — 双向减重  */
+
+  --red:    #f87171;
+  --green:  #34d399;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  padding: 52px 36px 100px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* ── HEADER ─────────────────────────────────── */
+.page-header {
+  margin-bottom: 60px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 32px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 32px;
+  align-items: end;
+}
+.header-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.header-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+.header-title em { font-style: italic; color: var(--p7); }
+.header-sub {
+  margin-top: 10px;
+  font-size: 0.83rem;
+  color: var(--muted);
+  display: flex;
+  gap: 20px;
+}
+.header-sub span { display: flex; align-items: center; gap: 6px; }
+.header-sub span::before { content:'·'; color: var(--border); }
+.header-sub span:first-child::before { display:none; }
+.header-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.76rem;
+  color: var(--muted);
+  line-height: 2;
+  text-align: right;
+}
+.header-meta b { color: var(--text); font-weight: 500; }
+
+/* ── CONSTRAINT BANNER ──────────────────────── */
+.constraint-banner {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 52px;
+}
+.cb-cell {
+  background: var(--surface);
+  padding: 18px 22px;
+}
+.cb-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.cb-ticker { font-size: 1.1rem; font-weight: 600; margin-bottom: 4px; }
+.cb-detail { font-size: 0.78rem; color: var(--muted); }
+.cb-cost {
+  margin-top: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  padding: 3px 8px;
+  border-radius: 4px;
+  display: inline-block;
+}
+.cb-cost.hold { background: rgba(52,211,153,0.1); color: var(--green); }
+.cb-cost.loss { background: rgba(248,113,113,0.1); color: var(--red); }
+
+/* ── SECTION LABEL ──────────────────────────── */
+.sl {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 22px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.sl::after { content:''; flex:1; height:1px; background:var(--border); }
+
+/* ── EFFICIENCY BAR ─────────────────────────── */
+.eff-strip {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  padding: 16px 24px;
+  margin-bottom: 48px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.eff-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.eff-items { display: flex; gap: 28px; flex: 1; }
+.eff-item { text-align: center; }
+.eff-name { font-size: 0.72rem; color: var(--muted); margin-bottom: 4px; font-family: 'JetBrains Mono', monospace; }
+.eff-val { font-family: 'JetBrains Mono', monospace; font-size: 1.05rem; font-weight: 500; }
+.eff-sub { font-size: 0.68rem; color: var(--muted); margin-top: 2px; }
+.c7 { color: var(--p7); }
+.c8 { color: var(--p8); }
+.c9 { color: var(--p9); }
+.eff-divider { width: 1px; background: var(--border); align-self: stretch; }
+.best-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  padding: 2px 6px;
+  border-radius: 3px;
+  background: rgba(52,211,153,0.12);
+  color: var(--green);
+  letter-spacing: 0.04em;
+}
+
+/* ── PATH CARDS ─────────────────────────────── */
+.paths-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 22px;
+  margin-bottom: 56px;
+}
+.path-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: rise 0.55s ease both;
+}
+.path-card.p7 { border-top: 3px solid var(--p7); animation-delay:.04s; }
+.path-card.p8 { border-top: 3px solid var(--p8); animation-delay:.14s; }
+.path-card.p9 { border-top: 3px solid var(--p9); animation-delay:.24s; }
+@keyframes rise {
+  from { opacity:0; transform:translateY(16px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+.ph {
+  padding: 22px 24px 16px;
+  border-bottom: 1px solid var(--border);
+}
+.ph-num { font-family:'JetBrains Mono',monospace; font-size:0.67rem; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:6px; }
+.p7 .ph-num { color: var(--p7); }
+.p8 .ph-num { color: var(--p8); }
+.p9 .ph-num { color: var(--p9); }
+.ph-name { font-family:'Playfair Display',serif; font-size:1.3rem; line-height:1.2; }
+.ph-desc { margin-top:8px; font-size:0.79rem; color:var(--muted); line-height:1.55; }
+
+.pb { padding:20px 24px; flex:1; display:flex; flex-direction:column; gap:18px; }
+
+/* sell summary */
+.sell-summary {
+  border-radius: 7px;
+  padding: 12px 14px;
+  border: 1px solid;
+}
+.p7 .sell-summary { background:rgba(52,211,153,0.05); border-color:rgba(52,211,153,0.2); }
+.p8 .sell-summary { background:rgba(232,121,249,0.05); border-color:rgba(232,121,249,0.2); }
+.p9 .sell-summary { background:rgba(251,191,36,0.05); border-color:rgba(251,191,36,0.2); }
+.ss-title { font-family:'JetBrains Mono',monospace; font-size:0.65rem; text-transform:uppercase; letter-spacing:0.09em; color:var(--muted); margin-bottom:8px; }
+.ss-row { display:flex; justify-content:space-between; align-items:center; padding:4px 0; border-bottom:1px solid var(--border); font-size:0.8rem; }
+.ss-row:last-child { border-bottom:none; }
+.ss-ticker { font-family:'JetBrains Mono',monospace; color:var(--text); }
+.ss-detail { font-size:0.72rem; color:var(--muted); }
+.ss-pnl { font-family:'JetBrains Mono',monospace; }
+.ss-pnl.neg { color: var(--red); }
+.ss-net { display:flex; justify-content:space-between; padding-top:8px; margin-top:4px; border-top:1px dashed var(--border); font-family:'JetBrains Mono',monospace; font-size:0.79rem; }
+.ss-net .sn-l { color:var(--muted); }
+.ss-net .sn-v { color: var(--red); }
+
+/* kpi row */
+.kpi-row { display:grid; grid-template-columns:1fr 1fr 1fr; gap:9px; }
+.kpi { background:var(--surface); border:1px solid var(--border); border-radius:7px; padding:9px 11px; text-align:center; }
+.kpi-l { font-size:0.61rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.06em; }
+.kpi-v { font-family:'JetBrains Mono',monospace; font-size:1.0rem; font-weight:500; margin-top:3px; }
+.p7 .kpi-v { color: var(--p7); }
+.p8 .kpi-v { color: var(--p8); }
+.p9 .kpi-v { color: var(--p9); }
+
+/* alloc bars */
+.at { font-size:0.68rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--muted); margin-bottom:9px; font-family:'JetBrains Mono',monospace; }
+.ar { display:flex; align-items:center; gap:8px; margin-bottom:5px; }
+.ar-t { font-family:'JetBrains Mono',monospace; font-size:0.73rem; width:46px; flex-shrink:0; color:var(--muted); }
+.ar-bw { flex:1; background:var(--border); border-radius:3px; height:4px; }
+.ar-bf { height:4px; border-radius:3px; }
+.p7 .ar-bf { background: var(--p7); }
+.p8 .ar-bf { background: var(--p8); }
+.p9 .ar-bf { background: var(--p9); }
+.ar-pct { font-family:'JetBrains Mono',monospace; font-size:0.7rem; width:36px; text-align:right; color:var(--text); flex-shrink:0; }
+.ar-cash { opacity:0.35; }
+.ar-nvda { }
+.nvda-pin { width:4px; height:4px; border-radius:50%; background:var(--p7); flex-shrink:0; margin-left:-6px; }
+
+/* nvda lock badge */
+.nvda-lock {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.67rem;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: rgba(52,211,153,0.1);
+  color: var(--green);
+  border: 1px solid rgba(52,211,153,0.2);
+  letter-spacing: 0.04em;
+}
+
+/* deploy */
+.dp { background:var(--surface); border:1px dashed var(--border); border-radius:7px; padding:11px 14px; }
+.dp-t { font-size:0.65rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:7px; font-family:'JetBrains Mono',monospace; }
+.dp-r { display:flex; justify-content:space-between; font-size:0.78rem; padding:2px 0; border-bottom:1px solid rgba(31,37,53,0.8); }
+.dp-r:last-child { border-bottom:none; }
+.dp-tk { font-family:'JetBrains Mono',monospace; color:var(--text); }
+.dp-am { font-family:'JetBrains Mono',monospace; color:var(--muted); }
+
+/* badges */
+.badges { display:flex; gap:7px; flex-wrap:wrap; }
+.badge { font-family:'JetBrains Mono',monospace; font-size:0.7rem; padding:3px 8px; border-radius:4px; }
+.badge.pos { background:rgba(52,211,153,0.1); color:var(--green); }
+.badge.neg { background:rgba(248,113,113,0.1); color:var(--red); }
+.badge.neu { background:rgba(107,117,144,0.1); color:var(--muted); }
+
+/* ── VaR TABLE ──────────────────────────────── */
+.var-sec { margin-bottom: 56px; }
+.var-tbl { width:100%; border-collapse:collapse; font-size:0.83rem; }
+.var-tbl th {
+  font-family:'JetBrains Mono',monospace; font-size:0.65rem;
+  letter-spacing:0.07em; text-transform:uppercase; color:var(--muted);
+  padding:10px 15px; text-align:left; border-bottom:1px solid var(--border);
+}
+.var-tbl th.r { text-align:right; }
+.var-tbl td { padding:11px 15px; border-bottom:1px solid rgba(31,37,53,0.7); vertical-align:middle; }
+.var-tbl tr:last-child td { border-bottom:none; }
+.var-tbl tr:hover td { background:rgba(255,255,255,0.015); }
+.rl { display:flex; align-items:center; gap:9px; }
+.dot { width:9px; height:9px; border-radius:50%; flex-shrink:0; }
+.dot.base { background:var(--base); }
+.dot.d7 { background:var(--p7); }
+.dot.d8 { background:var(--p8); }
+.dot.d9 { background:var(--p9); }
+.mono { font-family:'JetBrains Mono',monospace; }
+.r { text-align:right; }
+.vbc { width:140px; }
+.vbg { background:var(--border); border-radius:3px; height:5px; }
+.vbf { height:5px; border-radius:3px; }
+.fb { background:var(--base); }
+.f7 { background:var(--p7); }
+.f8 { background:var(--p8); }
+.f9 { background:var(--p9); }
+.pill { font-family:'JetBrains Mono',monospace; font-size:0.76rem; padding:2px 7px; border-radius:999px; }
+.pill.pos { background:rgba(52,211,153,0.1); color:var(--green); }
+.pill.neg { background:rgba(248,113,113,0.1); color:var(--red); }
+.pill.zer { background:rgba(107,117,144,0.1); color:var(--muted); }
+
+/* ── EFFICIENCY ANALYSIS ─────────────────────── */
+.eff-analysis {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 18px;
+  margin-bottom: 56px;
+}
+.ea-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px 20px;
+}
+.ea-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.ea-ticker { font-family:'JetBrains Mono',monospace; font-size:0.9rem; font-weight:500; }
+.ea-row { display:flex; justify-content:space-between; font-size:0.78rem; padding:4px 0; border-bottom:1px solid rgba(31,37,53,0.6); }
+.ea-row:last-child { border-bottom:none; }
+.ea-l { color:var(--muted); }
+.ea-v { font-family:'JetBrains Mono',monospace; font-size:0.8rem; }
+.ea-highlight {
+  margin-top: 12px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 0.73rem;
+  text-align: center;
+  font-family: 'JetBrains Mono', monospace;
+  line-height: 1.5;
+}
+.ea-highlight.good { background:rgba(52,211,153,0.08); color:var(--green); border:1px solid rgba(52,211,153,0.15); }
+.ea-highlight.med  { background:rgba(251,191,36,0.08); color:var(--p9); border:1px solid rgba(251,191,36,0.15); }
+.ea-highlight.bad  { background:rgba(248,113,113,0.08); color:var(--red); border:1px solid rgba(248,113,113,0.15); }
+
+/* ── SUMMARY TABLE ──────────────────────────── */
+.sum-sec { margin-bottom: 56px; }
+.sum-grid {
+  display: grid;
+  grid-template-columns: 200px repeat(4,1fr);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.sh {
+  background: var(--surface);
+  padding: 12px 18px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.67rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  border-bottom: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+}
+.sh.h7 { color:var(--p7); background:var(--card); }
+.sh.h8 { color:var(--p8); background:var(--card); }
+.sh.h9 { color:var(--p9); background:var(--card); }
+.sc {
+  padding: 10px 18px;
+  font-size: 0.82rem;
+  border-bottom: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+}
+.sc:last-child { border-right:none; }
+.sl2 { color:var(--muted); font-size:0.79rem; }
+.sv { font-family:'JetBrains Mono',monospace; font-size:0.83rem; }
+.best-cell { background: rgba(52,211,153,0.04); }
+.stars { color:var(--p9); font-size:0.84rem; letter-spacing:-1px; }
+
+/* ── SCENARIO ANALYSIS ──────────────────────── */
+.scenario-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 18px;
+  margin-bottom: 56px;
+}
+.sc-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px 22px;
+}
+.sc-card h3 { font-family:'Playfair Display',serif; font-size:1.0rem; margin-bottom:12px; }
+.sc-card.c7 h3 { color:var(--p7); }
+.sc-card.c8 h3 { color:var(--p8); }
+.sc-card.c9 h3 { color:var(--p9); }
+.sc-card ul { list-style:none; font-size:0.79rem; color:var(--muted); line-height:1.9; }
+.sc-card ul li::before { content:'→ '; color:var(--border); }
+.sc-card ul li strong { color:var(--text); font-weight:500; }
+.trigger {
+  margin-top: 12px;
+  padding: 9px 11px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.73rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.trigger em { color:var(--red); font-style:normal; font-family:'JetBrains Mono',monospace; }
+
+/* footer */
+.footer {
+  border-top: 1px solid var(--border);
+  padding-top: 22px;
+  margin-top: 64px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  color: var(--muted);
+  font-family: 'JetBrains Mono', monospace;
+}
+</style>
+</head>
+<body>
+
+<!-- ── HEADER ──────────────────────────────────────────── -->
+<div class="page-header">
+  <div>
+    <div class="header-eyebrow">Portfolio Paths C · Series 3 of 3</div>
+    <div class="header-title">保留 NVDA<br><em>Selling TSLA / GOOGL</em></div>
+    <div class="header-sub">
+      <span>NVDA 全程锁定不卖</span>
+      <span>仅卖 TSLA 和/或 GOOGL</span>
+      <span>已实现亏损最小化</span>
+      <span>5年持仓视野</span>
+    </div>
+  </div>
+  <div class="header-meta">
+    <b>基准日期</b> 2026-03-11<br>
+    <b>NVDA 状态</b> 保留全部 90 股<br>
+    <b>可卖出仓位</b> TSLA（−$30.50/股）&nbsp; GOOGL（−$17.32/股）<br>
+    <b>增量现金</b> $31,665
+  </div>
+</div>
+
+<!-- ── CONSTRAINT BANNER ────────────────────────────────── -->
+<div class="sl">§ 00 &nbsp; 三仓位卖出成本</div>
+<div class="constraint-banner">
+  <div class="cb-cell">
+    <div class="cb-label">NVDA — 锁定保留</div>
+    <div class="cb-ticker">NVDA ×90</div>
+    <div class="cb-detail">均价 $184.21 · 现价 $185.77 · 市值 $16,719</div>
+    <div class="cb-cost hold">⬤ 保留，不卖 · 浮盈 +$141</div>
+  </div>
+  <div class="cb-cell">
+    <div class="cb-label">TSLA — 可减仓</div>
+    <div class="cb-ticker">TSLA ×40</div>
+    <div class="cb-detail">均价 $432.95 · 现价 $402.45 · 市值 $16,098</div>
+    <div class="cb-cost loss">每卖 1 股 → −$30.50 实现亏损</div>
+  </div>
+  <div class="cb-cell">
+    <div class="cb-label">GOOGL — 可减重</div>
+    <div class="cb-ticker">GOOGL ×105</div>
+    <div class="cb-detail">均价 $325.78 · 现价 $308.46 · 市值 $32,388</div>
+    <div class="cb-cost loss">每卖 1 股 → −$17.32 实现亏损</div>
+  </div>
+</div>
+
+<!-- ── EFFICIENCY PREVIEW ───────────────────────────────── -->
+<div class="sl">§ 01 &nbsp; 亏损效率对比——每块钱换来多少集中度改善</div>
+<div class="eff-strip">
+  <div class="eff-label">$ 每 HHI 百分点</div>
+  <div class="eff-items">
+    <div class="eff-item">
+      <div class="eff-name c7">Path 7 · 只卖TSLA</div>
+      <div class="eff-val c7">$57</div>
+      <div class="eff-sub">亏损$458 / HHI改善0.080</div>
+    </div>
+    <div class="eff-divider"></div>
+    <div class="eff-item">
+      <div class="eff-name c8">Path 8 · 只卖GOOGL</div>
+      <div class="eff-val c8">$48 <span class="best-badge">最优</span></div>
+      <div class="eff-sub">亏损$606 / HHI改善0.125</div>
+    </div>
+    <div class="eff-divider"></div>
+    <div class="eff-item">
+      <div class="eff-name c9">Path 9 · 双向减重</div>
+      <div class="eff-val c9">$83</div>
+      <div class="eff-sub">亏损$956 / HHI改善0.116</div>
+    </div>
+    <div class="eff-divider"></div>
+    <div class="eff-item">
+      <div class="eff-name" style="color:var(--muted)">Baseline HHI</div>
+      <div class="eff-val" style="color:var(--base)">0.276</div>
+      <div class="eff-sub">集中度基准</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── PATH CARDS ───────────────────────────────────────── -->
+<div class="sl">§ 02 &nbsp; 三路径配置方案</div>
+<div class="paths-grid">
+
+  <!-- PATH 7 -->
+  <div class="path-card p7">
+    <div class="ph">
+      <div class="ph-num">Path 07</div>
+      <div class="ph-name">只卖 TSLA 15股<br>最低绝对亏损</div>
+      <div class="ph-desc">卖出 15 股 TSLA，保留 25 股维持上行参与感。TSLA 权重从 16.6% 降至 10.4%，用 $37k 补充 QQQM / META / CEG。</div>
+    </div>
+    <div class="pb">
+
+      <div style="display:flex;align-items:center;gap:8px;">
+        <span class="nvda-lock">🔒 NVDA ×90 保留</span>
+      </div>
+
+      <div class="sell-summary">
+        <div class="ss-title">卖出操作</div>
+        <div class="ss-row">
+          <span class="ss-ticker">TSLA ×15</span>
+          <span class="ss-detail">@$402.45，保留25股</span>
+          <span class="ss-pnl neg">−$458</span>
+        </div>
+        <div class="ss-net">
+          <span class="sn-l">净实现亏损</span>
+          <span class="sn-v">−$457.50</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="kpi-row">
+          <div class="kpi"><div class="kpi-l">Beta</div><div class="kpi-v">1.33</div></div>
+          <div class="kpi"><div class="kpi-l">年化波动</div><div class="kpi-v">23.3%</div></div>
+          <div class="kpi"><div class="kpi-v">0.196</div><div class="kpi-l">HHI</div></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="at">部署后持仓结构</div>
+        <div class="ar"><div class="ar-t">GOOGL</div><div class="ar-bw"><div class="ar-bf" style="width:100%"></div></div><div class="ar-pct">33.4%</div></div>
+        <div class="ar"><div class="ar-t">NVDA</div><div class="ar-bw"><div class="ar-bf" style="width:52%"></div></div><div class="ar-pct">17.3%</div></div>
+        <div class="ar"><div class="ar-t">QQQM</div><div class="ar-bw"><div class="ar-bf" style="width:46%"></div></div><div class="ar-pct">15.5%</div></div>
+        <div class="ar"><div class="ar-t">TSLA</div><div class="ar-bw"><div class="ar-bf" style="width:31%"></div></div><div class="ar-pct">10.4%</div></div>
+        <div class="ar"><div class="ar-t">META</div><div class="ar-bw"><div class="ar-bf" style="width:31%"></div></div><div class="ar-pct">10.3%</div></div>
+        <div class="ar"><div class="ar-t">CEG</div><div class="ar-bw"><div class="ar-bf" style="width:22%"></div></div><div class="ar-pct">7.2%</div></div>
+        <div class="ar ar-cash"><div class="ar-t">Cash</div><div class="ar-bw"><div class="ar-bf" style="width:18%"></div></div><div class="ar-pct">5.9%</div></div>
+      </div>
+
+      <div class="dp">
+        <div class="dp-t">$37,702 部署（TSLA收益+现金）</div>
+        <div class="dp-r"><span class="dp-tk">QQQM</span><span class="dp-am">$15,000</span></div>
+        <div class="dp-r"><span class="dp-tk">META</span><span class="dp-am">$10,000</span></div>
+        <div class="dp-r"><span class="dp-tk">CEG</span><span class="dp-am">$7,000</span></div>
+        <div class="dp-r"><span class="dp-tk">Cash Reserved</span><span class="dp-am">$5,702</span></div>
+      </div>
+
+      <div class="badges">
+        <span class="badge neg">−$458 已实现亏损</span>
+        <span class="badge pos">最多剩余现金 $5,702</span>
+        <span class="badge pos">TSLA −6.2pp</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PATH 8 -->
+  <div class="path-card p8">
+    <div class="ph">
+      <div class="ph-num">Path 08</div>
+      <div class="ph-name">只卖 GOOGL 35股<br>HHI 效率最优</div>
+      <div class="ph-desc">GOOGL 从 33.4% 降至 22.3%，是解决集中度问题最高效的路径（每 $48 换一个 HHI 百分点）。TSLA 仓位维持不变。</div>
+    </div>
+    <div class="pb">
+
+      <div style="display:flex;align-items:center;gap:8px;">
+        <span class="nvda-lock">🔒 NVDA ×90 保留</span>
+      </div>
+
+      <div class="sell-summary">
+        <div class="ss-title">卖出操作</div>
+        <div class="ss-row">
+          <span class="ss-ticker">GOOGL ×35</span>
+          <span class="ss-detail">@$308.46，保留70股</span>
+          <span class="ss-pnl neg">−$606</span>
+        </div>
+        <div class="ss-net">
+          <span class="sn-l">净实现亏损</span>
+          <span class="sn-v">−$606.20</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="kpi-row">
+          <div class="kpi"><div class="kpi-l">Beta</div><div class="kpi-v">1.47</div></div>
+          <div class="kpi"><div class="kpi-l">年化波动</div><div class="kpi-v">25.6%</div></div>
+          <div class="kpi"><div class="kpi-v" style="color:var(--green)">0.151</div><div class="kpi-l">HHI 最低</div></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="at">部署后持仓结构</div>
+        <div class="ar"><div class="ar-t">GOOGL</div><div class="ar-bw"><div class="ar-bf" style="width:67%"></div></div><div class="ar-pct">22.3%</div></div>
+        <div class="ar"><div class="ar-t">TSLA</div><div class="ar-bw"><div class="ar-bf" style="width:50%"></div></div><div class="ar-pct">16.6%</div></div>
+        <div class="ar"><div class="ar-t">NVDA</div><div class="ar-bw"><div class="ar-bf" style="width:52%"></div></div><div class="ar-pct">17.3%</div></div>
+        <div class="ar"><div class="ar-t">META</div><div class="ar-bw"><div class="ar-bf" style="width:40%"></div></div><div class="ar-pct">13.4%</div></div>
+        <div class="ar"><div class="ar-t">QQQM</div><div class="ar-bw"><div class="ar-bf" style="width:34%"></div></div><div class="ar-pct">11.4%</div></div>
+        <div class="ar"><div class="ar-t">SMH</div><div class="ar-bw"><div class="ar-bf" style="width:25%"></div></div><div class="ar-pct">8.3%</div></div>
+        <div class="ar"><div class="ar-t">CEG</div><div class="ar-bw"><div class="ar-bf" style="width:19%"></div></div><div class="ar-pct">6.2%</div></div>
+        <div class="ar"><div class="ar-t">XLU</div><div class="ar-bw"><div class="ar-bf" style="width:14%"></div></div><div class="ar-pct">4.6%</div></div>
+        <div class="ar ar-cash"><div class="ar-t">Cash</div><div class="ar-bw"><div class="ar-bf" style="width:1%"></div></div><div class="ar-pct">0%</div></div>
+      </div>
+
+      <div class="dp">
+        <div class="dp-t">$42,461 部署（GOOGL收益+现金）</div>
+        <div class="dp-r"><span class="dp-tk">META</span><span class="dp-am">$13,000</span></div>
+        <div class="dp-r"><span class="dp-tk">QQQM</span><span class="dp-am">$11,000</span></div>
+        <div class="dp-r"><span class="dp-tk">SMH</span><span class="dp-am">$8,000</span></div>
+        <div class="dp-r"><span class="dp-tk">CEG</span><span class="dp-am">$6,000</span></div>
+        <div class="dp-r"><span class="dp-tk">XLU</span><span class="dp-am">$4,461</span></div>
+        <div class="dp-r"><span class="dp-tk">Cash Reserved</span><span class="dp-am">$0</span></div>
+      </div>
+
+      <div class="badges">
+        <span class="badge neg">−$606 已实现亏损</span>
+        <span class="badge pos">HHI 最低 0.151</span>
+        <span class="badge neg">Beta 最高 1.47</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PATH 9 -->
+  <div class="path-card p9">
+    <div class="ph">
+      <div class="ph-num">Path 09</div>
+      <div class="ph-name">TSLA 20股<br>+GOOGL 20股 双向</div>
+      <div class="ph-desc">同时压缩两个问题仓位：TSLA 从 16.6% 降至 8.3%，GOOGL 从 33.4% 降至 27.1%。亏损最高但结构最均衡，Beta 1.36 处于中间地带。</div>
+    </div>
+    <div class="pb">
+
+      <div style="display:flex;align-items:center;gap:8px;">
+        <span class="nvda-lock">🔒 NVDA ×90 保留</span>
+      </div>
+
+      <div class="sell-summary">
+        <div class="ss-title">卖出操作</div>
+        <div class="ss-row">
+          <span class="ss-ticker">TSLA ×20</span>
+          <span class="ss-detail">@$402.45，保留20股</span>
+          <span class="ss-pnl neg">−$610</span>
+        </div>
+        <div class="ss-row">
+          <span class="ss-ticker">GOOGL ×20</span>
+          <span class="ss-detail">@$308.46，保留85股</span>
+          <span class="ss-pnl neg">−$346</span>
+        </div>
+        <div class="ss-net">
+          <span class="sn-l">净实现亏损</span>
+          <span class="sn-v">−$956.40</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="kpi-row">
+          <div class="kpi"><div class="kpi-l">Beta</div><div class="kpi-v">1.36</div></div>
+          <div class="kpi"><div class="kpi-l">年化波动</div><div class="kpi-v">23.7%</div></div>
+          <div class="kpi"><div class="kpi-v">0.161</div><div class="kpi-l">HHI</div></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="at">部署后持仓结构</div>
+        <div class="ar"><div class="ar-t">GOOGL</div><div class="ar-bw"><div class="ar-bf" style="width:81%"></div></div><div class="ar-pct">27.1%</div></div>
+        <div class="ar"><div class="ar-t">NVDA</div><div class="ar-bw"><div class="ar-bf" style="width:52%"></div></div><div class="ar-pct">17.3%</div></div>
+        <div class="ar"><div class="ar-t">QQQM</div><div class="ar-bw"><div class="ar-bf" style="width:43%"></div></div><div class="ar-pct">14.5%</div></div>
+        <div class="ar"><div class="ar-t">META</div><div class="ar-bw"><div class="ar-bf" style="width:37%"></div></div><div class="ar-pct">12.4%</div></div>
+        <div class="ar"><div class="ar-t">TSLA</div><div class="ar-bw"><div class="ar-bf" style="width:25%"></div></div><div class="ar-pct">8.3%</div></div>
+        <div class="ar"><div class="ar-t">SMH</div><div class="ar-bw"><div class="ar-bf" style="width:25%"></div></div><div class="ar-pct">8.3%</div></div>
+        <div class="ar"><div class="ar-t">CEG</div><div class="ar-bw"><div class="ar-bf" style="width:19%"></div></div><div class="ar-pct">6.2%</div></div>
+        <div class="ar"><div class="ar-t">XLU</div><div class="ar-bw"><div class="ar-bf" style="width:18%"></div></div><div class="ar-pct">6.1%</div></div>
+        <div class="ar ar-cash"><div class="ar-t">Cash</div><div class="ar-bw"><div class="ar-bf" style="width:1%"></div></div><div class="ar-pct">0%</div></div>
+      </div>
+
+      <div class="dp">
+        <div class="dp-t">$45,883 部署</div>
+        <div class="dp-r"><span class="dp-tk">QQQM</span><span class="dp-am">$14,000</span></div>
+        <div class="dp-r"><span class="dp-tk">META</span><span class="dp-am">$12,000</span></div>
+        <div class="dp-r"><span class="dp-tk">SMH</span><span class="dp-am">$8,000</span></div>
+        <div class="dp-r"><span class="dp-tk">CEG</span><span class="dp-am">$6,000</span></div>
+        <div class="dp-r"><span class="dp-tk">XLU</span><span class="dp-am">$5,883</span></div>
+        <div class="dp-r"><span class="dp-tk">Cash Reserved</span><span class="dp-am">$0</span></div>
+      </div>
+
+      <div class="badges">
+        <span class="badge neg">−$956 亏损最高</span>
+        <span class="badge pos">TSLA −8.3pp</span>
+        <span class="badge pos">GOOGL −6.3pp</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ── VaR TABLE ─────────────────────────────────────────── -->
+<div class="var-sec">
+  <div class="sl">§ 03 &nbsp; Value at Risk 对比</div>
+  <table class="var-tbl">
+    <thead>
+      <tr>
+        <th>方案</th>
+        <th class="r">已实现亏损</th>
+        <th class="r">Beta</th>
+        <th class="r">年化波动</th>
+        <th class="r">VaR 95% 1日</th>
+        <th class="r">VaR 99% 1日</th>
+        <th class="r">VaR 95% 10日</th>
+        <th>风险可视化</th>
+        <th class="r">最大回撤（2022）</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><div class="rl"><div class="dot base"></div><span style="color:var(--base)">Baseline</span></div></td>
+        <td class="r"><span class="pill zer">$0</span></td>
+        <td class="r mono">1.11</td>
+        <td class="r mono">20.84%</td>
+        <td class="r mono">$2,092</td>
+        <td class="r mono">$2,957</td>
+        <td class="r mono">$6,614</td>
+        <td class="vbc"><div class="vbg"><div class="vbf fb" style="width:55%"></div></div></td>
+        <td class="r mono" style="color:var(--red)">−24.8%</td>
+      </tr>
+      <tr>
+        <td><div class="rl"><div class="dot d7"></div><span style="color:var(--p7)">Path 7</span> <span style="font-size:0.71rem;color:var(--muted)">只卖TSLA 15股</span></div></td>
+        <td class="r"><span class="pill neg">−$458</span></td>
+        <td class="r mono">1.33</td>
+        <td class="r mono">23.3%</td>
+        <td class="r mono" style="color:var(--p7)">$2,343</td>
+        <td class="r mono">$3,313</td>
+        <td class="r mono">$7,410</td>
+        <td class="vbc"><div class="vbg"><div class="vbf f7" style="width:62%"></div></div></td>
+        <td class="r mono" style="color:var(--red)">−41.2%</td>
+      </tr>
+      <tr>
+        <td><div class="rl"><div class="dot d8"></div><span style="color:var(--p8)">Path 8</span> <span style="font-size:0.71rem;color:var(--muted)">只卖GOOGL 35股</span></div></td>
+        <td class="r"><span class="pill neg">−$606</span></td>
+        <td class="r mono" style="color:var(--red)">1.47</td>
+        <td class="r mono">25.6%</td>
+        <td class="r mono" style="color:var(--p8)">$2,565</td>
+        <td class="r mono">$3,627</td>
+        <td class="r mono">$8,113</td>
+        <td class="vbc"><div class="vbg"><div class="vbf f8" style="width:68%"></div></div></td>
+        <td class="r mono" style="color:var(--red)">−48.5%</td>
+      </tr>
+      <tr>
+        <td><div class="rl"><div class="dot d9"></div><span style="color:var(--p9)">Path 9</span> <span style="font-size:0.71rem;color:var(--muted)">TSLA+GOOGL 双向</span></div></td>
+        <td class="r"><span class="pill neg">−$956</span></td>
+        <td class="r mono">1.36</td>
+        <td class="r mono">23.7%</td>
+        <td class="r mono" style="color:var(--p9)">$2,377</td>
+        <td class="r mono">$3,361</td>
+        <td class="r mono">$7,518</td>
+        <td class="vbc"><div class="vbg"><div class="vbf f9" style="width:63%"></div></div></td>
+        <td class="r mono" style="color:var(--red)">−44.8%</td>
+      </tr>
+    </tbody>
+  </table>
+  <div style="margin-top:12px;font-size:0.72rem;color:var(--muted);font-family:'JetBrains Mono',monospace;line-height:1.75">
+    ⚠ Path 8 的 Beta 最高（1.47），原因是 GOOGL（β=1.18）被卖出后，TSLA（β=2.34）的相对权重上升，整体组合的高Beta资产占比反而增加。<br>
+    ⚠ 保留 NVDA（β=1.92）是本系列三条路径 Beta 普遍偏高的根本原因。与 B 系列相比，C 系列在降风险效果上天花板更低。
+  </div>
+</div>
+
+<!-- ── EFFICIENCY ANALYSIS ────────────────────────────────── -->
+<div class="sl">§ 04 &nbsp; 亏损—效率深度分析</div>
+<div class="eff-analysis">
+
+  <div class="ea-card">
+    <div class="ea-header">
+      <div class="ea-ticker" style="color:var(--p7)">Path 7</div>
+      <span class="badge neg">−$458</span>
+    </div>
+    <div class="ea-row"><span class="ea-l">亏损金额</span><span class="ea-v" style="color:var(--red)">$457.50</span></div>
+    <div class="ea-row"><span class="ea-l">HHI 改善</span><span class="ea-v">0.276 → 0.196 (−0.080)</span></div>
+    <div class="ea-row"><span class="ea-l">每HHI百分点成本</span><span class="ea-v">$57</span></div>
+    <div class="ea-row"><span class="ea-l">Beta 变化</span><span class="ea-v">1.11 → 1.33 (+0.22)</span></div>
+    <div class="ea-row"><span class="ea-l">TSLA 权重</span><span class="ea-v">16.6% → 10.4%</span></div>
+    <div class="ea-row"><span class="ea-l">剩余现金缓冲</span><span class="ea-v" style="color:var(--green)">$5,702</span></div>
+    <div class="ea-highlight med">中等效率 · 亏损最小<br>适合心理上难以接受大额亏损的客户</div>
+  </div>
+
+  <div class="ea-card">
+    <div class="ea-header">
+      <div class="ea-ticker" style="color:var(--p8)">Path 8</div>
+      <span class="badge neg">−$606</span>
+    </div>
+    <div class="ea-row"><span class="ea-l">亏损金额</span><span class="ea-v" style="color:var(--red)">$606.20</span></div>
+    <div class="ea-row"><span class="ea-l">HHI 改善</span><span class="ea-v">0.276 → 0.151 (−0.125)</span></div>
+    <div class="ea-row"><span class="ea-l">每HHI百分点成本</span><span class="ea-v" style="color:var(--green)">$48 ← 最优</span></div>
+    <div class="ea-row"><span class="ea-l">Beta 变化</span><span class="ea-v" style="color:var(--red)">1.11 → 1.47 (+0.36)</span></div>
+    <div class="ea-row"><span class="ea-l">GOOGL 权重</span><span class="ea-v">33.4% → 22.3%</span></div>
+    <div class="ea-row"><span class="ea-l">剩余现金缓冲</span><span class="ea-v" style="color:var(--red)">$0</span></div>
+    <div class="ea-highlight good">HHI效率最高 · 每块钱买到最多分散<br>⚠ 但Beta最高，TSLA风险未解决</div>
+  </div>
+
+  <div class="ea-card">
+    <div class="ea-header">
+      <div class="ea-ticker" style="color:var(--p9)">Path 9</div>
+      <span class="badge neg">−$956</span>
+    </div>
+    <div class="ea-row"><span class="ea-l">亏损金额</span><span class="ea-v" style="color:var(--red)">$956.40</span></div>
+    <div class="ea-row"><span class="ea-l">HHI 改善</span><span class="ea-v">0.276 → 0.161 (−0.116)</span></div>
+    <div class="ea-row"><span class="ea-l">每HHI百分点成本</span><span class="ea-v" style="color:var(--red)">$83 ← 最低效</span></div>
+    <div class="ea-row"><span class="ea-l">Beta 变化</span><span class="ea-v">1.11 → 1.36 (+0.25)</span></div>
+    <div class="ea-row"><span class="ea-l">TSLA+GOOGL 同步压缩</span><span class="ea-v">两仓各降约 8pp</span></div>
+    <div class="ea-row"><span class="ea-l">剩余现金缓冲</span><span class="ea-v" style="color:var(--red)">$0</span></div>
+    <div class="ea-highlight bad">亏损最高，效率最低<br>但唯一同时解决TSLA和GOOGL两个风险</div>
+  </div>
+
+</div>
+
+<!-- ── SUMMARY TABLE ─────────────────────────────────────── -->
+<div class="sum-sec">
+  <div class="sl">§ 05 &nbsp; 综合对比</div>
+  <div class="sum-grid">
+    <div class="sh">指标</div>
+    <div class="sh">Baseline</div>
+    <div class="sh h7">Path 7 · 只卖TSLA</div>
+    <div class="sh h8">Path 8 · 只卖GOOGL</div>
+    <div class="sh h9">Path 9 · 双向减重</div>
+
+    <div class="sc sl2">已实现亏损</div>
+    <div class="sc best"><span class="sv" style="color:var(--green)">$0</span></div>
+    <div class="sc best"><span class="sv" style="color:var(--red)">−$458</span></div>
+    <div class="sc"><span class="sv" style="color:var(--red)">−$606</span></div>
+    <div class="sc"><span class="sv" style="color:var(--red)">−$956</span></div>
+
+    <div class="sc sl2">Beta</div>
+    <div class="sc"><span class="sv" style="color:var(--base)">1.11</span></div>
+    <div class="sc"><span class="sv c7">1.33</span></div>
+    <div class="sc"><span class="sv c8">1.47 ⚠</span></div>
+    <div class="sc best"><span class="sv c9">1.36</span></div>
+
+    <div class="sc sl2">VaR 95% 1日</div>
+    <div class="sc best"><span class="sv" style="color:var(--base)">$2,092</span></div>
+    <div class="sc"><span class="sv c7">$2,343</span></div>
+    <div class="sc"><span class="sv c8">$2,565</span></div>
+    <div class="sc"><span class="sv c9">$2,377</span></div>
+
+    <div class="sc sl2">HHI 集中度</div>
+    <div class="sc"><span class="sv" style="color:var(--base)">0.276</span></div>
+    <div class="sc"><span class="sv c7">0.196</span></div>
+    <div class="sc best"><span class="sv c8">0.151</span></div>
+    <div class="sc"><span class="sv c9">0.161</span></div>
+
+    <div class="sc sl2">有效持仓数</div>
+    <div class="sc"><span class="sv" style="color:var(--base)">3.62</span></div>
+    <div class="sc"><span class="sv c7">5.11</span></div>
+    <div class="sc best"><span class="sv c8">6.63</span></div>
+    <div class="sc"><span class="sv c9">6.23</span></div>
+
+    <div class="sc sl2">剩余现金</div>
+    <div class="sc best"><span class="sv" style="color:var(--base)">$31,665</span></div>
+    <div class="sc best"><span class="sv c7">$5,702</span></div>
+    <div class="sc"><span class="sv" style="color:var(--red)">$0</span></div>
+    <div class="sc"><span class="sv" style="color:var(--red)">$0</span></div>
+
+    <div class="sc sl2">TSLA 权重</div>
+    <div class="sc"><span class="sv" style="color:var(--base)">16.6%</span></div>
+    <div class="sc best"><span class="sv c7">10.4%</span></div>
+    <div class="sc"><span class="sv" style="color:var(--red)">16.6%（不变）</span></div>
+    <div class="sc best"><span class="sv c9">8.3%</span></div>
+
+    <div class="sc sl2">GOOGL 权重</div>
+    <div class="sc"><span class="sv" style="color:var(--base)">33.4%</span></div>
+    <div class="sc"><span class="sv c7">33.4%（不变）</span></div>
+    <div class="sc best"><span class="sv c8">22.3%</span></div>
+    <div class="sc best"><span class="sv c9">27.1%</span></div>
+
+    <div class="sc sl2">5年上行弹性</div>
+    <div class="sc"><span class="stars">★★★★☆</span></div>
+    <div class="sc best"><span class="stars">★★★★★</span></div>
+    <div class="sc"><span class="stars">★★★☆☆</span></div>
+    <div class="sc"><span class="stars">★★★★☆</span></div>
+  </div>
+</div>
+
+<!-- ── SCENARIO CARDS ───────────────────────────────────── -->
+<div class="sl">§ 06 &nbsp; 适用场景与止损触发</div>
+<div class="scenario-grid">
+
+  <div class="sc-card c7">
+    <h3>Path 7 适合你如果…</h3>
+    <ul>
+      <li>认为 <strong>NVDA 是组合里最确定的仓位</strong>，不允许任何理由卖出</li>
+      <li>TSLA 是最担心的风险，但还不想全部清仓</li>
+      <li>希望保留 <strong>$5,702 现金缓冲</strong>等待 4月 TSLA 交付数据</li>
+      <li>心理上能接受 −$458 的小额实现亏损</li>
+      <li>GOOGL 集中度问题接受暂缓处理，等待回本再减</li>
+    </ul>
+    <div class="trigger">
+      止损触发：<em>TSLA Q1 交付 &lt; 350k</em> → 用保留的 $5,702 现金买入 QQQM 对冲，同时考虑卖出剩余 25 股 TSLA
+    </div>
+  </div>
+
+  <div class="sc-card c8">
+    <h3>Path 8 适合你如果…</h3>
+    <ul>
+      <li>认为 <strong>GOOGL 集中度 33% 是最大结构性风险</strong></li>
+      <li>对 TSLA 的基本面仍有信心（4月交付前不想动）</li>
+      <li>接受 HHI 效率最优逻辑：每块钱换最多分散化</li>
+      <li>能承受 <strong>Beta 升至 1.47</strong>（因保留NVDA+TSLA双高Beta）</li>
+      <li>全仓部署，无需现金缓冲的心理预期</li>
+    </ul>
+    <div class="trigger">
+      止损触发：<em>TSLA 跌破 $360</em>（距现价 −10%）→ 启动 TSLA 减仓，或用 QQQM 替换，防止 Beta 继续上行
+    </div>
+  </div>
+
+  <div class="sc-card c9">
+    <h3>Path 9 适合你如果…</h3>
+    <ul>
+      <li>认为 <strong>GOOGL 和 TSLA 两个问题都需要同时处理</strong></li>
+      <li>能接受 −$956 的最大实现亏损换取最均衡的结构</li>
+      <li>不需要现金缓冲（有其他账户的流动性）</li>
+      <li>Beta 1.36 是目标区间，不接受 Path 8 的 1.47</li>
+      <li>希望组合有 <strong>XLU 防御层</strong>但不需要 TLT 对冲</li>
+    </ul>
+    <div class="trigger">
+      止损触发：<em>GOOGL 反垄断风险实质化</em> 或 TSLA 连续两季度交付低于预期 → 考虑继续清仓剩余 TSLA 20股
+    </div>
+  </div>
+
+</div>
+
+<!-- ── FOOTER ───────────────────────────────────────────── -->
+<div class="footer">
+  <span>Portfolio Paths C · v1.0 · 2026-03-11</span>
+  <span>前提：NVDA 全程保留 · 仅操作 TSLA / GOOGL · 最小化已实现亏损</span>
+  <span>仅供参考，不构成投资建议</span>
+</div>
+
+</body>
+</html>

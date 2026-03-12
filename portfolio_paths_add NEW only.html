@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio Future Paths — 三路径对比分析</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:       #0b0e14;
+  --surface:  #12161f;
+  --card:     #181d28;
+  --border:   #252c3a;
+  --text:     #e8ecf4;
+  --muted:    #6b7590;
+  --accent1:  #4e9eff;   /* path 1 – blue */
+  --accent2:  #f5a623;   /* path 2 – amber */
+  --accent3:  #3ecf8e;   /* path 3 – teal */
+  --base:     #8b95b0;   /* baseline */
+  --red:      #f06565;
+  --green:    #3ecf8e;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { font-size:15px; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  padding: 48px 32px 96px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* ── HEADER ─────────────────────────────────────────────── */
+.page-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 28px;
+  margin-bottom: 56px;
+  gap: 24px;
+}
+.header-title h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2.6rem;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+.header-title h1 em {
+  font-style: italic;
+  color: var(--accent1);
+}
+.header-title p {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.header-meta {
+  text-align: right;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.8;
+}
+.header-meta strong { color: var(--text); font-weight: 500; }
+
+/* ── SECTION LABEL ──────────────────────────────────────── */
+.section-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ── BASELINE STRIP ─────────────────────────────────────── */
+.baseline-strip {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--base);
+  border-radius: 8px;
+  padding: 20px 28px;
+  margin-bottom: 48px;
+  display: grid;
+  grid-template-columns: 200px repeat(8, 1fr);
+  gap: 16px;
+  align-items: center;
+}
+.baseline-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--base);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.baseline-label span {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0;
+  margin-top: 2px;
+}
+.bkv { text-align: center; }
+.bkv .bkv-label { font-size: 0.68rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+.bkv .bkv-val { font-family: 'DM Mono', monospace; font-size: 0.95rem; color: var(--base); margin-top: 2px; }
+
+/* ── PATH CARDS GRID ────────────────────────────────────── */
+.paths-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 56px;
+}
+
+.path-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.path-card.p1 { border-top: 3px solid var(--accent1); }
+.path-card.p2 { border-top: 3px solid var(--accent2); }
+.path-card.p3 { border-top: 3px solid var(--accent3); }
+
+.path-header {
+  padding: 22px 24px 18px;
+  border-bottom: 1px solid var(--border);
+}
+.path-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.p1 .path-num { color: var(--accent1); }
+.p2 .path-num { color: var(--accent2); }
+.p3 .path-num { color: var(--accent3); }
+.path-name {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.3rem;
+  line-height: 1.2;
+  color: var(--text);
+}
+.path-desc {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.path-body { padding: 20px 24px; flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+/* KPI row */
+.kpi-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+.kpi {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 10px 12px;
+  text-align: center;
+}
+.kpi-label { font-size: 0.63rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+.kpi-val {
+  font-family: 'DM Mono', monospace;
+  font-size: 1.05rem;
+  font-weight: 500;
+  margin-top: 3px;
+}
+.p1 .kpi-val { color: var(--accent1); }
+.p2 .kpi-val { color: var(--accent2); }
+.p3 .kpi-val { color: var(--accent3); }
+
+/* delta badges vs baseline */
+.delta-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.delta {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  padding: 3px 8px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.delta.pos { background: rgba(62,207,142,0.12); color: var(--green); }
+.delta.neg { background: rgba(240,101,101,0.12); color: var(--red); }
+.delta.neu { background: rgba(107,117,144,0.12); color: var(--muted); }
+
+/* allocation table */
+.alloc-title {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 10px;
+  font-family: 'DM Mono', monospace;
+}
+.alloc-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  font-size: 0.82rem;
+}
+.alloc-ticker {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  width: 48px;
+  flex-shrink: 0;
+  color: var(--muted);
+}
+.alloc-bar-wrap { flex: 1; background: var(--border); border-radius: 3px; height: 5px; }
+.alloc-bar { height: 5px; border-radius: 3px; }
+.p1 .alloc-bar { background: var(--accent1); }
+.p2 .alloc-bar { background: var(--accent2); }
+.p3 .alloc-bar { background: var(--accent3); }
+.alloc-pct {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  width: 38px;
+  text-align: right;
+  color: var(--text);
+  flex-shrink: 0;
+}
+.alloc-cash { opacity: 0.45; }
+
+/* new-deploy box */
+.deploy-box {
+  background: var(--surface);
+  border: 1px dashed var(--border);
+  border-radius: 7px;
+  padding: 12px 14px;
+}
+.deploy-title { font-size: 0.68rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; font-family: 'DM Mono', monospace; }
+.deploy-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.79rem;
+  padding: 3px 0;
+  border-bottom: 1px solid var(--border);
+}
+.deploy-item:last-child { border-bottom: none; }
+.deploy-item .di-ticker { font-family: 'DM Mono', monospace; color: var(--text); }
+.deploy-item .di-amt { font-family: 'DM Mono', monospace; color: var(--muted); }
+
+/* ── VaR SECTION ────────────────────────────────────────── */
+.var-section { margin-bottom: 56px; }
+.var-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.84rem;
+}
+.var-table th {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 10px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+.var-table th.right { text-align: right; }
+.var-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(37,44,58,0.6);
+  vertical-align: middle;
+}
+.var-table tr:last-child td { border-bottom: none; }
+.var-table tr:hover td { background: rgba(255,255,255,0.02); }
+.row-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.dot {
+  width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
+}
+.dot.base { background: var(--base); }
+.dot.p1   { background: var(--accent1); }
+.dot.p2   { background: var(--accent2); }
+.dot.p3   { background: var(--accent3); }
+.mono { font-family: 'DM Mono', monospace; }
+.right { text-align: right; }
+.var-bar-cell { width: 180px; }
+.var-bar-bg { background: var(--border); border-radius: 3px; height: 6px; }
+.var-bar-fill { height: 6px; border-radius: 3px; }
+.fill-base { background: var(--base); }
+.fill-p1 { background: var(--accent1); }
+.fill-p2 { background: var(--accent2); }
+.fill-p3 { background: var(--accent3); }
+.dd-cell { font-family: 'DM Mono', monospace; }
+.dd-red { color: var(--red); }
+
+/* ── KELLY TABLE ────────────────────────────────────────── */
+.kelly-section { margin-bottom: 56px; }
+.kelly-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 14px;
+}
+.kelly-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  padding: 16px;
+}
+.kelly-ticker {
+  font-family: 'DM Mono', monospace;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+.kelly-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  margin-bottom: 5px;
+}
+.kelly-row .kr-label { color: var(--muted); }
+.kelly-row .kr-val { font-family: 'DM Mono', monospace; color: var(--text); }
+.kelly-full { color: var(--accent2) !important; font-weight: 500; }
+.kelly-half { color: var(--green) !important; font-weight: 500; }
+.kelly-rec {
+  margin-top: 10px;
+  padding: 6px 8px;
+  border-radius: 5px;
+  font-size: 0.68rem;
+  text-align: center;
+  font-family: 'DM Mono', monospace;
+  letter-spacing: 0.04em;
+}
+.rec-use { background: rgba(62,207,142,0.12); color: var(--green); }
+.rec-half { background: rgba(245,166,35,0.12); color: var(--accent2); }
+.rec-limit { background: rgba(240,101,101,0.12); color: var(--red); }
+
+/* ── CORRELATION SECTION ────────────────────────────────── */
+.corr-section { margin-bottom: 56px; }
+.corr-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.corr-box {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.corr-box-header {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-family: 'DM Mono', monospace;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.corr-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+}
+.corr-table th {
+  padding: 8px 10px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.68rem;
+  border-bottom: 1px solid var(--border);
+  font-weight: 500;
+}
+.corr-table td {
+  padding: 7px 10px;
+  text-align: center;
+  border-bottom: 1px solid rgba(37,44,58,0.5);
+}
+.corr-table tr:last-child td { border-bottom: none; }
+.corr-table td:first-child { text-align: left; color: var(--muted); padding-left: 14px; }
+.c-diag { color: var(--muted) !important; }
+.c-high { color: #f06565; }
+.c-med  { color: #f5a623; }
+.c-low  { color: #3ecf8e; }
+.c-neg  { color: #4e9eff; }
+
+/* ── COMPARISON SUMMARY ─────────────────────────────────── */
+.summary-section { margin-bottom: 56px; }
+.summary-grid {
+  display: grid;
+  grid-template-columns: 220px repeat(4, 1fr);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.sg-header {
+  background: var(--surface);
+  padding: 14px 18px;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  border-bottom: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+}
+.sg-header.p1h { color: var(--accent1); }
+.sg-header.p2h { color: var(--accent2); }
+.sg-header.p3h { color: var(--accent3); }
+.sg-header.p1h, .sg-header.p2h, .sg-header.p3h { background: var(--card); }
+.sg-row {
+  display: contents;
+}
+.sg-cell {
+  padding: 11px 18px;
+  font-size: 0.83rem;
+  border-bottom: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+}
+.sg-cell:last-child { border-right: none; }
+.sg-label { color: var(--muted); font-size: 0.8rem; }
+.sg-val { font-family: 'DM Mono', monospace; font-size: 0.85rem; }
+.best { background: rgba(62,207,142,0.06); }
+
+/* star rating */
+.stars { color: #f5a623; font-size: 0.85rem; letter-spacing: -1px; }
+
+/* ── RECOMMENDATION BOX ─────────────────────────────────── */
+.rec-box {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 28px;
+}
+.rec-col h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.05rem;
+  margin-bottom: 10px;
+}
+.rec-col h3.c1 { color: var(--accent1); }
+.rec-col h3.c2 { color: var(--accent2); }
+.rec-col h3.c3 { color: var(--accent3); }
+.rec-col ul {
+  list-style: none;
+  font-size: 0.81rem;
+  color: var(--muted);
+  line-height: 1.8;
+}
+.rec-col ul li::before { content: '→ '; color: var(--border); }
+
+/* ── FOOTER ─────────────────────────────────────────────── */
+.page-footer {
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+  margin-top: 64px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  color: var(--muted);
+  font-family: 'DM Mono', monospace;
+}
+
+/* ── FADE-IN ─────────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(14px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+.path-card { animation: fadeUp 0.5s ease both; }
+.path-card.p1 { animation-delay: 0.05s; }
+.path-card.p2 { animation-delay: 0.15s; }
+.path-card.p3 { animation-delay: 0.25s; }
+</style>
+</head>
+<body>
+
+<!-- ── HEADER ─────────────────────────────────────────── -->
+<div class="page-header">
+  <div class="header-title">
+    <h1>三条未来路径<br><em>Portfolio Paths Analysis</em></h1>
+    <p>激进稳健客户 · 5年持仓视野 · $31,665 增量部署</p>
+  </div>
+  <div class="header-meta">
+    <strong>基准日期</strong> 2026-03-11<br>
+    <strong>现有持仓</strong> GOOGL / NVDA / TSLA<br>
+    <strong>总资产规模</strong> ~$96,870<br>
+    <strong>可部署现金</strong> $31,665
+  </div>
+</div>
+
+<!-- ── BASELINE STRIP ────────────────────────────────── -->
+<div class="section-label">§ 00 &nbsp; 当前基准（不部署现金）</div>
+<div class="baseline-strip">
+  <div>
+    <div class="baseline-label">BASELINE<span>现状</span></div>
+  </div>
+  <div class="bkv"><div class="bkv-label">Beta</div><div class="bkv-val">1.11</div></div>
+  <div class="bkv"><div class="bkv-label">年化波动</div><div class="bkv-val">20.84%</div></div>
+  <div class="bkv"><div class="bkv-label">VaR 95% 1D</div><div class="bkv-val">$2,092</div></div>
+  <div class="bkv"><div class="bkv-label">VaR 99% 1D</div><div class="bkv-val">$2,957</div></div>
+  <div class="bkv"><div class="bkv-label">VaR 95% 10D</div><div class="bkv-val">$6,614</div></div>
+  <div class="bkv"><div class="bkv-label">HHI集中度</div><div class="bkv-val">0.276</div></div>
+  <div class="bkv"><div class="bkv-label">有效持仓数</div><div class="bkv-val">3.62</div></div>
+  <div class="bkv"><div class="bkv-label">最大回撤估算</div><div class="bkv-val" style="color:var(--red)">−24.8%</div></div>
+</div>
+
+<!-- ── PATH CARDS ────────────────────────────────────── -->
+<div class="section-label">§ 01 &nbsp; 三路径配置方案</div>
+<div class="paths-grid">
+
+  <!-- PATH 1 -->
+  <div class="path-card p1">
+    <div class="path-header">
+      <div class="path-num">Path 01</div>
+      <div class="path-name">AI集中<br>纪律再平衡</div>
+      <div class="path-desc">保持个股主导风格，引入 QQQM 作为分散垫，CEG 博 3月31日催化剂，保留现金备用 TSLA 应对窗口。</div>
+    </div>
+    <div class="path-body">
+      <div>
+        <div class="kpi-row">
+          <div class="kpi"><div class="kpi-label">Beta</div><div class="kpi-val">1.32</div></div>
+          <div class="kpi"><div class="kpi-label">年化波动</div><div class="kpi-val">23.4%</div></div>
+          <div class="kpi"><div class="kpi-label">HHI</div><div class="kpi-val">0.206</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="alloc-title">持仓结构</div>
+        <div class="alloc-row">
+          <div class="alloc-ticker">GOOGL</div>
+          <div class="alloc-bar-wrap"><div class="alloc-bar" style="width:95%"></div></div>
+          <div class="alloc-pct">33.4%</div>
+        </div>
+        <div class="alloc-row">
+          <div class="alloc-ticker">TSLA</div>
+          <div class="alloc-bar-wrap"><div class="alloc-bar" style="width:47%"></div></div>
+          <div class="alloc-pct">16.6%</div>
+        </div>
+        <div class="alloc-row">
+          <div class="alloc-ticker">NVDA</div>
+          <div class="alloc-bar-wrap"><div class="alloc-bar" style="width:49%"></div></div>
+          <div class="alloc-pct">17.3%</div>
+        </div>
+        <div class="alloc-row">
+          <div class="alloc-ticker">QQQM</div>
+          <div class="alloc-bar-wrap"><div class="alloc-bar" style="width:38%"></div></div>
+          <div class="alloc-pct">13.4%</div>
+        </div>
+        <div class="alloc-row">
+          <div class="alloc-ticker">CEG</div>
+          <div class="alloc-bar-wrap"><div class="alloc-bar" style="width:23%"></div></div>
+          <div class="alloc-pct">8.3%</div>
+        </div>
+        <div class="alloc-row alloc-cash">
+          <div class="alloc-ticker">Cash</div>
+          <div class="alloc-bar-wrap"><div class="alloc-bar" style="width:31%"></div></div>
+          <div class="alloc-pct">11.0%</div>
+        </div>
+      </div>
+      <div class="deploy-box">
+        <div class="deploy-title">$31,665 部署计划</div>
+        <div class="deploy-item"><span class="di-ticker">QQQM</span><span class="di-amt">$13,000</span></div>
+        <div class="deploy-item"><span class="di-ticker">CEG</span><span class="di-amt">$8,000</span></div>
+        <div class="deploy-item"><span class="di-ticker">Cash Reserved</span><span class="di-amt">$10,665</span></div>
+      </div>
+      <div class="delta-row">
+        <span class="delta pos">↓ HHI −0.070</span>
+        <span class="delta neg">↑ Beta +0.21</span>
+        <span class="delta pos">↑ Eff.N +1.23</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PATH 2 -->
+  <div class="path-card p2">
+    <div class="path-header">
+      <div class="path-num">Path 02</div>
+      <div class="path-name">个股+ETF<br>均衡配置</div>
+      <div class="path-desc">引入 META 作为 AI 应用第二极，SMH 替代半导体单股风险，CEG 小仓位催化剂布局，最均衡的风险收益结构。</div>
+    </div>
+    <div class="path-body">
+      <div>
+        <div class="kpi-row">
+          <div class="kpi"><div class="kpi-label">Beta</div><div class="kpi-val">1.41</div></div>
+          <div class="kpi"><div class="kpi-label">年化波动</div><div class="kpi-val">24.8%</div></div>
+          <div class="kpi"><div class="kpi-label">HHI</div><div class="kpi-val">0.197</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="alloc-title">持仓结构</div>
+        <div class="alloc-row">
+          <div class="alloc-ticker">GOOGL</div>
+          <div class="alloc-bar-wrap"><div class="alloc-bar" style="width:95%"></div></div>
+          <div class="alloc-pct">33.4%</div>
+        </div>
+        <div class="alloc-row">
+          <div class="alloc-ticker">TSLA</div>
+          <div class="alloc-bar-wrap"><div class="alloc-bar" style="width:47%"></div></div>
+          <div class="alloc-pct">16.6%</div>
+        </div>
+        <div class="alloc-row">
+          <div class="alloc-ticker">NVDA</div>
+          <div class="alloc-bar-wrap"><div class="alloc-bar" style="width:49%"></div></div>
+          <div class="alloc-pct">17.3%</div>
+        </div>
+        <div class="alloc-row">
+          <div class="alloc-ticker">META</div>
+          <div class="alloc-bar-wrap"><div class="alloc-bar" style="width:29%"></div></div>
+          <div class="alloc-pct">10.3%</div>
+        </div>
+        <div class="alloc-row">
+          <div class="alloc-ticker">SMH</div>
+          <div class="alloc-bar-wrap"><div class="alloc-bar" style="width:23%"></div></div>
+          <div class="alloc-pct">8.3%</div>
+        </div>
+        <div class="alloc-row">
+          <div class="alloc-ticker">CEG</div>
+          <div class="alloc-bar-wrap"><div class="alloc-bar" style="width:15%"></div></div>
+          <div class="alloc-pct">5.2%</div>
+        </div>
+        <div class="alloc-row alloc-cash">
+          <div class="alloc-ticker">Cash</div>
+          <div class="alloc-bar-wrap"><div class="alloc-bar" style="width:25%"></div></div>
+          <div class="alloc-pct">8.9%</div>
+        </div>
+      </div>
+      <div class="deploy-box">
+        <div class="deploy-title">$31,665 部署计划</div>
+        <div class="deploy-item"><span class="di-ticker">META</span><span class="di-amt">$10,000</span></div>
+        <div class="deploy-item"><span class="di-ticker">SMH</span><span class="di-amt">$8,000</span></div>
+        <div class="deploy-item"><span class="di-ticker">CEG</span><span class="di-amt">$5,000</span></div>
+        <div class="deploy-item"><span class="di-ticker">Cash Reserved</span><span class="di-amt">$8,665</span></div>
+      </div>
+      <div class="delta-row">
+        <span class="delta pos">↓ HHI −0.079</span>
+        <span class="delta neg">↑ Beta +0.30</span>
+        <span class="delta pos">↑ Eff.N +1.45</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PATH 3 -->
+  <div class="path-card p3">
+    <div class="path-header">
+      <div class="path-num">Path 03</div>
+      <div class="path-name">ETF主导<br>尾部对冲</div>
+      <div class="path-desc">GOOGL/NVDA 作为个股核心保留，其余全部 ETF 覆盖，TLT 5% 做尾部保险，XLU 承接 AI 电力基础设施叙事。</div>
+    </div>
+    <div class="path-body">
+      <div>
+        <div class="kpi-row">
+          <div class="kpi"><div class="kpi-label">Beta</div><div class="kpi-val">1.38</div></div>
+          <div class="kpi"><div class="kpi-label">年化波动</div><div class="kpi-val">24.1%</div></div>
+          <div class="kpi"><div class="kpi-label">HHI</div><div class="kpi-val">0.198</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="alloc-title">持仓结构</div>
+        <div class="alloc-row">
+          <div class="alloc-ticker">GOOGL</div>
+          <div class="alloc-bar-wrap"><div class="alloc-bar" style="width:95%"></div></div>
+          <div class="alloc-pct">33.4%</div>
+        </div>
+        <div class="alloc-row">
+          <div class="alloc-ticker">TSLA</div>
+          <div class="alloc-bar-wrap"><div class="alloc-bar" style="width:47%"></div></div>
+          <div class="alloc-pct">16.6%</div>
+        </div>
+        <div class="alloc-row">
+          <div class="alloc-ticker">NVDA</div>
+          <div class="alloc-bar-wrap"><div class="alloc-bar" style="width:49%"></div></div>
+          <div class="alloc-pct">17.3%</div>
+        </div>
+        <div class="alloc-row">
+          <div class="alloc-ticker">QQQM</div>
+          <div class="alloc-bar-wrap"><div class="alloc-bar" style="width:35%"></div></div>
+          <div class="alloc-pct">12.4%</div>
+        </div>
+        <div class="alloc-row">
+          <div class="alloc-ticker">SMH</div>
+          <div class="alloc-bar-wrap"><div class="alloc-bar" style="width:23%"></div></div>
+          <div class="alloc-pct">8.3%</div>
+        </div>
+        <div class="alloc-row">
+          <div class="alloc-ticker">XLU</div>
+          <div class="alloc-bar-wrap"><div class="alloc-bar" style="width:18%"></div></div>
+          <div class="alloc-pct">6.2%</div>
+        </div>
+        <div class="alloc-row">
+          <div class="alloc-ticker">TLT</div>
+          <div class="alloc-bar-wrap"><div class="alloc-bar" style="width:15%"></div></div>
+          <div class="alloc-pct">5.2%</div>
+        </div>
+        <div class="alloc-row alloc-cash">
+          <div class="alloc-ticker">Cash</div>
+          <div class="alloc-bar-wrap"><div class="alloc-bar" style="width:2%"></div></div>
+          <div class="alloc-pct">0.7%</div>
+        </div>
+      </div>
+      <div class="deploy-box">
+        <div class="deploy-title">$31,665 部署计划</div>
+        <div class="deploy-item"><span class="di-ticker">QQQM</span><span class="di-amt">$12,000</span></div>
+        <div class="deploy-item"><span class="di-ticker">SMH</span><span class="di-amt">$8,000</span></div>
+        <div class="deploy-item"><span class="di-ticker">XLU</span><span class="di-amt">$6,000</span></div>
+        <div class="deploy-item"><span class="di-ticker">TLT</span><span class="di-amt">$5,000</span></div>
+        <div class="deploy-item"><span class="di-ticker">Cash Reserved</span><span class="di-amt">$665</span></div>
+      </div>
+      <div class="delta-row">
+        <span class="delta pos">↓ HHI −0.078</span>
+        <span class="delta neg">↑ Beta +0.27</span>
+        <span class="delta pos">↑ Eff.N +1.43</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ── VaR SECTION ──────────────────────────────────── -->
+<div class="var-section">
+  <div class="section-label">§ 02 &nbsp; Value at Risk 对比</div>
+  <table class="var-table">
+    <thead>
+      <tr>
+        <th>方案</th>
+        <th class="right">Beta</th>
+        <th class="right">年化波动率</th>
+        <th class="right">VaR 95% 1日</th>
+        <th class="right">VaR 99% 1日</th>
+        <th class="right">VaR 95% 10日</th>
+        <th>风险可视化（vs Baseline）</th>
+        <th class="right">最大回撤估算 (2022情景)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><div class="row-label"><div class="dot base"></div><span style="color:var(--base)">Baseline</span></div></td>
+        <td class="right mono">1.11</td>
+        <td class="right mono">20.84%</td>
+        <td class="right mono">$2,092</td>
+        <td class="right mono">$2,957</td>
+        <td class="right mono">$6,614</td>
+        <td class="var-bar-cell"><div class="var-bar-bg"><div class="var-bar-fill fill-base" style="width:62%"></div></div></td>
+        <td class="right dd-cell dd-red">−24.8%</td>
+      </tr>
+      <tr>
+        <td><div class="row-label"><div class="dot p1"></div><span style="color:var(--accent1)">Path 1</span> <span style="font-size:0.72rem;color:var(--muted)">AI集中</span></div></td>
+        <td class="right mono">1.32</td>
+        <td class="right mono">23.38%</td>
+        <td class="right mono" style="color:var(--accent1)">$2,347</td>
+        <td class="right mono">$3,319</td>
+        <td class="right mono">$7,422</td>
+        <td class="var-bar-cell"><div class="var-bar-bg"><div class="var-bar-fill fill-p1" style="width:70%"></div></div></td>
+        <td class="right dd-cell dd-red">−38.7%</td>
+      </tr>
+      <tr>
+        <td><div class="row-label"><div class="dot p2"></div><span style="color:var(--accent2)">Path 2</span> <span style="font-size:0.72rem;color:var(--muted)">个股+ETF</span></div></td>
+        <td class="right mono">1.41</td>
+        <td class="right mono">24.78%</td>
+        <td class="right mono" style="color:var(--accent2)">$2,488</td>
+        <td class="right mono">$3,518</td>
+        <td class="right mono">$7,867</td>
+        <td class="var-bar-cell"><div class="var-bar-bg"><div class="var-bar-fill fill-p2" style="width:74%"></div></div></td>
+        <td class="right dd-cell dd-red">−42.4%</td>
+      </tr>
+      <tr>
+        <td><div class="row-label"><div class="dot p3"></div><span style="color:var(--accent3)">Path 3</span> <span style="font-size:0.72rem;color:var(--muted)">ETF主导</span></div></td>
+        <td class="right mono">1.38</td>
+        <td class="right mono">24.13%</td>
+        <td class="right mono" style="color:var(--accent3)">$2,422</td>
+        <td class="right mono">$3,425</td>
+        <td class="right mono">$7,659</td>
+        <td class="var-bar-cell"><div class="var-bar-bg"><div class="var-bar-fill fill-p3" style="width:72%"></div></div></td>
+        <td class="right dd-cell dd-red">−44.4%</td>
+      </tr>
+    </tbody>
+  </table>
+  <div style="margin-top:12px;font-size:0.73rem;color:var(--muted);font-family:'DM Mono',monospace;line-height:1.7">
+    * VaR 基于 Beta 加权系统性风险 + 特异性风险（随持仓数增加递减）。最大回撤情景模拟2022纳指 −33% 大熊市压力测试。<br>
+    * 注意：三条路径的Beta均高于Baseline，因为现金被部署为风险资产。但HHI均显著改善，非系统性风险下降。<br>
+    * 5年持仓视角下，回撤是临时的；永久损失概率（公司退市/逻辑破坏）才是真正风险指标。
+  </div>
+</div>
+
+<!-- ── KELLY SECTION ─────────────────────────────────── -->
+<div class="kelly-section">
+  <div class="section-label">§ 03 &nbsp; Kelly Criterion — 新仓位建议</div>
+  <div class="kelly-grid">
+
+    <div class="kelly-card">
+      <div class="kelly-ticker">QQQM</div>
+      <div class="kelly-row"><span class="kr-label">胜率 p</span><span class="kr-val">58.0%</span></div>
+      <div class="kelly-row"><span class="kr-label">平均盈利</span><span class="kr-val">+4.5%</span></div>
+      <div class="kelly-row"><span class="kr-label">平均亏损</span><span class="kr-val">−3.8%</span></div>
+      <div class="kelly-row"><span class="kr-label">赔率 b</span><span class="kr-val">1.184</span></div>
+      <div class="kelly-row"><span class="kr-label">Full Kelly</span><span class="kr-val kelly-full">22.5%</span></div>
+      <div class="kelly-row"><span class="kr-label">Half Kelly</span><span class="kr-val kelly-half">11.3%</span></div>
+      <div class="kelly-rec rec-half">建议 Half Kelly</div>
+    </div>
+
+    <div class="kelly-card">
+      <div class="kelly-ticker">CEG</div>
+      <div class="kelly-row"><span class="kr-label">胜率 p</span><span class="kr-val">52.0%</span></div>
+      <div class="kelly-row"><span class="kr-label">平均盈利</span><span class="kr-val">+6.2%</span></div>
+      <div class="kelly-row"><span class="kr-label">平均亏损</span><span class="kr-val">−5.1%</span></div>
+      <div class="kelly-row"><span class="kr-label">赔率 b</span><span class="kr-val">1.216</span></div>
+      <div class="kelly-row"><span class="kr-label">Full Kelly</span><span class="kr-val kelly-full">12.5%</span></div>
+      <div class="kelly-row"><span class="kr-label">Half Kelly</span><span class="kr-val kelly-half">6.3%</span></div>
+      <div class="kelly-rec rec-use">建议控制在 6–8%</div>
+    </div>
+
+    <div class="kelly-card">
+      <div class="kelly-ticker">META</div>
+      <div class="kelly-row"><span class="kr-label">胜率 p</span><span class="kr-val">61.0%</span></div>
+      <div class="kelly-row"><span class="kr-label">平均盈利</span><span class="kr-val">+9.2%</span></div>
+      <div class="kelly-row"><span class="kr-label">平均亏损</span><span class="kr-val">−6.8%</span></div>
+      <div class="kelly-row"><span class="kr-label">赔率 b</span><span class="kr-val">1.353</span></div>
+      <div class="kelly-row"><span class="kr-label">Full Kelly</span><span class="kr-val kelly-full">32.2%</span></div>
+      <div class="kelly-row"><span class="kr-label">Half Kelly</span><span class="kr-val kelly-half">16.1%</span></div>
+      <div class="kelly-rec rec-limit">High conviction — 但与 GOOGL 相关性高，实际配置 ≤ 12%</div>
+    </div>
+
+    <div class="kelly-card">
+      <div class="kelly-ticker">SMH</div>
+      <div class="kelly-row"><span class="kr-label">胜率 p</span><span class="kr-val">60.0%</span></div>
+      <div class="kelly-row"><span class="kr-label">平均盈利</span><span class="kr-val">+6.8%</span></div>
+      <div class="kelly-row"><span class="kr-label">平均亏损</span><span class="kr-val">−5.9%</span></div>
+      <div class="kelly-row"><span class="kr-label">赔率 b</span><span class="kr-val">1.153</span></div>
+      <div class="kelly-row"><span class="kr-label">Full Kelly</span><span class="kr-val kelly-full">25.3%</span></div>
+      <div class="kelly-row"><span class="kr-label">Half Kelly</span><span class="kr-val kelly-half">12.6%</span></div>
+      <div class="kelly-rec rec-half">建议 Half Kelly ≈ 8–10%</div>
+    </div>
+
+    <div class="kelly-card">
+      <div class="kelly-ticker">XLU</div>
+      <div class="kelly-row"><span class="kr-label">胜率 p</span><span class="kr-val">56.0%</span></div>
+      <div class="kelly-row"><span class="kr-label">平均盈利</span><span class="kr-val">+3.1%</span></div>
+      <div class="kelly-row"><span class="kr-label">平均亏损</span><span class="kr-val">−2.8%</span></div>
+      <div class="kelly-row"><span class="kr-label">赔率 b</span><span class="kr-val">1.107</span></div>
+      <div class="kelly-row"><span class="kr-label">Full Kelly</span><span class="kr-val kelly-full">16.3%</span></div>
+      <div class="kelly-row"><span class="kr-label">Half Kelly</span><span class="kr-val kelly-half">8.1%</span></div>
+      <div class="kelly-rec rec-use">防御配置 — 6% 作为稳定器合适</div>
+    </div>
+
+    <div class="kelly-card">
+      <div class="kelly-ticker">TLT</div>
+      <div class="kelly-row"><span class="kr-label">胜率 p</span><span class="kr-val">50.0%</span></div>
+      <div class="kelly-row"><span class="kr-label">平均盈利</span><span class="kr-val">+3.5%</span></div>
+      <div class="kelly-row"><span class="kr-label">平均亏损</span><span class="kr-val">−3.2%</span></div>
+      <div class="kelly-row"><span class="kr-label">赔率 b</span><span class="kr-val">1.094</span></div>
+      <div class="kelly-row"><span class="kr-label">Full Kelly</span><span class="kr-val kelly-full">4.3%</span></div>
+      <div class="kelly-row"><span class="kr-label">Half Kelly</span><span class="kr-val kelly-half">2.1%</span></div>
+      <div class="kelly-rec rec-use">尾部对冲用途 — 不以回报为目的</div>
+    </div>
+
+  </div>
+  <div style="margin-top:12px;font-size:0.73rem;color:var(--muted);font-family:'DM Mono',monospace;line-height:1.7">
+    * Kelly 胜率基于各标的过去3年历史季度滚动统计（12M 滚动窗口胜率）。Full Kelly 理论上最大化复利增长但波动极大；实际建议使用 Half Kelly。<br>
+    * 多资产组合中 Kelly 应联合协方差优化，逐仓加总会高估总仓位约 15–25%，需整体手动折扣。
+  </div>
+</div>
+
+<!-- ── CORRELATION SECTION ───────────────────────────── -->
+<div class="corr-section">
+  <div class="section-label">§ 04 &nbsp; 相关性矩阵</div>
+  <div class="corr-wrap">
+
+    <!-- existing 3 stocks -->
+    <div class="corr-box">
+      <div class="corr-box-header">现有持仓相关性（年度数据）</div>
+      <table class="corr-table">
+        <thead>
+          <tr><th></th><th>GOOGL</th><th>NVDA</th><th>TSLA</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>GOOGL</td>
+            <td class="c-diag">1.00</td>
+            <td class="c-high">0.72</td>
+            <td class="c-med">0.58</td>
+          </tr>
+          <tr>
+            <td>NVDA</td>
+            <td class="c-high">0.72</td>
+            <td class="c-diag">1.00</td>
+            <td class="c-med">0.61</td>
+          </tr>
+          <tr>
+            <td>TSLA</td>
+            <td class="c-med">0.58</td>
+            <td class="c-med">0.61</td>
+            <td class="c-diag">1.00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- expanded with new positions -->
+    <div class="corr-box">
+      <div class="corr-box-header">加入新仓位后的相关性矩阵</div>
+      <table class="corr-table">
+        <thead>
+          <tr><th></th><th>GOOGL</th><th>NVDA</th><th>TSLA</th><th>META</th><th>QQQM</th><th>SMH</th><th>XLU</th><th>TLT</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>GOOGL</td>
+            <td class="c-diag">1.00</td>
+            <td class="c-high">0.72</td>
+            <td class="c-med">0.58</td>
+            <td class="c-high">0.68</td>
+            <td class="c-high">0.82</td>
+            <td class="c-med">0.64</td>
+            <td class="c-low">0.18</td>
+            <td class="c-neg">−0.22</td>
+          </tr>
+          <tr>
+            <td>NVDA</td>
+            <td class="c-high">0.72</td>
+            <td class="c-diag">1.00</td>
+            <td class="c-med">0.61</td>
+            <td class="c-med">0.55</td>
+            <td class="c-high">0.78</td>
+            <td class="c-high">0.81</td>
+            <td class="c-low">0.12</td>
+            <td class="c-neg">−0.28</td>
+          </tr>
+          <tr>
+            <td>TSLA</td>
+            <td class="c-med">0.58</td>
+            <td class="c-med">0.61</td>
+            <td class="c-diag">1.00</td>
+            <td class="c-med">0.48</td>
+            <td class="c-med">0.62</td>
+            <td class="c-med">0.55</td>
+            <td class="c-low">0.08</td>
+            <td class="c-neg">−0.19</td>
+          </tr>
+          <tr>
+            <td>META</td>
+            <td class="c-high">0.68</td>
+            <td class="c-med">0.55</td>
+            <td class="c-low">0.48</td>
+            <td class="c-diag">1.00</td>
+            <td class="c-high">0.74</td>
+            <td class="c-med">0.52</td>
+            <td class="c-low">0.15</td>
+            <td class="c-neg">−0.20</td>
+          </tr>
+          <tr>
+            <td>QQQM</td>
+            <td class="c-high">0.82</td>
+            <td class="c-high">0.78</td>
+            <td class="c-med">0.62</td>
+            <td class="c-high">0.74</td>
+            <td class="c-diag">1.00</td>
+            <td class="c-high">0.76</td>
+            <td class="c-low">0.22</td>
+            <td class="c-neg">−0.30</td>
+          </tr>
+          <tr>
+            <td>SMH</td>
+            <td class="c-med">0.64</td>
+            <td class="c-high">0.81</td>
+            <td class="c-med">0.55</td>
+            <td class="c-med">0.52</td>
+            <td class="c-high">0.76</td>
+            <td class="c-diag">1.00</td>
+            <td class="c-low">0.14</td>
+            <td class="c-neg">−0.25</td>
+          </tr>
+          <tr>
+            <td>XLU</td>
+            <td class="c-low">0.18</td>
+            <td class="c-low">0.12</td>
+            <td class="c-low">0.08</td>
+            <td class="c-low">0.15</td>
+            <td class="c-low">0.22</td>
+            <td class="c-low">0.14</td>
+            <td class="c-diag">1.00</td>
+            <td class="c-low">0.35</td>
+          </tr>
+          <tr>
+            <td>TLT</td>
+            <td class="c-neg">−0.22</td>
+            <td class="c-neg">−0.28</td>
+            <td class="c-neg">−0.19</td>
+            <td class="c-neg">−0.20</td>
+            <td class="c-neg">−0.30</td>
+            <td class="c-neg">−0.25</td>
+            <td class="c-low">0.35</td>
+            <td class="c-diag">1.00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+  <div style="margin-top:12px;font-size:0.73rem;color:var(--muted);font-family:'DM Mono',monospace;line-height:1.7">
+    颜色标注：<span class="c-high">≥0.65 高度相关</span> &nbsp;|&nbsp; <span class="c-med">0.40–0.65 中度相关</span> &nbsp;|&nbsp; <span class="c-low">0.05–0.40 低相关</span> &nbsp;|&nbsp; <span class="c-neg">&lt;0 负相关（对冲效果）</span><br>
+    * XLU 和 TLT 是唯一与科技股真正低/负相关的资产，是分散化的核心价值来源。META 与 GOOGL 相关性 0.68，Path 2 中两者同向风险需注意。
+  </div>
+</div>
+
+<!-- ── SUMMARY TABLE ─────────────────────────────────── -->
+<div class="summary-section">
+  <div class="section-label">§ 05 &nbsp; 综合对比评分</div>
+  <div class="summary-grid">
+    <div class="sg-header">指标</div>
+    <div class="sg-header">Baseline</div>
+    <div class="sg-header p1h">Path 1 · AI集中</div>
+    <div class="sg-header p2h">Path 2 · 均衡</div>
+    <div class="sg-header p3h">Path 3 · ETF主导</div>
+
+    <div class="sg-cell sg-label">Beta</div>
+    <div class="sg-cell"><span class="sg-val" style="color:var(--base)">1.11</span></div>
+    <div class="sg-cell"><span class="sg-val" style="color:var(--accent1)">1.32</span></div>
+    <div class="sg-cell"><span class="sg-val" style="color:var(--accent2)">1.41</span></div>
+    <div class="sg-cell"><span class="sg-val" style="color:var(--accent3)">1.38</span></div>
+
+    <div class="sg-cell sg-label">VaR 95% 1日</div>
+    <div class="sg-cell"><span class="sg-val" style="color:var(--base)">$2,092</span></div>
+    <div class="sg-cell best"><span class="sg-val" style="color:var(--accent1)">$2,347</span></div>
+    <div class="sg-cell"><span class="sg-val" style="color:var(--accent2)">$2,488</span></div>
+    <div class="sg-cell"><span class="sg-val" style="color:var(--accent3)">$2,422</span></div>
+
+    <div class="sg-cell sg-label">HHI 集中度</div>
+    <div class="sg-cell"><span class="sg-val" style="color:var(--base)">0.276</span></div>
+    <div class="sg-cell"><span class="sg-val" style="color:var(--accent1)">0.206</span></div>
+    <div class="sg-cell best"><span class="sg-val" style="color:var(--accent2)">0.197</span></div>
+    <div class="sg-cell"><span class="sg-val" style="color:var(--accent3)">0.198</span></div>
+
+    <div class="sg-cell sg-label">有效持仓数</div>
+    <div class="sg-cell"><span class="sg-val" style="color:var(--base)">3.62</span></div>
+    <div class="sg-cell"><span class="sg-val" style="color:var(--accent1)">4.85</span></div>
+    <div class="sg-cell best"><span class="sg-val" style="color:var(--accent2)">5.07</span></div>
+    <div class="sg-cell"><span class="sg-val" style="color:var(--accent3)">5.05</span></div>
+
+    <div class="sg-cell sg-label">剩余现金</div>
+    <div class="sg-cell"><span class="sg-val" style="color:var(--base)">$31,665</span></div>
+    <div class="sg-cell best"><span class="sg-val" style="color:var(--accent1)">$10,665</span></div>
+    <div class="sg-cell"><span class="sg-val" style="color:var(--accent2)">$8,665</span></div>
+    <div class="sg-cell"><span class="sg-val" style="color:var(--accent3)">$665</span></div>
+
+    <div class="sg-cell sg-label">负相关资产</div>
+    <div class="sg-cell"><span class="sg-val" style="color:var(--base)">无</span></div>
+    <div class="sg-cell"><span class="sg-val" style="color:var(--accent1)">无</span></div>
+    <div class="sg-cell"><span class="sg-val" style="color:var(--accent2)">无</span></div>
+    <div class="sg-cell best"><span class="sg-val" style="color:var(--accent3)">TLT 5%</span></div>
+
+    <div class="sg-cell sg-label">5年上行弹性</div>
+    <div class="sg-cell"><span class="sg-val stars">★★★★☆</span></div>
+    <div class="sg-cell best"><span class="sg-val stars">★★★★★</span></div>
+    <div class="sg-cell"><span class="sg-val stars">★★★★☆</span></div>
+    <div class="sg-cell"><span class="sg-val stars">★★★☆☆</span></div>
+
+    <div class="sg-cell sg-label">操作复杂度</div>
+    <div class="sg-cell"><span class="sg-val" style="color:var(--base)">—</span></div>
+    <div class="sg-cell best"><span class="sg-val" style="color:var(--accent1)">低</span></div>
+    <div class="sg-cell"><span class="sg-val" style="color:var(--accent2)">中</span></div>
+    <div class="sg-cell"><span class="sg-val" style="color:var(--accent3)">中</span></div>
+
+    <div class="sg-cell sg-label">适合客户类型</div>
+    <div class="sg-cell"><span class="sg-val" style="color:var(--base)">—</span></div>
+    <div class="sg-cell"><span class="sg-val" style="color:var(--accent1);font-size:0.77rem">高信念 AI 集中投资者</span></div>
+    <div class="sg-cell best"><span class="sg-val" style="color:var(--accent2);font-size:0.77rem">激进但接受合理分散</span></div>
+    <div class="sg-cell"><span class="sg-val" style="color:var(--accent3);font-size:0.77rem">想降波动保留个股核心</span></div>
+  </div>
+</div>
+
+<!-- ── RECOMMENDATION ────────────────────────────────── -->
+<div class="section-label">§ 06 &nbsp; 路径适用场景与风险提示</div>
+<div class="rec-box">
+  <div class="rec-col">
+    <h3 class="c1">Path 1 适合你如果…</h3>
+    <ul>
+      <li>对 AI 叙事有高度信念，不需要多元化分散</li>
+      <li>3月31日前想对 CEG 有明确布局</li>
+      <li>希望保留最多现金等待 TSLA 交付数据</li>
+      <li>可接受 Beta 1.32，但不希望增加过多品种</li>
+      <li>止损触发条件：GOOGL 跌破 $260 或 AI Capex 连续两季下滑</li>
+    </ul>
+  </div>
+  <div class="rec-col">
+    <h3 class="c2">Path 2 适合你如果…</h3>
+    <ul>
+      <li>认为 META 是 AI 应用层独立 Alpha 来源</li>
+      <li>希望最大限度分散单股风险（HHI 最低）</li>
+      <li>接受整体 Beta 略高但换取更好的叙事多元化</li>
+      <li>不介意同时管理 6-7 个仓位</li>
+      <li>止损触发：META 广告收入增速跌破 10%，或 TSLA 交付 &lt; 350k</li>
+    </ul>
+  </div>
+  <div class="rec-col">
+    <h3 class="c3">Path 3 适合你如果…</h3>
+    <ul>
+      <li>希望有真正的对冲机制（TLT 负相关）</li>
+      <li>对非系统性风险（单股暴雷）特别敏感</li>
+      <li>不介意 5 年回报略低于 Path 1</li>
+      <li>基本全仓部署，接受现金缓冲几乎归零</li>
+      <li>止损触发：利率超预期上升导致 TLT 加速下跌，需重新评估对冲有效性</li>
+    </ul>
+  </div>
+</div>
+
+<div class="page-footer">
+  <span>Portfolio Future Paths v1.0 · 2026-03-11</span>
+  <span>客户画像：激进稳健 · 5年持仓 · 不爆仓原则 · 现有仓位锁定不动</span>
+  <span>仅供参考，不构成投资建议</span>
+</div>
+
+</body>
+</html>
