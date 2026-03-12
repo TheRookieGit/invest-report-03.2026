@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio Master Strategy — 9条进化路径全整合</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:       #0b0e14;
+  --surface:  #12161f;
+  --card:     #181d28;
+  --border:   #252c3a;
+  --text:     #e8ecf4;
+  --muted:    #6b7590;
+  --accent1:  #4e9eff;   /* Path 1-3 */
+  --accent2:  #c084fc;   /* Path 4-6 */
+  --accent3:  #34d399;   /* Path 7-9 */
+  --base:     #8b95b0;
+  --red:      #f06565;
+  --green:    #3ecf8e;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif;
+  line-height: 1.6; padding: 48px 32px 96px; max-width: 1400px; margin: 0 auto;
+}
+
+/* Header */
+.master-header { border-bottom: 1px solid var(--border); padding-bottom: 32px; margin-bottom: 56px; display: flex; justify-content: space-between; align-items: flex-end; }
+.master-header h1 { font-family: 'DM Serif Display', serif; font-size: 3rem; line-height: 1.1; }
+.master-header h1 em { color: var(--accent1); font-style: italic; }
+.header-meta { text-align: right; font-family: 'DM Mono', monospace; font-size: 0.8rem; color: var(--muted); }
+
+/* Global Sections */
+.section-group { margin-bottom: 80px; }
+.group-title { font-family: 'DM Serif Display', serif; font-size: 2rem; margin-bottom: 24px; padding-left: 15px; border-left: 4px solid var(--accent1); }
+.group-title.g2 { border-color: var(--accent2); }
+.group-title.g3 { border-color: var(--accent3); }
+
+.sl { font-family: 'DM Mono', monospace; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
+.sl::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+/* Grid Layouts */
+.paths-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 40px; }
+.path-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; display: flex; flex-direction: column; overflow: hidden; transition: transform 0.3s ease; }
+.path-card:hover { transform: translateY(-5px); border-color: var(--muted); }
+.path-header { padding: 24px; border-bottom: 1px solid var(--border); }
+.path-body { padding: 24px; flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+/* Components: KPI, Alloc, SellBox */
+.kpi-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+.kpi { background: var(--surface); border: 1px solid var(--border); border-radius: 7px; padding: 10px; text-align: center; }
+.kpi-v { font-family: 'DM Mono', monospace; font-size: 1.1rem; font-weight: 600; }
+.alloc-row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; font-size: 0.8rem; }
+.alloc-bar-wrap { flex: 1; background: var(--border); height: 5px; border-radius: 3px; }
+.alloc-bar { height: 100%; border-radius: 3px; }
+
+.sell-box { background: rgba(255,255,255,0.03); border: 1px dashed var(--border); border-radius: 8px; padding: 15px; margin-bottom: 15px; font-size: 0.85rem; }
+.pnl-pos { color: var(--green); }
+.pnl-neg { color: var(--red); }
+
+/* Comparison Table */
+.master-table { width: 100%; border-collapse: collapse; margin-top: 40px; font-size: 0.85rem; background: var(--card); border-radius: 12px; overflow: hidden; }
+.master-table th, .master-table td { padding: 15px; border: 1px solid var(--border); text-align: left; }
+.master-table th { background: var(--surface); color: var(--muted); font-family: 'DM Mono', monospace; text-transform: uppercase; font-size: 0.7rem; }
+.best { background: rgba(62,207,142,0.1); color: var(--green); font-weight: 600; }
+
+.footer { margin-top: 100px; padding-top: 30px; border-top: 1px solid var(--border); color: var(--muted); font-family: 'DM Mono', monospace; font-size: 0.75rem; display: flex; justify-content: space-between; }
+
+/* Colors per group */
+.g1-c { color: var(--accent1); } .g1-b { background: var(--accent1); }
+.g2-c { color: var(--accent2); } .g2-b { background: var(--accent2); }
+.g3-c { color: var(--accent3); } .g3-b { background: var(--accent3); }
+
+</style>
+</head>
+<body>
+
+<div class="master-header">
+  <div>
+    <h1>Portfolio <em>Master Strategy</em></h1>
+    <p style="color:var(--muted); margin-top:10px;">9条全维度进化路径整合报告 · 激进稳健型客户 · 5年持仓视野</p>
+  </div>
+  <div class="header-meta">
+    总资产: ~$96,870 | 现金: $31,665<br>
+    基准日期: 2026-03-11
+  </div>
+</div>
+
+<div class="section-group">
+  <div class="group-title g1">策略 A：锁定持仓 · 纯现金部署</div>
+  <p style="margin-bottom:24px; color:var(--muted)">不触动现有 GOOGL/NVDA/TSLA，通过 $31,665 增量资金进行结构化改善。适合对现有仓位有极高信念、不愿实现任何亏损的场景。</p>
+  
+  <div class="paths-grid">
+    <div class="path-card" style="border-top: 3px solid var(--accent1)">
+      <div class="path-header">
+        <div class="sl" style="color:var(--accent1)">Path 01 · AI 集中</div>
+        <h3>AI 纪律再平衡</h3>
+        <p style="font-size:0.8rem; color:var(--muted)">引入 QQQM 垫高分散度，CEG 博弈 3.31 催化剂。</p>
+      </div>
+      <div class="path-body">
+        <div class="kpi-row">
+          <div class="kpi"><div class="kpi-v g1-c">1.32</div><div style="font-size:0.6rem">BETA</div></div>
+          <div class="kpi"><div class="kpi-v g1-c">0.206</div><div style="font-size:0.6rem">HHI</div></div>
+          <div class="kpi"><div class="kpi-v g1-c">4.85</div><div style="font-size:0.6rem">有效持仓</div></div>
+        </div>
+        <div>
+          <div class="sl">部署计划</div>
+          <div style="font-size:0.85rem">QQQM: $13k | CEG: $8k | 现金留存: $10.6k</div>
+        </div>
+      </div>
+    </div>
+    <div class="path-card" style="border-top: 3px solid var(--accent1)">
+      <div class="path-header">
+        <div class="sl" style="color:var(--accent1)">Path 02 · 均衡</div>
+        <h3>个股+ETF 均衡配置</h3>
+        <p style="font-size:0.8rem; color:var(--muted)">META 补齐 AI 应用层，SMH 替代单股半导体风险。</p>
+      </div>
+      <div class="path-body">
+        <div class="kpi-row">
+          <div class="kpi"><div class="kpi-v g1-c">1.41</div><div style="font-size:0.6rem">BETA</div></div>
+          <div class="kpi"><div class="kpi-v g1-c">0.197</div><div style="font-size:0.6rem">HHI</div></div>
+          <div class="kpi"><div class="kpi-v g1-c">5.07</div><div style="font-size:0.6rem">有效持仓</div></div>
+        </div>
+        <div style="font-size:0.85rem">META: $10k | SMH: $8k | CEG: $5k | 留存: $8.6k</div>
+      </div>
+    </div>
+    <div class="path-card" style="border-top: 3px solid var(--accent1)">
+      <div class="path-header">
+        <div class="sl" style="color:var(--accent1)">Path 03 · ETF主导</div>
+        <h3>ETF 覆盖+尾部对冲</h3>
+        <p style="font-size:0.8rem; color:var(--muted)">最高分散度，引入 TLT 作为负相关保险。</p>
+      </div>
+      <div class="path-body">
+        <div class="kpi-row">
+          <div class="kpi"><div class="kpi-v g1-c">1.38</div><div style="font-size:0.6rem">BETA</div></div>
+          <div class="kpi"><div class="kpi-v g1-c">0.198</div><div style="font-size:0.6rem">HHI</div></div>
+          <div class="kpi"><div class="kpi-v g1-c">5.05</div><div style="font-size:0.6rem">有效持仓</div></div>
+        </div>
+        <div style="font-size:0.85rem">QQQM: $12k | SMH: $8k | TLT: $5k | XLU: $6k</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-group">
+  <div class="group-title g2">策略 B：卖出盈利仓 (NVDA) · 零亏损重组</div>
+  <p style="margin-bottom:24px; color:var(--muted)">卖出唯一的盈利仓 NVDA，腾出约 $16,719 资金。这是唯一不产生“实现亏损”的减仓方案，适合心理上无法接受卖出亏损标的的客户。</p>
+  
+  <div class="paths-grid">
+    <div class="path-card" style="border-top: 3px solid var(--accent2)">
+      <div class="path-header">
+        <div class="sl" style="color:var(--accent2)">Path 04 · 只卖 NVDA</div>
+        <h3>无痛资金置换</h3>
+        <p style="font-size:0.8rem; color:var(--muted)">实现 +$140 盈利。NVDA 置换为 META+SMH。</p>
+      </div>
+      <div class="path-body">
+        <div class="sell-box">
+          <div class="pnl-pos">卖出 NVDA 90股: 净盈利 +$140.40</div>
+        </div>
+        <div class="kpi-row">
+          <div class="kpi"><div class="kpi-v g2-c">1.32</div><div style="font-size:0.6rem">BETA</div></div>
+          <div class="kpi"><div class="kpi-v g2-c">0.199</div><div style="font-size:0.6rem">HHI</div></div>
+        </div>
+        <div style="font-size:0.85rem">总部署 $48k: META $12k, SMH $10k, QQQM $16k</div>
+      </div>
+    </div>
+    <div class="path-card" style="border-top: 3px solid var(--accent2)">
+      <div class="path-header">
+        <div class="sl" style="color:var(--accent2)">Path 05 · NVDA+TSLA减半</div>
+        <h3>核心风险切除</h3>
+        <p style="font-size:0.8rem; color:var(--muted)">最小亏损换取 TSLA 风险大幅压缩至 8.3%。</p>
+      </div>
+      <div class="path-body">
+        <div class="sell-box">
+          <div class="pnl-neg">净实现亏损: −$469.60 (NVDA盈+TSLA亏)</div>
+        </div>
+        <div class="kpi-row">
+          <div class="kpi"><div class="kpi-v g2-c">1.18</div><div style="font-size:0.6rem">BETA</div></div>
+          <div class="kpi"><div class="kpi-v g2-c">0.190</div><div style="font-size:0.6rem">HHI</div></div>
+        </div>
+        <div style="font-size:0.85rem">Beta 降至 1.18，最接近基准风险。</div>
+      </div>
+    </div>
+    <div class="path-card" style="border-top: 3px solid var(--accent2)">
+      <div class="path-header">
+        <div class="sl" style="color:var(--accent2)">Path 06 · 集中度优化</div>
+        <h3>GOOGL 减重计划</h3>
+        <p style="font-size:0.8rem; color:var(--muted)">卖出 NVDA+部分 GOOGL，HHI 三路径最低。</p>
+      </div>
+      <div class="path-body">
+        <div class="sell-box">
+          <div class="pnl-neg">净实现亏损: −$379.20</div>
+        </div>
+        <div class="kpi-row">
+          <div class="kpi"><div class="kpi-v g2-c">1.26</div><div style="font-size:0.6rem">BETA</div></div>
+          <div class="kpi"><div class="kpi-v g2-c">0.153</div><div style="font-size:0.6rem">HHI</div></div>
+        </div>
+        <div style="font-size:0.85rem">有效持仓提升至 6.55，结构最稳。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-group">
+  <div class="group-title g3">策略 C：保留 NVDA · 减持 TSLA/GOOGL</div>
+  <p style="margin-bottom:24px; color:var(--muted)">认为 NVDA 是唯一确定性 Alpha，坚决不动。通过卖出处于亏损状态的 TSLA 或 GOOGL 来回收资金。适合看好半导体长牛、但担心集中度或个别雷点的客户。</p>
+  
+  <div class="paths-grid">
+    <div class="path-card" style="border-top: 3px solid var(--accent3)">
+      <div class="path-header">
+        <div class="sl" style="color:var(--accent3)">Path 07 · 只卖 TSLA</div>
+        <h3>最低实现亏损</h3>
+        <p style="font-size:0.8rem; color:var(--muted)">减持 15 股 TSLA。保留 25 股维持上行参与感。</p>
+      </div>
+      <div class="path-body">
+        <div class="sell-box">
+          <div class="pnl-neg">实现亏损: −$457.50</div>
+        </div>
+        <div class="kpi-row">
+          <div class="kpi"><div class="kpi-v g3-c">1.33</div><div style="font-size:0.6rem">BETA</div></div>
+          <div class="kpi"><div class="kpi-v g3-c">0.196</div><div style="font-size:0.6rem">HHI</div></div>
+        </div>
+        <div style="font-size:0.85rem">剩余现金缓冲 $5.7k，应对 Q1 交付。</div>
+      </div>
+    </div>
+    <div class="path-card" style="border-top: 3px solid var(--accent3)">
+      <div class="path-header">
+        <div class="sl" style="color:var(--accent3)">Path 08 · 只卖 GOOGL</div>
+        <h3>HHI 效率最优</h3>
+        <p style="font-size:0.8rem; color:var(--muted)">每 $48 亏损换取 1% HHI 改善。最高效的分散。 </p>
+      </div>
+      <div class="path-body">
+        <div class="sell-box">
+          <div class="pnl-neg">实现亏损: −$606.20</div>
+        </div>
+        <div class="kpi-row">
+          <div class="kpi"><div class="kpi-v g3-c">1.47</div><div style="font-size:0.6rem">BETA</div></div>
+          <div class="kpi"><div class="kpi-v g3-c">0.151</div><div style="font-size:0.6rem">HHI</div></div>
+        </div>
+        <div style="font-size:0.85rem">⚠ 警告: BETA 升至 1.47，风险最高。</div>
+      </div>
+    </div>
+    <div class="path-card" style="border-top: 3px solid var(--accent3)">
+      <div class="path-header">
+        <div class="sl" style="color:var(--accent3)">Path 09 · 双向减重</div>
+        <h3>结构最均衡</h3>
+        <p style="font-size:0.8rem; color:var(--muted)">同时处理 TSLA 与 GOOGL 风险。牺牲短期盈利。</p>
+      </div>
+      <div class="path-body">
+        <div class="sell-box">
+          <div class="pnl-neg">实现亏损: −$956.40</div>
+        </div>
+        <div class="kpi-row">
+          <div class="kpi"><div class="kpi-v g3-c">1.36</div><div style="font-size:0.6rem">BETA</div></div>
+          <div class="kpi"><div class="kpi-v g3-c">0.161</div><div style="font-size:0.6rem">HHI</div></div>
+        </div>
+        <div style="font-size:0.85rem">最均衡，但已实现亏损最高。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-group">
+  <div class="sl">§ 终极决策对比矩阵</div>
+  <table class="master-table">
+    <thead>
+      <tr>
+        <th>路径方案</th>
+        <th>已实现盈亏</th>
+        <th>Beta</th>
+        <th>HHI 集中度</th>
+        <th>5年上行弹性</th>
+        <th>核心卖点</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Baseline (不动)</td><td>$0</td><td>1.11</td><td>0.276</td><td>★★★★☆</td><td>无操作，保持现状</td></tr>
+      <tr><td>Path 1 (纯买)</td><td>$0</td><td>1.32</td><td>0.206</td><td>★★★★★</td><td>高信念 AI 投资者首选</td></tr>
+      <tr><td class="best">Path 5 (卖NVDA/TSLA半)</td><td class="pnl-neg">−$470</td><td class="best">1.18</td><td>0.190</td><td>★★★★☆</td><td>最好的风险/收益比 (Risk-Adjusted)</td></tr>
+      <tr><td class="best">Path 6 (卖NVDA/部分G)</td><td class="pnl-neg">−$379</td><td>1.26</td><td class="best">0.153</td><td>★★★☆☆</td><td>最低集中度，结构最稳</td></tr>
+      <tr><td>Path 8 (卖GOOGL/留N)</td><td class="pnl-neg">−$606</td><td class="pnl-neg">1.47</td><td class="best">0.151</td><td>★★★☆☆</td><td>最高效的分散化，但波动剧烈</td></tr>
+      <tr><td>Path 9 (全方位减仓)</td><td class="pnl-neg">−$956</td><td>1.36</td><td>0.161</td><td>★★★★☆</td><td>最均衡但“心理成本”最高</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="footer">
+  <span>Portfolio Master Paths v2.0 · 2026-03-12</span>
+  <span>* BETA 超过 1.30 意味着在大盘回调时会有更深回撤。建议根据止损触发条件分批部署。</span>
+  <span>仅供参考 · 不构成投资建议</span>
+</div>
+
+</body>
+</html>
