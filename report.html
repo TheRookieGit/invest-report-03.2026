@@ -816,7 +816,6 @@ tbody td:first-child{text-align:left}
   </div>
 </section>
 
-<div class="chapter-break">深度分析扩展章节 · Extended Deep Dive Analysis · Sections 08–15</div>
 
 <!-- SECTION 08 -->
 <!-- SECTION 08 -->
@@ -905,8 +904,7 @@ tbody td:first-child{text-align:left}
   </div>
   <div class="note-light">
     <span class="nl">Beta 解读 · Beta Interpretation</span>
-    <strong>组合加权Beta = 1.57</strong> 意味着：当S&amp;P 500上涨1%，组合预期上涨约1.57%；当S&amp;P 500下跌1%，组合预期下跌约1.57%。这解释了为何在近期大盘仅回撤约-2%时，本组合承受了更深幅度的跌幅（部分由NVDA高beta及TSLA非基本面因素加剧）。<br><br>
-    <strong>Beta贡献分解（已更新）：</strong> GOOGL(51.3% × 1.11 = 0.569) + NVDA(26.5% × 2.17 = 0.575) + TSLA(22.2% × 1.93 = 0.428) = <strong>组合β ≈ 1.57</strong>。值得注意：NVDA的beta已从此前估算的1.92上修至2.17，成为单位权重beta贡献最高的持仓。
+    <strong>Beta贡献分解：</strong> GOOGL(51.3% × 1.11 = 0.569) + NVDA(26.5% × 2.17 = 0.575) + TSLA(22.2% × 1.93 = 0.428) = <strong>组合β ≈ 1.57</strong>。
   </div>
   <div class="sub-head purple" style="margin-top:20px">分散化程度评估 · Diversification Effectiveness</div>
   <div class="triple-grid">
@@ -914,22 +912,22 @@ tbody td:first-child{text-align:left}
       <div class="dual-head gold">当前组合 — 3只集中持股</div>
       <div style="font-size:12px;color:var(--text-mid);line-height:1.8">
         <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--light)"><span>持仓标的数量</span><strong style="color:var(--navy)">3</strong></div>
-        <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--light)"><span>有效持仓数 (1/HHI)</span><strong style="color:var(--amber)">2.4</strong></div>
+        <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--light)"><span>有效持仓数 (1/HHI)</span><strong style="color:var(--amber)">2.617</strong></div>
         <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--light)"><span>最大单仓占比</span><strong style="color:var(--red)">51.3%</strong></div>
-        <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--light)"><span>HHI指数（集中度）</span><strong style="color:var(--red)">0.418</strong></div>
-        <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--light)"><span>非系统性风险占比</span><strong style="color:var(--red)">~62%</strong></div>
-        <div style="display:flex;justify-content:space-between;padding:5px 0"><span>系统性风险占比</span><strong style="color:var(--amber)">~38%</strong></div>
+        <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--light)"><span>HHI指数（集中度）</span><strong style="color:var(--red)">0.382</strong></div>
+        <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--light)"><span>非系统性风险占比</span><strong style="color:var(--red)">~22.1%</strong></div>
+        <div style="display:flex;justify-content:space-between;padding:5px 0"><span>系统性风险占比</span><strong style="color:var(--amber)">~77.9%</strong></div>
       </div>
     </div>
     <div class="dual-card">
       <div class="dual-head" style="color:var(--blue)">对比参考 — QQQ (100只)</div>
       <div style="font-size:12px;color:var(--text-mid);line-height:1.8">
-        <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--light)"><span>持仓标的数量</span><strong style="color:var(--navy)">100</strong></div>
-        <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--light)"><span>有效持仓数 (1/HHI)</span><strong style="color:var(--green)">~12</strong></div>
-        <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--light)"><span>最大单仓占比</span><strong style="color:var(--amber)">~9% (AAPL)</strong></div>
-        <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--light)"><span>HHI指数（集中度）</span><strong style="color:var(--green)">0.085</strong></div>
-        <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--light)"><span>非系统性风险占比</span><strong style="color:var(--green)">~18%</strong></div>
-        <div style="display:flex;justify-content:space-between;padding:5px 0"><span>系统性风险占比</span><strong style="color:var(--green)">~82%</strong></div>
+        <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--light)"><span>持仓标的数量</span><strong style="color:var(--navy)">100+</strong></div>
+        <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--light)"><span>有效持仓数 (1/HHI)</span><strong style="color:var(--green)">~43</strong></div>
+        <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--light)"><span>最大单仓占比</span><strong style="color:var(--amber)">~9% (NVDA)</strong></div>
+        <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--light)"><span>HHI指数（集中度）</span><strong style="color:var(--green)">~0.023</strong></div>
+        <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--light)"><span>非系统性风险占比</span><strong style="color:var(--green)">~7%</strong></div>
+        <div style="display:flex;justify-content:space-between;padding:5px 0"><span>系统性风险占比</span><strong style="color:var(--green)">~93%</strong></div>
       </div>
     </div>
     <div class="dual-card">
@@ -939,15 +937,15 @@ tbody td:first-child{text-align:left}
         <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--light)"><span>有效持仓数目标</span><strong style="color:var(--green)">4–6</strong></div>
         <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--light)"><span>最大单仓上限目标</span><strong style="color:var(--green)">35%</strong></div>
         <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--light)"><span>目标HHI</span><strong style="color:var(--green)">0.22–0.28</strong></div>
-        <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--light)"><span>非系统性风险目标</span><strong style="color:var(--amber)">~40%</strong></div>
-        <div style="display:flex;justify-content:space-between;padding:5px 0"><span>改善方向</span><strong style="color:var(--green)">加入TSM/META/AVGO</strong></div>
+        <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--light)"><span>非系统性风险目标</span><strong style="color:var(--amber)">~15%</strong></div>
+        <div style="display:flex;justify-content:space-between;padding:5px 0"><span>改善方向</span><strong style="color:var(--green)">加入TSM/META/AVGO/CEG，或增加类似QQQM/XLU/IGV/SMH的ETF持仓</strong></div>
       </div>
     </div>
   </div>
   <div class="note-light red">
     <span class="nl">集中度风险警告 · Concentration Risk Warning</span>
-    当前HHI（赫芬达尔-赫希曼指数）= <strong>0.418</strong>，远超"高度集中"阈值（0.25）。在信息不对称或黑天鹅事件中，GOOGL单一持仓的非系统性风险可导致账户价值在数小时内出现超预期损失。这是一把双刃剑——高集中度是追求超额回报的核心策略，但在当前持仓浮亏的状态下，集中度风险的不对称性（下行无限，上行受限于估值）需要特别关注。<br><br>
-    <strong>额外警示：</strong> NVDA的实际Beta（2.17）高于此前预估（1.92），意味着其对大盘波动的放大效应被低估。在当前NVDA股价与MA200仅相差0.2%的关键位，若大盘出现-5%以上回调，NVDA面临约-10%的系统性压力。
+    当前HHI（赫芬达尔-赫希曼指数）= <strong>0.382</strong>，远超"高度集中"阈值（0.25）。在信息不对称或黑天鹅事件中，GOOGL单一持仓的非系统性风险可导致账户价值在数小时内出现超预期损失。这是一把双刃剑——高集中度是追求超额回报的核心策略，但在当前持仓浮亏的状态下，集中度风险的不对称性（下行无限，上行受限于估值）需要特别关注。<br><br>
+    <strong>额外警示：</strong> 在当前NVDA股价与MA200仅相差0.2%的关键位，若大盘出现-5%以上回调，NVDA面临约-10%的系统性压力。
   </div>
 </section>
 
@@ -968,8 +966,8 @@ tbody td:first-child{text-align:left}
       <thead><tr><th>持仓</th><th>市值</th><th>年化波动率</th><th>日波动率</th><th>1日VaR (95%)</th><th>1日VaR (99%)</th><th>10日VaR (95%)</th><th>最大历史单日损失</th></tr></thead>
       <tbody>
         <tr><td><span class="ticker">GOOGL</span></td><td class="mono">$32,388</td><td>25%</td><td>1.57%</td><td class="red mono">-$838 (-2.6%)</td><td class="red mono">-$1,184 (-3.7%)</td><td class="red mono">-$2,650</td><td class="red">-8.2% (财报后)</td></tr>
-        <tr><td><span class="ticker">NVDA</span></td><td class="mono">$16,719</td><td>42%</td><td>2.65%</td><td class="red mono">-$730 (-4.4%)</td><td class="red mono">-$1,031 (-6.2%)</td><td class="red mono">-$2,309</td><td class="red">-12.3% (DeepSeek冲击)</td></tr>
-        <tr><td><span class="ticker">TSLA</span></td><td class="mono">$16,098</td><td>44%</td><td>2.77%</td><td class="red mono">-$736 (-4.6%)</td><td class="red mono">-$1,040 (-6.5%)</td><td class="red mono">-$2,328</td><td class="red">-18.4% (地缘+交付)</td></tr>
+        <tr><td><span class="ticker">NVDA</span></td><td class="mono">$16,719</td><td>42%</td><td>2.65%</td><td class="red mono">-$730 (-4.4%)</td><td class="red mono">-$1,031 (-6.2%)</td><td class="red mono">-$2,309</td><td class="red">-17% (DeepSeek冲击)</td></tr>
+        <tr><td><span class="ticker">TSLA</span></td><td class="mono">$16,098</td><td>44%</td><td>2.77%</td><td class="red mono">-$736 (-4.6%)</td><td class="red mono">-$1,040 (-6.5%)</td><td class="red mono">-$2,328</td><td class="red">-21.06% (地缘+交付)</td></tr>
         <tr style="background:#F0F4FB;font-weight:600"><td><strong>组合合计</strong></td><td class="mono">$63,169</td><td><strong>32% (加权)</strong></td><td>2.02%</td><td class="red mono"><strong>-$2,107 (-3.3%)</strong></td><td class="red mono"><strong>-$2,974 (-4.7%)</strong></td><td class="red mono"><strong>-$6,664</strong></td><td class="red">-12.4% (本轮实测)</td></tr>
       </tbody>
     </table>
@@ -980,7 +978,7 @@ tbody td:first-child{text-align:left}
     <div class="kpi-card red-top"><span class="kpi-label-en">CVaR 99% (Expected Shortfall)</span><span class="kpi-label-cn">条件VaR (尾部期望损失)</span><span class="kpi-value red">$3,866</span><span class="kpi-sub">超过VaR时的平均损失（约1.3×VaR99%）</span></div>
   </div>
   <div class="sub-head red" style="margin-top:24px">历史情景压力测试 · Historical Stress Scenarios</div>
-  <div class="note-light amber">以下情景基于历史真实市场事件的跌幅，对当前持仓市值（$63,169）进行假设性冲击测试。组合Beta已更新为1.57（原1.62）。结果揭示组合在极端事件下的最大潜在损失区间。</div>
+  <div class="note-light amber">以下情景基于历史真实市场事件的跌幅，对当前持仓市值（$63,169）进行假设性冲击测试。组合Beta已更新为1.57。结果揭示组合在极端事件下的最大潜在损失区间。</div>
   <div class="table-wrap">
     <table>
       <thead><tr><th>历史事件</th><th>发生时间</th><th>纳指跌幅</th><th>组合估算跌幅 (β=1.57)</th><th>估算账面损失</th></tr></thead>
@@ -1006,7 +1004,7 @@ tbody td:first-child{text-align:left}
   </div>
   <div class="note-dark">
     <span class="nl">Kelly Formula · 凯利公式说明</span>
-    <strong style="color:var(--gold-pale)">Kelly% = (bp - q) / b</strong>，其中 b = 赔率（平均盈利/平均亏损），p = 胜率，q = 败率（1-p）。本次数据基于2025年3月—2026年2月共<strong style="color:var(--gold-pale)">12个完整自然月</strong>的月度收盘价，通过 Yahoo Finance 实时拉取计算，非估算值。实践中通常采用半Kelly（Half-Kelly）以降低破产风险，并将全Kelly结果视为理论上限而非精确目标。
+    <strong style="color:var(--gold-pale)">Kelly% = (bp - q) / b</strong>，其中 b = 赔率（平均盈利/平均亏损），p = 胜率，q = 败率（1-p）。本次数据基于2025年3月—2026年2月共<strong style="color:var(--gold-pale)">12个完整自然月</strong>的月度收盘价，通过 Yahoo Finance 实时拉取计算。实践中通常采用半Kelly（Half-Kelly）以降低破产风险，并将全Kelly结果视为理论上限而非精确目标。
   </div>
   <div class="kelly-visual">
     <div class="kelly-card">
@@ -1045,7 +1043,7 @@ tbody td:first-child{text-align:left}
         <div class="kelly-row"><span>全Kelly建议仓位</span><span class="mono amber">25.4%</span></div>
         <div class="kelly-row"><span>半Kelly建议仓位</span><span class="mono green">12.7%</span></div>
         <div class="kelly-row" style="border-top:2px solid var(--gold);margin-top:4px"><span style="color:var(--navy)">当前实际仓位</span><span class="mono" style="color:var(--green)">22.2%</span></div>
-        <div style="margin-top:8px;padding:8px;background:var(--green-bg);font-size:11px;color:var(--green)">✓ 实测数据显示TSLA平均亏损月仅-6.6%（原报告高估为-13.1%），赔率实为2.03，远优于原估算的1.08。当前仓位22.2%略低于全Kelly（25.4%），属于合理区间，原"严重超配"定性需修正。主要风险仍为情绪驱动的尾部波动，而非Kelly超配。</div>
+        <div style="margin-top:8px;padding:8px;background:var(--green-bg);font-size:11px;color:var(--green)">✓ 当前仓位22.2%略低于全Kelly（25.4%），属于合理区间。主要风险仍为情绪驱动的尾部波动，而非Kelly超配。</div>
       </div>
     </div>
   </div>
@@ -1057,10 +1055,6 @@ tbody td:first-child{text-align:left}
     <span class="section-num">12</span>
     <span class="section-en">Macro Factor Sensitivity Analysis</span>
     <span class="section-cn">宏观因子敏感性分析 · 利率 / 美元 / VIX / 油价 / 关税 / 地缘政治 · 截至2026年3月12日</span>
-  </div>
-  <div class="note-light amber">
-    <span class="nl">数据更新说明 · Data Revision Note</span>
-    本次更新依据实时数据对"当前状态"全面修正。主要变化：①美联储已完成3次降息，基准利率从4.25–4.50%降至<strong>3.50–3.75%</strong>，对成长股估值环境改善；②DXY从约104下滑至<strong>~99</strong>，美元走弱减轻海外营收压制；③伊朗战争推动WTI油价从$68大幅升至<strong>~$82</strong>；④CPI从2.9%回落至<strong>2.4%</strong>。相应调整了利率、美元、通胀三项的组合影响评级。
   </div>
   <div class="sub-head gold">因子敏感性矩阵 · Factor Exposure Heatmap（含综合评分）</div>
   <div class="table-wrap">
@@ -1226,272 +1220,6 @@ tbody td:first-child{text-align:left}
 
 
 
-<!-- 附录A -->
-<section class="section" style="margin-top:32px;opacity:0.85">
-  <div class="section-header" style="background:rgba(255,255,255,0.04)">
-    <span class="section-num" style="font-size:11px;padding:6px 10px">附录A</span>
-    <span class="section-en">Appendix A — DCF Model: Detailed Calculations</span>
-    <span class="section-cn">DCF模型完整计算 · 逐年折现 · 敏感性矩阵 · 供参考</span>
-  </div>
-  <div style="font-size:11px;color:var(--slate);padding:10px 0 16px">
-    以下为正文估值结论的完整计算依据，包含所有输入假设、逐年FCF折现过程及敏感性分析。
-  </div>
-
-  <!-- 附录内嵌section15_final的完整内容 -->
-  <div style="font-size:11px;color:var(--slate);font-style:italic;padding:8px 12px;border:1px dashed var(--light);border-radius:4px">
-    〔 此处嵌入 section15_final.html 的完整内容 〕<br>
-    在最终合并报告时，将 section15_final.html 的 &lt;section&gt; 内部内容完整粘贴于此。
-  </div>
-</section>
-
-<!-- SECTION 15 -->
-<section class="section">
-  <div class="section-header">
-    <span class="section-num">15</span>
-    <span class="section-en">DCF Intrinsic Value Estimation</span>
-    <span class="section-cn">DCF 内在价值估算 · GOOGL / NVDA 三情景折现现金流模型 · 截至2026年3月12日</span>
-  </div>
-
-  <!-- 数据来源 -->
-  <div class="sub-head gold">输入数据来源 · Verified Inputs</div>
-  <div class="table-wrap">
-    <table>
-      <thead><tr><th>数据项</th><th>数值</th><th>来源</th></tr></thead>
-      <tbody>
-        <tr><td>GOOGL FY2025 FCF</td><td class="mono green">$73.3B</td><td>SEC Q4 2025 10-K</td></tr>
-        <tr><td>GOOGL FY2025 OCF</td><td class="mono green">$164.7B（Margin 40.9%）</td><td>SEC Q4 2025现金流量表，$164.7B÷$402.8B</td></tr>
-        <tr><td>GOOGL 净现金</td><td class="mono green">$80.3B</td><td>Q4财报电话会议：$126.8B现金及有价证券 − $46.5B长期债务</td></tr>
-        <tr><td>GOOGL 流通股</td><td class="mono green">12.09B</td><td>SEC最新报告</td></tr>
-        <tr><td>GOOGL 2026 Capex指引</td><td class="mono green">$175–185B</td><td>管理层Q4财报电话会议原文</td></tr>
-        <tr style="border-top:2px solid var(--light)"><td>NVDA FY2026 FCF</td><td class="mono green">$96.58B</td><td>NVDA FY2026年报（截至Jan 25 2026）</td></tr>
-        <tr><td>NVDA FY2026 OCF</td><td class="mono green">$102.72B</td><td>NVDA FY2026年报</td></tr>
-        <tr><td>NVDA FY2026 Q4单季营收</td><td class="mono green">$68.1B（年化$272B）</td><td>NVDA FY2026年报</td></tr>
-        <tr><td>NVDA 净现金</td><td class="mono green">$55.13B</td><td>$62.6B现金及有价证券 − $7.47B长期债务（Jan 25 2026）</td></tr>
-        <tr><td>NVDA 流通股</td><td class="mono green">24.3B</td><td>SEC最新报告</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- ====== GOOGL ====== -->
-  <div class="sub-head green" style="margin-top:28px">▶ GOOGL — DCF三情景</div>
-
-  <div class="note-dark" style="margin-bottom:14px">
-    <span class="nl">模型框架 · Setup</span>
-    10年两阶段DCF。<strong>Y1 (2026) 特殊处理：</strong>Capex指引$175–185B（vs 2025年$91.4B，近翻倍），
-    FY2025 OCF Margin 40.9%。三情景Y1 FCF分别以OCF margin 50% / 44% / 40%减去对应Capex推算。
-    净现金加回 <span class="mono">$80.3B ÷ 12.09B股 = +$6.64/股</span>。
-  </div>
-
-  <!-- Y1推导表 -->
-  <div class="sub-head amber" style="font-size:11px;margin-bottom:6px">Y1(2026) FCF三情景推导</div>
-  <div class="table-wrap" style="margin-bottom:16px">
-    <table>
-      <thead><tr><th>情景</th><th>2026E营收</th><th>OCF Margin</th><th>2026E OCF</th><th>Capex</th><th>Y1 FCF</th><th>依据</th></tr></thead>
-      <tbody>
-        <tr><td class="green">乐观</td><td class="mono">$486B</td><td class="mono">50%</td><td class="mono">$243B</td><td class="mono">$175B</td><td class="mono green"><strong>$68B</strong></td><td>OCF Margin继续提升（历史趋势：2024→2025年从35.8%升至40.9%）</td></tr>
-        <tr style="background:rgba(245,158,11,0.05)"><td class="amber">基准</td><td class="mono">$486B</td><td class="mono">44%</td><td class="mono">$214B</td><td class="mono">$180B</td><td class="mono amber"><strong>$34B</strong></td><td>Margin小幅提升，Capex取指引中值</td></tr>
-        <tr><td class="red">悲观</td><td class="mono">$486B</td><td class="mono">40%</td><td class="mono">$194B</td><td class="mono">$185B</td><td class="mono red"><strong>$9B</strong></td><td>Margin无改善，Capex上限+Search份额风险</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- 三情景卡片 -->
-  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px">
-
-    <div style="background:rgba(16,185,129,0.07);border:1px solid rgba(16,185,129,0.3);border-radius:8px;padding:14px">
-      <div style="font-weight:700;color:var(--green);margin-bottom:4px">乐观 · WACC 8.5% / g 4.0%</div>
-      <div style="font-size:10px;color:var(--slate);margin-bottom:8px">Y1 $68B → Cloud+48%推动强劲反弹</div>
-      <div class="table-wrap"><table style="font-size:10px">
-        <thead><tr><th>年份</th><th>FCF</th><th>折现因子</th><th>现值</th></tr></thead>
-        <tbody><tr><td class="mono">Y1</td><td class="mono">$68.0B</td><td class="mono">0.921659</td><td class="mono green">$62.7B</td></tr><tr><td class="mono">Y2</td><td class="mono">$126.0B</td><td class="mono">0.849455</td><td class="mono green">$107.0B</td></tr><tr><td class="mono">Y3</td><td class="mono">$201.0B</td><td class="mono">0.782908</td><td class="mono green">$157.4B</td></tr><tr><td class="mono">Y4</td><td class="mono">$267.0B</td><td class="mono">0.721574</td><td class="mono green">$192.7B</td></tr><tr><td class="mono">Y5</td><td class="mono">$332.0B</td><td class="mono">0.665045</td><td class="mono green">$220.8B</td></tr><tr><td class="mono">Y6</td><td class="mono">$372.0B</td><td class="mono">0.612945</td><td class="mono green">$228.0B</td></tr><tr><td class="mono">Y7</td><td class="mono">$417.0B</td><td class="mono">0.564926</td><td class="mono green">$235.6B</td></tr><tr><td class="mono">Y8</td><td class="mono">$467.0B</td><td class="mono">0.520669</td><td class="mono green">$243.2B</td></tr><tr><td class="mono">Y9</td><td class="mono">$523.0B</td><td class="mono">0.479880</td><td class="mono green">$251.0B</td></tr><tr><td class="mono">Y10</td><td class="mono">$586.0B</td><td class="mono">0.442285</td><td class="mono green">$259.2B</td></tr></tbody>
-      </table></div>
-      <div style="margin-top:8px;font-size:11px;color:var(--text-mid);line-height:2">
-        <div style="display:flex;justify-content:space-between"><span>FCF现值合计</span><strong class="mono">$1957.4B</strong></div>
-        <div style="display:flex;justify-content:space-between"><span>终值现值</span><strong class="mono">$5989.9B</strong></div>
-        <div style="display:flex;justify-content:space-between"><span>净现金</span><strong class="mono">+$80.3B</strong></div>
-        <div style="display:flex;justify-content:space-between;border-top:1px solid rgba(16,185,129,0.4);padding-top:4px;margin-top:4px"><span>权益总价值</span><strong class="mono">$8027.6B</strong></div>
-        <div style="display:flex;justify-content:space-between"><span>每股内在价值</span><strong class="mono green" style="font-size:15px">$663.99</strong></div>
-        <div style="display:flex;justify-content:space-between"><span>vs $313</span><strong class="green">↑ 112.1%</strong></div>
-      </div>
-    </div>
-
-    <div style="background:rgba(245,158,11,0.07);border:1px solid rgba(245,158,11,0.35);border-radius:8px;padding:14px">
-      <div style="font-weight:700;color:var(--amber);margin-bottom:4px">基准 · WACC 9.5% / g 3.5%</div>
-      <div style="font-size:10px;color:var(--slate);margin-bottom:8px">Y1 $34B → Capex正常化后稳健复苏</div>
-      <div class="table-wrap"><table style="font-size:10px">
-        <thead><tr><th>年份</th><th>FCF</th><th>折现因子</th><th>现值</th></tr></thead>
-        <tbody><tr><td class="mono">Y1</td><td class="mono">$34.0B</td><td class="mono">0.913242</td><td class="mono green">$31.1B</td></tr><tr><td class="mono">Y2</td><td class="mono">$79.0B</td><td class="mono">0.834011</td><td class="mono green">$65.9B</td></tr><tr><td class="mono">Y3</td><td class="mono">$140.0B</td><td class="mono">0.761654</td><td class="mono green">$106.6B</td></tr><tr><td class="mono">Y4</td><td class="mono">$193.0B</td><td class="mono">0.695574</td><td class="mono green">$134.2B</td></tr><tr><td class="mono">Y5</td><td class="mono">$239.0B</td><td class="mono">0.635228</td><td class="mono green">$151.8B</td></tr><tr><td class="mono">Y6</td><td class="mono">$268.0B</td><td class="mono">0.580117</td><td class="mono green">$155.5B</td></tr><tr><td class="mono">Y7</td><td class="mono">$300.0B</td><td class="mono">0.529787</td><td class="mono green">$158.9B</td></tr><tr><td class="mono">Y8</td><td class="mono">$336.0B</td><td class="mono">0.483824</td><td class="mono green">$162.6B</td></tr><tr><td class="mono">Y9</td><td class="mono">$376.0B</td><td class="mono">0.441848</td><td class="mono green">$166.1B</td></tr><tr><td class="mono">Y10</td><td class="mono">$421.0B</td><td class="mono">0.403514</td><td class="mono green">$169.9B</td></tr></tbody>
-      </table></div>
-      <div style="margin-top:8px;font-size:11px;color:var(--text-mid);line-height:2">
-        <div style="display:flex;justify-content:space-between"><span>FCF现值合计</span><strong class="mono">$1302.6B</strong></div>
-        <div style="display:flex;justify-content:space-between"><span>终值现值</span><strong class="mono">$2930.4B</strong></div>
-        <div style="display:flex;justify-content:space-between"><span>净现金</span><strong class="mono">+$80.3B</strong></div>
-        <div style="display:flex;justify-content:space-between;border-top:1px solid rgba(245,158,11,0.5);padding-top:4px;margin-top:4px"><span>权益总价值</span><strong class="mono">$4313.3B</strong></div>
-        <div style="display:flex;justify-content:space-between"><span>每股内在价值</span><strong class="mono amber" style="font-size:15px">$356.77</strong></div>
-        <div style="display:flex;justify-content:space-between"><span>vs $313</span><strong class="green">↑ 14.0%</strong></div>
-      </div>
-    </div>
-
-    <div style="background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.25);border-radius:8px;padding:14px">
-      <div style="font-weight:700;color:var(--red);margin-bottom:4px">悲观 · WACC 11.0% / g 2.5%</div>
-      <div style="font-size:10px;color:var(--slate);margin-bottom:8px">Y1 $9B → OCF无改善+Search份额风险</div>
-      <div class="table-wrap"><table style="font-size:10px">
-        <thead><tr><th>年份</th><th>FCF</th><th>折现因子</th><th>现值</th></tr></thead>
-        <tbody><tr><td class="mono">Y1</td><td class="mono">$9.0B</td><td class="mono">0.900901</td><td class="mono green">$8.1B</td></tr><tr><td class="mono">Y2</td><td class="mono">$27.0B</td><td class="mono">0.811622</td><td class="mono green">$21.9B</td></tr><tr><td class="mono">Y3</td><td class="mono">$42.0B</td><td class="mono">0.731191</td><td class="mono green">$30.7B</td></tr><tr><td class="mono">Y4</td><td class="mono">$54.0B</td><td class="mono">0.658731</td><td class="mono green">$35.6B</td></tr><tr><td class="mono">Y5</td><td class="mono">$65.0B</td><td class="mono">0.593451</td><td class="mono green">$38.6B</td></tr><tr><td class="mono">Y6</td><td class="mono">$72.0B</td><td class="mono">0.534641</td><td class="mono green">$38.5B</td></tr><tr><td class="mono">Y7</td><td class="mono">$79.0B</td><td class="mono">0.481658</td><td class="mono green">$38.0B</td></tr><tr><td class="mono">Y8</td><td class="mono">$87.0B</td><td class="mono">0.433926</td><td class="mono green">$37.8B</td></tr><tr><td class="mono">Y9</td><td class="mono">$96.0B</td><td class="mono">0.390925</td><td class="mono green">$37.5B</td></tr><tr><td class="mono">Y10</td><td class="mono">$106.0B</td><td class="mono">0.352184</td><td class="mono green">$37.3B</td></tr></tbody>
-      </table></div>
-      <div style="margin-top:8px;font-size:11px;color:var(--text-mid);line-height:2">
-        <div style="display:flex;justify-content:space-between"><span>FCF现值合计</span><strong class="mono">$324.0B</strong></div>
-        <div style="display:flex;justify-content:space-between"><span>终值现值</span><strong class="mono">$450.2B</strong></div>
-        <div style="display:flex;justify-content:space-between"><span>净现金</span><strong class="mono">+$80.3B</strong></div>
-        <div style="display:flex;justify-content:space-between;border-top:1px solid rgba(239,68,68,0.4);padding-top:4px;margin-top:4px"><span>权益总价值</span><strong class="mono">$854.5B</strong></div>
-        <div style="display:flex;justify-content:space-between"><span>每股内在价值</span><strong class="mono red" style="font-size:15px">$70.68</strong></div>
-        <div style="display:flex;justify-content:space-between"><span>vs $313</span><strong class="red">↓ 77.4%</strong></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- GOOGL Sensitivity -->
-  <div style="margin-top:14px">
-    <div style="font-size:11px;color:var(--text-mid);margin-bottom:5px;font-weight:600">GOOGL 敏感性矩阵（基准FCF路径 × WACC × g）— 每股内在价值</div>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>WACC ↓ / g →</th><th>g=2.5%</th><th>g=3.0%</th><th>g=3.5%</th><th>g=4.0%</th><th>g=4.5%</th></tr></thead>
-        <tbody><tr><td class="mono">8.0%</td><td class="mono green">$425</td><td class="mono green">$457</td><td class="mono green">$495</td><td class="mono green">$544</td><td class="mono green">$606</td></tr><tr><td class="mono">8.5%</td><td class="mono green">$384</td><td class="mono green">$409</td><td class="mono green">$440</td><td class="mono green">$477</td><td class="mono green">$523</td></tr><tr><td class="mono">9.0%</td><td class="mono amber">$350</td><td class="mono green">$370</td><td class="mono green">$394</td><td class="mono green">$424</td><td class="mono green">$459</td></tr><tr style="background:rgba(245,158,11,0.08)"><td class="mono amber">9.5%  ★</td><td class="mono amber">$320</td><td class="mono amber">$337</td><td class="mono amber">$357</td><td class="mono green">$380</td><td class="mono green">$408</td></tr><tr><td class="mono">10.0%</td><td class="mono amber">$295</td><td class="mono amber">$309</td><td class="mono amber">$325</td><td class="mono amber">$344</td><td class="mono green">$366</td></tr><tr><td class="mono">11.0%</td><td class="mono red">$253</td><td class="mono red">$263</td><td class="mono amber">$275</td><td class="mono amber">$288</td><td class="mono amber">$303</td></tr></tbody>
-      </table>
-    </div>
-    <div style="font-size:10px;color:var(--slate);margin-top:4px">
-      绿色 = 较$313低估&gt;15%；橙色 = 合理区间；红色 = 高估&gt;15%。
-      ★ 基准(WACC 9.5%, g 3.5%) = <strong>$357</strong>，低估约14%，存在一定安全边际。
-      2026年Capex ROI兑现与否是最关键的分叉变量。
-    </div>
-  </div>
-
-  <!-- GOOGL 风险提示 -->
-  <div style="background:rgba(239,68,68,0.05);border:1px solid rgba(239,68,68,0.2);border-radius:8px;padding:14px;margin-top:14px">
-    <div style="font-weight:700;color:var(--red);margin-bottom:8px;font-size:12px">⚠ 2026 Capex压力 · FCF Compression Risk</div>
-    <div style="font-size:11px;color:var(--text-mid);line-height:1.9">
-      <div>FY2025 OCF $164.7B (+31.5% YoY)，OCF Margin 40.9%——这是即使Capex大增FCF仍有支撑的核心。</div>
-      <div>2026 Capex指引 $175–185B（2025年$91.4B的两倍），估算 FY2026 FCF 约 <strong>$25–35B</strong>（基准），较2025年下滑约55%。</div>
-      <div>若OCF增速不及预期，FCF可能接近零。若Cloud $240B积压订单持续转化，2027–2028年FCF将强劲反弹。</div>
-      <div style="margin-top:6px;color:var(--gold-pale);font-weight:600">长期视角：2026年FCF压缩是战略性蓄力，而非基本面恶化——前提是Capex带动Cloud营收持续加速。</div>
-    </div>
-  </div>
-
-  <!-- ====== NVDA ====== -->
-  <div class="sub-head purple" style="margin-top:32px">▶ NVDA — DCF三情景</div>
-
-  <div class="note-dark" style="margin-bottom:14px">
-    <span class="nl">增速校准 · Growth Calibration</span>
-    FY2026 Q4单季营收 $68.1B，年化运行率 $272B。仅维持Q4运行率即隐含FY2027增速 <strong>+26%</strong>，分析师共识约+30–40%。
-    基准Y1采用+32%，保守于共识但高于最低隐含值。
-    FCF基数 $96.58B（FY2026实际）。净现金 $55.13B（$62.6B现金 − $7.47B长期债务，Jan 25 2026）。
-  </div>
-
-  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px">
-
-    <div style="background:rgba(16,185,129,0.07);border:1px solid rgba(16,185,129,0.3);border-radius:8px;padding:14px">
-      <div style="font-weight:700;color:var(--green);margin-bottom:4px">乐观 · WACC 8.5% / g 4.0%</div>
-      <div style="font-size:10px;color:var(--slate);margin-bottom:8px">增速 40/35/28/22/18% → 15/14/13/12/10%</div>
-      <div class="table-wrap"><table style="font-size:10px">
-        <thead><tr><th>年份</th><th>FCF</th><th>折现因子</th><th>现值</th></tr></thead>
-        <tbody><tr><td class="mono">Y1</td><td class="mono">$135.2B</td><td class="mono">0.921659</td><td class="mono green">$124.6B</td></tr><tr><td class="mono">Y2</td><td class="mono">$182.5B</td><td class="mono">0.849455</td><td class="mono green">$155.1B</td></tr><tr><td class="mono">Y3</td><td class="mono">$233.7B</td><td class="mono">0.782908</td><td class="mono green">$182.9B</td></tr><tr><td class="mono">Y4</td><td class="mono">$285.1B</td><td class="mono">0.721574</td><td class="mono green">$205.7B</td></tr><tr><td class="mono">Y5</td><td class="mono">$336.4B</td><td class="mono">0.665045</td><td class="mono green">$223.7B</td></tr><tr><td class="mono">Y6</td><td class="mono">$386.8B</td><td class="mono">0.612945</td><td class="mono green">$237.1B</td></tr><tr><td class="mono">Y7</td><td class="mono">$441.0B</td><td class="mono">0.564926</td><td class="mono green">$249.1B</td></tr><tr><td class="mono">Y8</td><td class="mono">$498.3B</td><td class="mono">0.520669</td><td class="mono green">$259.4B</td></tr><tr><td class="mono">Y9</td><td class="mono">$558.1B</td><td class="mono">0.479880</td><td class="mono green">$267.8B</td></tr><tr><td class="mono">Y10</td><td class="mono">$613.9B</td><td class="mono">0.442285</td><td class="mono green">$271.5B</td></tr></tbody>
-      </table></div>
-      <div style="margin-top:8px;font-size:11px;color:var(--text-mid);line-height:2">
-        <div style="display:flex;justify-content:space-between"><span>FCF现值合计</span><strong class="mono">$2177.0B</strong></div>
-        <div style="display:flex;justify-content:space-between"><span>终值现值</span><strong class="mono">$6275.0B</strong></div>
-        <div style="display:flex;justify-content:space-between"><span>净现金</span><strong class="mono">+$55.13B</strong></div>
-        <div style="display:flex;justify-content:space-between;border-top:1px solid rgba(16,185,129,0.4);padding-top:4px;margin-top:4px"><span>权益总价值</span><strong class="mono">$8507.1B</strong></div>
-        <div style="display:flex;justify-content:space-between"><span>每股内在价值</span><strong class="mono green" style="font-size:15px">$350.09</strong></div>
-        <div style="display:flex;justify-content:space-between"><span>vs $185</span><strong class="green">↑ 89.2%</strong></div>
-      </div>
-    </div>
-
-    <div style="background:rgba(245,158,11,0.07);border:1px solid rgba(245,158,11,0.35);border-radius:8px;padding:14px">
-      <div style="font-weight:700;color:var(--amber);margin-bottom:4px">基准 · WACC 9.5% / g 3.5%</div>
-      <div style="font-size:10px;color:var(--slate);margin-bottom:8px">增速 32/28/22/18/14% → 12/11/10/9/8%</div>
-      <div class="table-wrap"><table style="font-size:10px">
-        <thead><tr><th>年份</th><th>FCF</th><th>折现因子</th><th>现值</th></tr></thead>
-        <tbody><tr><td class="mono">Y1</td><td class="mono">$127.5B</td><td class="mono">0.913242</td><td class="mono green">$116.4B</td></tr><tr><td class="mono">Y2</td><td class="mono">$163.2B</td><td class="mono">0.834011</td><td class="mono green">$136.1B</td></tr><tr><td class="mono">Y3</td><td class="mono">$199.1B</td><td class="mono">0.761654</td><td class="mono green">$151.6B</td></tr><tr><td class="mono">Y4</td><td class="mono">$234.9B</td><td class="mono">0.695574</td><td class="mono green">$163.4B</td></tr><tr><td class="mono">Y5</td><td class="mono">$267.8B</td><td class="mono">0.635228</td><td class="mono green">$170.1B</td></tr><tr><td class="mono">Y6</td><td class="mono">$299.9B</td><td class="mono">0.580117</td><td class="mono green">$174.0B</td></tr><tr><td class="mono">Y7</td><td class="mono">$332.9B</td><td class="mono">0.529787</td><td class="mono green">$176.4B</td></tr><tr><td class="mono">Y8</td><td class="mono">$366.2B</td><td class="mono">0.483824</td><td class="mono green">$177.2B</td></tr><tr><td class="mono">Y9</td><td class="mono">$399.2B</td><td class="mono">0.441848</td><td class="mono green">$176.4B</td></tr><tr><td class="mono">Y10</td><td class="mono">$431.1B</td><td class="mono">0.403514</td><td class="mono green">$174.0B</td></tr></tbody>
-      </table></div>
-      <div style="margin-top:8px;font-size:11px;color:var(--text-mid);line-height:2">
-        <div style="display:flex;justify-content:space-between"><span>FCF现值合计</span><strong class="mono">$1615.6B</strong></div>
-        <div style="display:flex;justify-content:space-between"><span>终值现值</span><strong class="mono">$3000.9B</strong></div>
-        <div style="display:flex;justify-content:space-between"><span>净现金</span><strong class="mono">+$55.13B</strong></div>
-        <div style="display:flex;justify-content:space-between;border-top:1px solid rgba(245,158,11,0.5);padding-top:4px;margin-top:4px"><span>权益总价值</span><strong class="mono">$4671.6B</strong></div>
-        <div style="display:flex;justify-content:space-between"><span>每股内在价值</span><strong class="mono amber" style="font-size:15px">$192.25</strong></div>
-        <div style="display:flex;justify-content:space-between"><span>vs $185</span><strong class="green">↑ 3.9%</strong></div>
-      </div>
-    </div>
-
-    <div style="background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.25);border-radius:8px;padding:14px">
-      <div style="font-weight:700;color:var(--red);margin-bottom:4px">悲观 · WACC 11.0% / g 2.5%</div>
-      <div style="font-size:10px;color:var(--slate);margin-bottom:8px">增速 20/15/8/5% → 3%/yr</div>
-      <div class="table-wrap"><table style="font-size:10px">
-        <thead><tr><th>年份</th><th>FCF</th><th>折现因子</th><th>现值</th></tr></thead>
-        <tbody><tr><td class="mono">Y1</td><td class="mono">$115.9B</td><td class="mono">0.900901</td><td class="mono green">$104.4B</td></tr><tr><td class="mono">Y2</td><td class="mono">$133.3B</td><td class="mono">0.811622</td><td class="mono green">$108.2B</td></tr><tr><td class="mono">Y3</td><td class="mono">$143.9B</td><td class="mono">0.731191</td><td class="mono green">$105.2B</td></tr><tr><td class="mono">Y4</td><td class="mono">$151.1B</td><td class="mono">0.658731</td><td class="mono green">$99.6B</td></tr><tr><td class="mono">Y5</td><td class="mono">$155.7B</td><td class="mono">0.593451</td><td class="mono green">$92.4B</td></tr><tr><td class="mono">Y6</td><td class="mono">$160.3B</td><td class="mono">0.534641</td><td class="mono green">$85.7B</td></tr><tr><td class="mono">Y7</td><td class="mono">$165.2B</td><td class="mono">0.481658</td><td class="mono green">$79.5B</td></tr><tr><td class="mono">Y8</td><td class="mono">$170.1B</td><td class="mono">0.433926</td><td class="mono green">$73.8B</td></tr><tr><td class="mono">Y9</td><td class="mono">$175.2B</td><td class="mono">0.390925</td><td class="mono green">$68.5B</td></tr><tr><td class="mono">Y10</td><td class="mono">$180.5B</td><td class="mono">0.352184</td><td class="mono green">$63.6B</td></tr></tbody>
-      </table></div>
-      <div style="margin-top:8px;font-size:11px;color:var(--text-mid);line-height:2">
-        <div style="display:flex;justify-content:space-between"><span>FCF现值合计</span><strong class="mono">$880.9B</strong></div>
-        <div style="display:flex;justify-content:space-between"><span>终值现值</span><strong class="mono">$766.4B</strong></div>
-        <div style="display:flex;justify-content:space-between"><span>净现金</span><strong class="mono">+$55.13B</strong></div>
-        <div style="display:flex;justify-content:space-between;border-top:1px solid rgba(239,68,68,0.4);padding-top:4px;margin-top:4px"><span>权益总价值</span><strong class="mono">$1702.5B</strong></div>
-        <div style="display:flex;justify-content:space-between"><span>每股内在价值</span><strong class="mono red" style="font-size:15px">$70.06</strong></div>
-        <div style="display:flex;justify-content:space-between"><span>vs $185</span><strong class="red">↓ 62.1%</strong></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- NVDA Sensitivity -->
-  <div style="margin-top:14px">
-    <div style="font-size:11px;color:var(--text-mid);margin-bottom:5px;font-weight:600">NVDA 敏感性矩阵（基准FCF路径 × WACC × g）— 每股内在价值</div>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>WACC ↓ / g →</th><th>g=2.0%</th><th>g=2.5%</th><th>g=3.0%</th><th>g=3.5%</th><th>g=4.0%</th></tr></thead>
-        <tbody><tr><td class="mono">8.0%</td><td class="mono green">$214</td><td class="mono green">$227</td><td class="mono green">$244</td><td class="mono green">$263</td><td class="mono green">$288</td></tr><tr><td class="mono">8.5%</td><td class="mono amber">$196</td><td class="mono amber">$206</td><td class="mono green">$219</td><td class="mono green">$235</td><td class="mono green">$254</td></tr><tr><td class="mono">9.0%</td><td class="mono amber">$180</td><td class="mono amber">$189</td><td class="mono amber">$199</td><td class="mono amber">$212</td><td class="mono green">$226</td></tr><tr style="background:rgba(245,158,11,0.08)"><td class="mono amber">9.5%  ★</td><td class="mono amber">$166</td><td class="mono amber">$174</td><td class="mono amber">$182</td><td class="mono amber">$192</td><td class="mono amber">$204</td></tr><tr><td class="mono">10.0%</td><td class="mono red">$154</td><td class="mono amber">$161</td><td class="mono amber">$168</td><td class="mono amber">$176</td><td class="mono amber">$186</td></tr><tr><td class="mono">11.0%</td><td class="mono red">$135</td><td class="mono red">$139</td><td class="mono red">$144</td><td class="mono red">$150</td><td class="mono red">$157</td></tr><tr><td class="mono">12.0%</td><td class="mono red">$119</td><td class="mono red">$122</td><td class="mono red">$126</td><td class="mono red">$130</td><td class="mono red">$135</td></tr></tbody>
-      </table>
-    </div>
-    <div style="font-size:10px;color:var(--slate);margin-top:4px">
-      绿色 = 较$185低估&gt;15%；橙色 = 合理区间；红色 = 高估&gt;15%。
-      ★ 基准(WACC 9.5%, g 3.5%) = <strong>$192</strong>，与当前$185高度吻合（低估约4%）。
-      市场定价隐含WACC约8.5–9.0%，反映对AI GPU垄断地位的高信心溢价。
-    </div>
-  </div>
-
-  <!-- 综合总结 -->
-  <div class="sub-head gold" style="margin-top:28px">综合估值总结 · Summary</div>
-  <div class="table-wrap">
-    <table>
-      <thead><tr><th>股票</th><th>当前股价</th><th>悲观情景</th><th>基准情景</th><th>乐观情景</th><th>结论</th></tr></thead>
-      <tbody>
-        <tr>
-          <td><strong>GOOGL</strong></td>
-          <td class="mono">$313</td>
-          <td class="mono red">$71</td>
-          <td class="mono amber">$357</td>
-          <td class="mono green">$664</td>
-          <td><span class="signal bull">基准低估14%</span><br><span style="font-size:9px;color:var(--slate)">核心风险：Capex $180B的ROI兑现时间</span></td>
-        </tr>
-        <tr>
-          <td><strong>NVDA</strong></td>
-          <td class="mono">$185</td>
-          <td class="mono red">$70</td>
-          <td class="mono amber">$192</td>
-          <td class="mono green">$350</td>
-          <td><span class="signal neutral">基准基本公允</span><br><span style="font-size:9px;color:var(--slate)">低估4%，市场按基准情景定价</span></td>
-        </tr>
-        <tr>
-          <td><strong>TSLA</strong></td>
-          <td colspan="4" style="color:var(--slate);font-size:10px">运营现金流特殊性不适用标准FCF-DCF。建议采用P/S或相对估值，本节不纳入。</td>
-          <td><span class="signal neutral">P/S估值更适合</span></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <div style="font-size:10px;color:var(--slate);margin-top:6px">
-    所有FCF均逐年列示折现因子与现值，计算过程可审计。WACC和永续增长率g是最大不确定性来源。
-  </div>
-
-</section>
 
 
   <!-- OUTLOOK -->
